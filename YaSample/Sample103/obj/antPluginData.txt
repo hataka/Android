@@ -1,0 +1,8 @@
+..\obj\ProjectMenu.xml
+//obj\FDTreeMenu.xml
+//build.gradle
+//app\src\main\AndroidManifest.xml
+//app\src\main\res\values\strings.xml
+//app\src\main\res\layout\main.xml
+//src\main\java\ya\Sample011\Sample011.java
+obj\antPluginData.txt

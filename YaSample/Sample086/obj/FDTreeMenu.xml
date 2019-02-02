@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root title="ya.$(CurProjectName) Treemenu" icon="" expand="false">
+	<include path="$(CurProjectDir)"/>
+	<folder title="build" >
+		<record title="compile" action="conexe" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k F:\gradle-3.5\bin\gradle.bat assembleDebug"
+			path ="$(CurProjectDir)"
+			icon="image:127" />
+	<record title="apk to Top" action="conexe" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\cp.exe ./app/build/outputs/apk/*.apk ./"
+			path ="$(CurProjectDir)"
+			icon="image:127" />
+	<record title="copy to sdcard2" action="RunProcess" 
+		command="c:\windows\system32\cmd.exe"
+		args="/k c:\cygwin64\bin\cp $(CurProjectDir)/$(CurProjectName).apk F:/mnt/sdcard2/backups/apps/YaSample" 
+		path ="$(CurProjectDir)" 
+		icon="image:127"/>
+	<record title="clean" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\rm.exe -rf ./.gradle ./build ./app/build"
+			path ="$(CurProjectDir)" 
+			icon="image:127"/>
+  </folder>
+
+<folder title="viewSrc">
+  <record title="AndroidManifest.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\AndroidManifest.xml" />
+  <record title="$(CurProjectName).java" action="open"
+		path="$(CurProjectDir)\app\src\main\java\ya\$(CurProjectName)\$(CurProjectName).java" />
+  <record title="layout\main.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\res\layout\main.xml" />
+  <record title="values\strings.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\res\values\strings.xml" />
+		
+</folder>
+
+	<folder title="WebSite">
+	<record title="GitHub Site" action="browse"
+		path="https://github.com/hataka/codingground/tree/master/android/YaSample/$(CurProjectName)" />
+ <record title="やさしいAndroidプログラミング 第三版　高橋麻奈" action="browse"
+ 	path="http://mana.on.coocan.jp/yasaa.html" />
+ <record title="コマンドラインからのアプリ作成  |  Android Developers"
+ 	path="https://developer.android.com/studio/build/building-cmdline?hl=ja" />
+ <record title="SBクリエイティブ:【正誤情報】『やさしいAndroidプログラミング 第3版』"
+ 	path = "https://www.sbcr.jp/support/14003.html" />
+ <record title="[Android] ImageView:画像を表示する | Programming Style -- Android"
+ path="http://www.programing-style.com/android/android-api/android-imageview/" />
+	</folder>
+
+	
+	
+	
+</root>

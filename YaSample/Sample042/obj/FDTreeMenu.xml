@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root title="ya.Sample042 Treemenu" icon="" expand="false">
+	<include path="F:\GitHub\hataka\codingground\android\YaSample\Sample042"/>
+  <folder title="build" >
+	<record title="apk to Top" action="conexe" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\cp.exe ./app/build/outputs/apk/*.apk ./"
+			path ="F:/GitHub/hataka/codingground/android/YaSample/Sample042/"
+			icon="image:127" />
+	<record title="clean" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\rm.exe -rf ./.gradle ./build ./app/build"
+			path ="F:/GitHub/hataka/codingground/android/YaSample/Sample042/" 
+			icon="image:127"/>
+  </folder>
+</root>

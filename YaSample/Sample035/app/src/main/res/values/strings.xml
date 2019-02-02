@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Sample035!</string>
+    <string name="app_name">Sample035 ボタンをタッチした時の処理を行う</string>
+
+</resources>

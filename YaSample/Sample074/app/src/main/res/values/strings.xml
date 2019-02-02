@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Sample074!</string>
+    <string name="app_name">Sample074 緯度・経度を指定する</string>
+
+</resources>
