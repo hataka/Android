@@ -1,0 +1,12 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-29 20:54:15 kahata>
+/*================================================================
+ * title: GViewEvent ユーザからのイベントに応答する
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\GViewEvent\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/GViewEvent/settings.gradle
+ * created: Time-stamp: <2017-06-29 20:54:15 kahata>
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=folder&id=android
+ * description: GViewEvent ユーザからのイベントに応答する
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.gviewevent";
+include ':app'

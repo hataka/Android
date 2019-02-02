@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:shrinkColumns="0,2">
+	<TableRow>
+		<EditText android:text="____[0,0]____" />
+		<EditText android:text="____[0,1]____" />
+		<EditText android:text="____[0,2]____" />
+	</TableRow>
+	<TableRow>
+		<EditText android:text="____[1,0]____" />
+		<EditText android:text="____[1,1]____" />
+		<EditText android:text="____[1,2]____" />
+	</TableRow>
+	<TableRow>
+		<EditText android:text="____[2,0]____" />
+		<EditText android:text="____[2,1]____" />
+		<EditText android:text="____[2,2]____" />
+	</TableRow>
+</TableLayout>

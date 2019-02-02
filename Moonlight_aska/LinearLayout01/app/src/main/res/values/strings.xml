@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+一直線にウィジェットを並べる
+最終更新：moonlight_aska 2011年09月25日(日) 09:32:24履歴
+縦方向又は横方向に一直線にウィジェットを並べる場合, リニアレイアウト(LinearLayout)を使う.
+縦方向に並べる
+res/values/strings.xml
+表示する文字列を定義する.
+-->
+<resources>
+	<string name="app_name">LinearLayout01 一直線にWidgetを並べる レイアウト</string>
+	<string name="textview01_label">名　前</string>
+	<string name="textview02_label">住　所</string>
+	<string name="button_label">登　録</string>
+</resources>

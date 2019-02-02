@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MemoryInfo02!</string>
+    <string name="app_name">MemoryInfo02 ヒープの使用量を取得する システム</string>
+
+</resources>

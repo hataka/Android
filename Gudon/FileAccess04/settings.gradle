@@ -1,0 +1,3 @@
+
+gradle.ext.applicationId = "gudon.sample.fileaccess04";
+include ':app'

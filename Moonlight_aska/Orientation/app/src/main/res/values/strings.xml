@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Orientation!</string>
+    <string name="app_name">Orientation 画面の向きを取得する システム</string>
+
+</resources>

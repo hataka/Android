@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Table_layout02Activity!</string>
+    <string name="app_name">Table_layout02 xmlレイアウトファイルを使わずにコードで記述する</string>
+
+</resources>

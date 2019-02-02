@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TouchEvent02!</string>
+    <string name="app_name">TouchEvent02 タッチイベントをViewで取得する</string>
+
+</resources>

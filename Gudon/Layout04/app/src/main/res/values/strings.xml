@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Layout04!</string>
+    <string name="app_name">Layout04 addViewメソッドの引数に幅と高さの値を指定</string>
+
+</resources>

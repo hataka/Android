@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+テキストビュー(TextView)を作成する方法は2通りある.
+静的に決定しているものはXMLで定義して, 動的に決定するものはコードで定義するというのが一般的である.
+XMLファイルにより定義
+res/values/strings.xml
+テキストビューに表示する文字列を定義する.
+<resources>
+	<string name="app_name">テキストビューを作成する</string>
+	<string name="textview_label">This is a TextView sample.</string>
+</resources>
+res/layout/main.xml
+"@+id/textview_id"でプログラムからアクセスするIDを定義する.
+テキストビューをどれくらいの大きさで配置するかを指定する.
+"@string/textview_label"で表示する文字列を指定する.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<TextView android:id="@+id/textview_id"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/textview_label"
+	/>
+</LinearLayout>

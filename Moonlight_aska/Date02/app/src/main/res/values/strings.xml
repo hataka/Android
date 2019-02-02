@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Date02!</string>
+    <string name="app_name">Date02 現在の日時を取得する(java.text,SimpleDateFormat) システム</string>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+		android:id="@+id/menu_ya"
+	<item android:id="@+id/menu_ya_all" android:title="全て"></item>
+	<item	android:id="@+id/menu_lesson01" android:title="Lesson01 はじめの一歩" />
+	<item	android:id="@+id/menu_lesson02" android:title="Lesson02 Javaとクラスライブラリ" />
+	<item	android:id="@+id/menu_lesson03" android:title="Lesson03 Androidの基本" />
+	<item	android:id="@+id/menu_lesson04" android:title="Lesson04 いろいろなビュー" />
+	<item	android:id="@+id/menu_lesson05" android:title="Lesson05 グラフィック" />
+	<item	android:id="@+id/menu_lesson06" android:title="Lesson06 マルチメディア" />
+	<item	android:id="@+id/menu_lesson07" android:title="Lesson07 センサとマップ" />
+	<item	android:id="@+id/menu_lesson08" android:title="Lesson08 アプリケーションの連携" />
+	<item	android:id="@+id/menu_lesson09" android:title="Lesson09 ウィジェット" />
+	<item	android:id="@+id/menu_lesson10" android:title="Lesson10 ファイルとデータベース" />
+	<item	android:id="@+id/menu_lesson11" android:title="Lesson11 ネットワーク" />
+	<item	android:id="@+id/menu_lesson12" android:title="Lesson12 アプリケーションの配布" />
+
+	<item android:id="@+id/menu_submenu" android:title="サブメニュー...">
+		<menu>
+			<item android:id="@+id/menu_launcher" android:title="ランチャー"></item>
+ 			<item android:id="@+id/menu_kahata" android:title="kahata"/>
+			<item android:id="@+id/menu_android" android:title="Android"/>
+			<item android:id="@+id/menu_google" android:title="Google"/>
+			<item android:id="@+id/menu_asus" android:title="ASUS"/>
+			<item android:id="@+id/menu_nocategory" android:title="未分類" />
+			<item android:id="@+id/menu_test" android:title="テスト" />
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+			<item android:id="@+id/menu_website" android:title="Web Site" />
+		</menu>
+	</item>
+
+	<item
+		android:id="@+id/menu_tools"
+		android:title="ツール...">
+		<menu>
+			<item android:id="@+id/menu_workspace" android:title="ワークスペース ホルダー"/>
+			<item android:id="@+id/menu_pukiwiki2012" android:title="PukiWiki 2012"/>
+			<item android:id="@+id/menu_frame" android:title="FrameWork"/>
+			<item android:id="@+id/menu_subactivity" android:title="画面遷移"/>
+		</menu>
+	</item>	
+
+	<item
+		android:id="@+id/menu_search"
+		android:title="検索...">
+		<menu>
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+		</menu>
+	</item>
+</menu>

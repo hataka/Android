@@ -1,0 +1,17 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-23 16:36:23 kahata>
+/*================================================================
+ * title: FileAccess06 簡易ファイルエクスプローラ＆テキストビュアーをつくる
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\FileAccess06\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/FileAccess06/settings.gradle
+ * created: Time-stamp: <2017-06-23 16:36:23 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android044_FileAccess
+ * link: http://www.javadrive.jp/android/edittext/index11.html
+ * description: FileAccess06 簡易ファイルエクスプローラ＆テキストビュアーをつくる
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.fileaccess06";
+include ':app'

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+垂直方向にスクロールする
+最終更新：moonlight_aska 2011年07月23日(土) 22:33:28履歴
+画面に貼り付けたウィジェットが画面からあふれた場合, そのあふれた部分は見えなくなる. そこで, 画面サイズをカバーするために, スクロール機能を実装することで, あふれた部分を見ることができるようになる. 
+垂直方向のスクロールを行いたい場合, スクロールビュー(ScrollView)を使う.
+垂直方向にスクロールする
+res/layout/main.xml
+ScrollViewを定義する.
+ボタンビューを垂直方向に配置する.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout 
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+		<!-- 北海道 -->
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/hokkaido"
+			/>
+		<!-- 東北 -->
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/aomori"
+			/>
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/iwate"
+			/>
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/miyagi"
+			/>
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/kagoshima"
+			/>
+		<Button 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/okinawa"
+			/>
+	</LinearLayout>
+</ScrollView>

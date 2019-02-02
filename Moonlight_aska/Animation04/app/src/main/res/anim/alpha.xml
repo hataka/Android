@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+res/anim/alpha.xml
+アニメーションの設定を行うXMLファイルである.
+AlphaAnimationクラスで指定する属性
+android:fromAlpha	アニメーション開始時のアルファ値
+andorid:toAlpha	アニメーション終了時のアルファ値
+Animationクラスで指定する属性
+android:duration	アニメーションの動作時間(msec)
+android:fillAfter	true:アニメーション終了後にアニメーションの変換が適用
+android:fillBefore	true:アニメーション開始前にアニメーションの変換が適用
+android:fillEnabled	true:fillAfterが適用
+android:repeatCount	アニメーションの繰り返し回数
+android:repeatMode	アニメーションが終了した場合の振る舞い
+android:startOffset	アニメーションが開始する前に置く時間(msec)
+android:zAdjustment	アニメーション実行中のコンテンツについてZ軸方向の調整
+-->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+	android:interpolator="@android:anim/decelerate_interpolator"
+	android:fromAlpha="1.0"
+	android:toAlpha="0.2"
+	android:fillAfter="true"
+	android:duration="2000"
+	/>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+水平方向にスクロールする
+最終更新：moonlight_aska 2011年09月25日(日) 09:28:20履歴
+画面に貼り付けたウィジェットが画面からあふれた場合, そのあふれた部分は見えなくなる. そこで, 画面サイズをカバーするために, スクロール機能を実装することで, あふれた部分を見ることができるようになる. 
+水平方向のスクロールを行いたい場合, ホリゾンタルスクロールビュー(HorizontalScrollView)を使う.
+水平方向にスクロールする.
+res/layout/main.xml
+HorizontalScrollViewを定義する.
+ボタンビューを水平方向に配置する.
+-->
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+		<!-- 北海道 -->
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/hokkaido"
+			/>
+		<!-- 東北 -->
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/aomori"
+			/>
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/iwate"
+			/>
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/miyagi"
+			/>
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/kagoshima"
+			/>
+		<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/okinawa"
+			/>
+	</LinearLayout>
+</HorizontalScrollView>

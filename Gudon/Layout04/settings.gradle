@@ -1,0 +1,13 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-07-04 9:15:17 kahata>
+/*================================================================
+ * title: Layout04 addViewメソッドの引数に幅と高さの値を指定
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\Layout04\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/Layout04/settings.gradle
+ * created: Time-stamp: <2017-07-04 9:15:17 kahata>
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=folder&id=android
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android053_layout2
+ * description: Layout04 addViewメソッドの引数に幅と高さの値を指定
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.layout04";
+include ':app'

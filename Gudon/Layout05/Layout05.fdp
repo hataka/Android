@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <output>
+    <movie preferredSDK="F:\GitHub\hataka\codingground\android\Gudon\obj" />
+  </output>
+  <XmlTreeMenu>
+  <folder title="Links" expand="true">
+    <folder title="LocalSite">
+      <record title="FrameWork" action="Browse" path="http://localhost/f/FrameWork/FrameWork.html" />
+    </folder>
+    <folder title="WebSite">
+      <record title="PukiWki2016" action="Browse" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+    </folder>
+  </folder>
+</XmlTreeMenu>
+</project>

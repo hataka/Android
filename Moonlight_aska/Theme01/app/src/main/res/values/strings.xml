@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Theme01!</string>
+    <string name="app_name">Theme01 Activity に背景画像を設定する(変更) アクティビティ</string>
+
+</resources>

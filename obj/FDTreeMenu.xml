@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="Android TreeMenu" icon="" expand="true">
+
+<!--
+<settings>
+ 	<documentroot>C:\eclipse461\xampp\htdocs</documentroot>
+ 	<serverroot>http://localhost:8081</serverroot>
+</settings>
+-->
+<toolbar>
+	<dropdownbutton name="ExecDropdownButton3" label="現在開いているファイルを外部プログラムで起動します" image="486">
+		<menu label="サクラエディタ" click="RunProcess" tag="C:\TiuDevTools\sakura\sakura.exe;$(Quote)$(CurFile)$(Quote)" imagelist="147" />
+		<menu label="PS Pad" click="RunProcess" tag="F:\Programs\PSPad editor\PSPad.exe;$(Quote)$(CurFile)$(Quote)" imagelist="148" />
+		<menu label="XML Editor" click="RunProcess" tag="F:\Programs\XMLEDITOR.NET\xml.exe;$(Quote)$(CurFile)$(Quote)" imagelist="98" />
+		<menu label="RichText Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;RichTextEditor|$(CurFile)" imagelist="151" />
+		<menu label="Azuki Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;AzukiEditor|$(CurFile)" imagelist="150" />
+		<separator />
+		<menu label="エクスプローラ" click="PluginCommand" tag="FileExplorer.Explore;$(CurDir)" imagelist="152" />
+		<menu label="コマンド・プロンプト" click="PluginCommand" tag="FileExplorer.PromptHere;$(CurDir)" imagelist="153" />
+		<menu label="現在のファイルをBrowserで開く(&amp;W)" click="PluginCommand" tag="XMLTreeMenu.BrowseEx;$(CurFile)" image="480" />
+	</dropdownbutton>
+</toolbar>
+<!--
+<launch>
+	<record title="PukiWki2016" action="Browse" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+  <record title="snippets" action="Browse" path="https://www.eclipse.org/swt/snippets/" icon="F:\icons\pukiwiki.ico" />
+</launch>
+-->
+
+<folder title="Menu">
+    <record title="ツリーデーターを開く" action="menu" command="OpenTreeDataDialog" />
+    <record title="Flashdevelop XmlTreeMenu" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\XmlTreeMenu.xml" />
+	<record title="Projoectメニュー" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FlashProject.xml" />
+	<!--
+    <record title="ビルド実行環境" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FDTreeMenu_work.xml" />
+-->  
+    <record title="elcipse MainMenu" action="menu" path="F:\eclipse3.5.1EE\SettingData\XmlTreeMenu.xml" />
+    <record title="SWT MainMenu" action="menu" path="F:\java\SWT\SWTFrameWork\XmlTreeMenu.xml" />
+<!--
+    <record title="VC++2008 Sample" action="menu" path="F:\VCSharp\MDI\FlashDevelop\FlashDevelop\Bin\Debug\MDIFormData\VCPP2008_menu.xml" />
+-->
+  </folder>
+
+  <folder title="Android Projects">
+		<record title="Gudon" path="F:\GitHub\hataka\codingground\android\Gudon\Gudon.fdp" />
+	</folder>
+
+	<folder title="Links">
+  <folder title="WebSite">
+    <record title="PukiWki2016" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+    <record title="Google" path="http://www.google.co.jp/" icon="http://www.google.co.jp/favicon.ico" />
+<!--
+    <record title="@nifty" path="http://www.nifty,com" />
+    <record title="yahoo" path="http://www.yahoo.co.jp/" />
+    <record title="SWT Snippets" path="https://www.eclipse.org/swt/snippets/" />
+-->
+  </folder>
+    <record title="愚鈍人"      path="http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=folder&amp;id=android" />
+    <record title="Moonlight 明日香" action="browse" path="http://seesaawiki.jp/w/moonlight_aska/" />
+  </folder>
+
+<folder title="IDE">
+  <record title="Android Studio" action="RunProcess" command="C:\Program Files\Android\Android Studio\bin\studio64.exe"/>
+  <record title="FlashDevelop.14.sln" action="RunProcess" command="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop.14..sln" path="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop.14..sln"/>
+</folder>	
+	
+	<!--
+    <record title="build.bat" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k $(CurProjectDir)\build.bat" />
+    <record title="VC# 2010 rebuild(cmd)" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe&quot; $(CurProjectName).csproj /rebuild"/>
+    <record title="resgen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\resgen.exe&quot; $(CurProjectName).resx $(CurProjectName).resources"/>
+    <record title="VC# 2010  Express 起動" action="winexe" command="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe" args="$(CurProjectDir)\$(CurProjectName).sln"  path="$(CurProjectDir)\$(CurProjectName).sln" icon="F:\icons\VCSExpress1.ico" />
+-->
+
+<!--
+  <folder title="実行" expand="true">
+    <record title="Console Output" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="Windows Output" action="RunProcess" command="&quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="RunApp.wsf" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="WsScript" action="RunProcess" command="F:\Programs\csscript\csws.exe" args="$(CurProjectDir)\$(CurProjectName).cs" />
+    <record title="RunWsScript.wsf" action="RunProcess" command="C:\WINDOWS\system32\Wscript.exe" args="//nologo $(CurProjectDir)\RunWsScript.wsf" />
+  </folder>
+-->
+<!--
+  <folder title="ツール">
+     <record title="NextFTP" action="winexe" path="C:\Program Files\NextFTP\NEXTFTP.EXE" />
+    <record title="PSPad プロジェクト" action="winexe" path="$(CurProjectDir)\$(CurProjectName).ppr" />
+    <record title="akura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\Sakura_MultiOpen.wsf&quot;" />
+
+  </folder>
+-->
+  <!--
+	<folder title="ExecuteScript" expand="false">
+    <record title="RunScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="Build" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:build" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="RunWsScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:RunWsScript" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+
+    <record title="Sakura_MultiOpen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:Sakura_MultiOpen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+
+    <record title="clean" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:clean" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="doxygen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:doxygen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="make_ppr" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:make_ppr" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+
+  </folder>
+-->
+<!--
+  <folder title="RunAppメニュー" expand="false">
+    <record title="build" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:build &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="run" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:run &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="RunWsScript" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:RunWsScript &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="clean" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:clean &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="Sakura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:Sakura_MultiOpen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+
+
+    <record title="doxygen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:doxygen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+   
+    <record title="make_ppr" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:make_ppr &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+  
+    <record title="doxydoc" action="Browse" path="$(CurProjectUrl)/doxygen/html/index.html" />
+  
+  
+  </folder>
+-->
+<!--
+  <folder title="Source" expand="true">
+    <record title="$(CurProjectName).cs" path="$(CurProjectDir)\$(CurProjectName).cs" />
+  </folder>
+-->
+<!--
+<job id="job_test" title="job_test">
+ jobですよ	
+</job> 
+
+<target id="target_test" title="target_test">
+ taskですよ	
+</target> 
+-->
+<folder title="埋め込みスクリプト">
+<record title="fdscript test 「about」起動" action="script" command="fdscript" 
+					path="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\CsMacro\FDScript.cs"><![CDATA[
+	// FDScript.cs
+	// TODO: Time-stamp: <2011-05-26 14:16:30 kahata>
+	// TODO 組み込み必要
+	////css_import CommonLib\CommonLib.cs;
+	using FlashDevelop;
+
+	public class FDScript
+	{
+		public static void Execute()
+		{
+			Globals.MainForm.About(null, null);
+		}
+	}
+]]></record>
+
+<record title="show MessageBox" action="script" command="fdscript" icon="F:\icons\csharp.ico"><![CDATA[
+	// FDScript.cs
+	////css_import CommonLib\CommonLib.cs;
+	using System.Windows.Forms;
+	public class FDScript
+	{
+		public static void Execute()
+		{
+			MessageBox.Show("こんにちわ");
+		}
+	}
+]]></record>
+	
+<record title="sslib211.php(埋め込み)" action="script" command="php" option="browse"
+				path="F:\php1\sslib\sslib211.php" />
+	
+<!--<record title="sslib212" action="script" command="php" option="Browse" path="temp" -->
+<!-- <record title="sslib212" action="script" command="php" option="browse" path="temp" -->
+<!-- <record title="sslib212" action="script" command="php" option="browse" path="localhost" -->
+<record title="sslib212.php(browse)" action="script" command="php" option="browse"
+				tooptip = "埋め込みphpコードを sslib212 をブラウザで起動します"
+				icon="imagelist:90"><![CDATA[
+	<?php
+	header('Content-Type: text/html;charset=UTF-8');
+ 	$a = array( 2.0, 2.0);
+  $b = array( 1.0, 1.0);
+  $z = array( 0.0, 0.0);
+  print('<pre style="font-size:32px;">');
+	printf('                 ★ 科学技術計算サブルーチンライブラリー（PHP）'."\n");
+  printf('                2.1.2 複素数　加減算 （ＣＭＵＬ、ＣＤＩＶ）'."\n\n");
+  
+	$z = cmul($a, $b);
+  $format = '    ( %5.2f + %5.2f*i ) * ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )'."\n";
+  printf( $format, $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+  
+	$z = cdiv($a, $b);
+  $format = '    ( %5.2f + %5.2f*i ) / ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )'."\n";
+  printf( $format, $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+	print('</pre>');
+
+/**
+ * cmul  複素数の積を求め結果を配列 [re,im]で返す
+ *
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の積を配列[re,im]で返す
+ * @uses Sslib212()
+ */
+  function cmul($a, $b){
+    $z = array();
+  $z[1] = $a[0]*$b[1] + $b[0]*$a[1];
+  $z[0] = $a[0]*$b[0] - $a[1]*$b[1];
+  return $z;
+  }
+/**
+ * cdiv  複素数の商を求め結果を配列 $z[re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の商を配列[re,im]で返す
+ * @uses Sslib212()
+ */
+  function cdiv($a, $b){
+    $z =array();
+  
+    if (cabs($b) == 0.0){
+      $z[0] = 999.0;
+      $z[1] = 999.0;
+      return $z;
+    }
+    $z[1] = ($b[0]*$a[1]-$a[0]*$b[1])/($b[0]*$b[0]+$b[1]*$b[1]);
+    $z[0] = ($a[0]*$b[0]+$a[1]*$b[1])/($b[0]*$b[0]+$b[1]*$b[1]);
+    return $z;
+  }
+/**
+ * cadd  複素数の和を求め結果を配列 [re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の和を配列[re,im]で返す
+ * @see csub()
+ */
+  function cadd($a, $b){
+    $z = array();
+    $z[0] = $a[0] + $b[0];
+    $z[1] = $a[1] + $b[1];
+    return $z;
+  }
+/**
+ * csub  複素数の差を求め結果を配列 [re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の差を配列[re,im]で返す
+ * @see sslib211::sslib211()
+ */
+  function csub($a, $b){
+    $z[0] = $a[0] - $b[0];
+    $z[1] = $a[1] - $b[1];
+    return $z;
+  }
+/**
+ * cabs  複素数の絶対値を返す
+ * {@source }
+ * @access public
+ * @param array
+ * @return double 複素数の絶対値をdoubleで返す
+ * @uses Sslib215()
+ */
+  function cabs($a){
+    return sqrt($a[0]*$a[0]+$a[1]*$a[1]);
+  }
+//ＰＨＰの終わり
+?>	
+
+]]></record>
+	
+<!-- <record title="sslib213.php" action="script" command="php" option="browse" -->
+<!-- <record title="sslib213.php" action="script" command="php" option="browse" path="tempfile" -->
+<record title="sslib213.php(localhost)" action="script" command="php" option="browse" path="localhost"
+					tooltip ="2.1.3 複素数　対数、指数、ベキ乗（ＣＬＯＧ、ＣＥＸＰ、ＣＰＷＲ）"
+					><![CDATA[
+<?php
+/*===========================================================================
+ * プログラム名: sslib213.php
+ * 作成日: Sun Feb 10 15:18:42 2002
+ * $Id: sslib213.php,v 1.1 2008/03/26 13:42:58 kazuhiko Exp $
+ * Programmed By: 畑和彦
+ * To compile:
+ * To run: {@link http://localhost/php1/sslib/sslib213_good.php
+ * To folder: {@link http://localhost/php1/sslib_class/sslib_class.lnk}
+ * 説明: ラインコメント // は \n を削除しているので悪さする 削除するか ブロックコメントにすること
+ *=============================================================================
+ * ★ 科学技術計算サブルーチンライブラリー  
+ * p.18 2.1.3 複素数　対数、指数、ベキ乗（ＣＬＯＧ、ＣＥＸＰ、ＣＰＷＲ）
+ * create    Sun Feb 10 15:18:42 2002
+ *=============================================================================*/
+header('Content-Type: text/html;charset=utf-8');
+print("<pre><font size=5>");  
+
+  $a = array( 2.0, 2.0);
+  $b = array( 1.0, 1.0);
+  $z = array( 0.0, 0.0);
+// ラインコメント試験
+  printf ("\n%60s\n","★ 科学技術計算サブルーチンライブラリー（PHP）");
+  printf("       2.1.3 複素数　対数、指数、ベキ乗 （ＣＬＯＧ、ＣＥＸＰ、ＣＰＷＲ）\n\n");
+  $z = clog($a);
+
+	$format = '        log(%5.2f + %5.2f*i) = ( %12.6e ) + ( %12.6e )*i'."\n";
+  printf($format, $a[0],$a[1],$z[0],$z[1]);
+  $z = cexp($a);
+  $format = '        exp(%5.2f + %5.2f*i) = ( %12.6e ) + ( %12.6e )*i'."\n";
+  printf($format, $a[0],$a[1],$z[0],$z[1]);
+
+  $z = cpwr($a, $b);
+  $format = '  (%5.2f+%5.2f*i)^(%5.2f+%5.2f*i) = ( %12.6e ) + ( %12.6e )*i'."\n";
+  printf($format, $a[0],$a[1],$b[0],$b[1],$z[0],$z[1]);
+
+  print("</font></pre>");  
+
+/**
+ * cmul  複素数の積を求め結果を配列 [re,im]で返す
+ *
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の積を配列[re,im]で返す
+ * @uses Sslib212()
+ */
+  function cmul($a, $b){
+    $z = array();
+
+  $z[1] = $a[0]*$b[1] + $b[0]*$a[1];
+  $z[0] = $a[0]*$b[0] - $a[1]*$b[1];
+  return $z;
+  }
+
+/**
+ * cdiv  複素数の商を求め結果を配列 $z[re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の商を配列[re,im]で返す
+ * @uses Sslib212()
+ */
+  function cdiv($a, $b){
+    $z =array();
+  
+    if (cabs($b) == 0.0){
+      $z[0] = 999.0;
+      $z[1] = 999.0;
+      return $z;
+    }
+    $z[1] = ($b[0]*$a[1]-$a[0]*$b[1])/($b[0]*$b[0]+$b[1]*$b[1]);
+    $z[0] = ($a[0]*$b[0]+$a[1]*$b[1])/($b[0]*$b[0]+$b[1]*$b[1]);
+    return $z;
+  }
+
+/**
+ * cadd  複素数の和を求め結果を配列 [re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の和を配列[re,im]で返す
+ * @see csub()
+ */
+  function cadd($a, $b){
+    $z = array();
+
+    $z[0] = $a[0] + $b[0];
+    $z[1] = $a[1] + $b[1];
+    return $z;
+  }
+
+/**
+ * csub  複素数の差を求め結果を配列 [re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の差を配列[re,im]で返す
+ * @see sslib211::sslib211()
+ */
+  function csub($a, $b){
+    $z[0] = $a[0] - $b[0];
+    $z[1] = $a[1] - $b[1];
+    return $z;
+  }
+
+/**
+ * cabs  複素数の絶対値を返す
+ * {@source }
+ * @access public
+ * @param array
+ * @return double 複素数の絶対値をdoubleで返す
+ * @uses Sslib215()
+ */
+  function cabs($a){
+    return sqrt($a[0]*$a[0]+$a[1]*$a[1]);
+  }
+
+/**
+ * cexp  複素数の指数を求め結果を配列 $z[re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @return array 複素数の商を配列[re,im]で返す
+ * @uses Sslib213()
+ */
+function cexp($a) {
+  $z = array();
+  $w = 0;
+  
+  $w = exp($a[0]);
+  $z[0] = $w * cos($a[1]);
+  $z[1] = $w * sin($a[1]);
+  return $z;
+}
+
+/**
+ * cexp  複素数の対数を求め結果を配列 $z[re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @return array 複素数の対数を配列[re,im]で返す
+ * @uses Sslib213()
+ */
+function clog( $a ) {
+  $z = array();
+  $w = 0;
+  $w = cabs($a);
+  if ($w == 0){
+    $z[0] = 999.0;
+    $z[0] = 999.0;
+    return $z;
+  }
+  if ($a[0] != 0){
+    $z[1] = atan($a[1]/$a[0]);
+  }
+  else if ($a[1]==0){
+    $z[1] = 0;
+  }
+  else {
+    $z[1] = ($a[1]<0?-1:1)*1.5907963;
+  }
+  $z[0] = log($w);
+  return $z;
+}
+
+/**
+ * cexp  複素数のベキ乗を求め結果を配列 $z[re,im]で返す
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数のベキ乗を配列[re,im]で返す
+ * @uses Sslib213()
+ */
+function cpwr($a, $b) {
+  $z =array();
+  $w = 0;
+  
+  $w = clog($a);
+  if ($w[0] == 999.0 && $w[0]==999.0){
+    $z[0] = 999.0;
+    $z[1] = 999.0;
+    return  $z;
+  }
+  $w = cmul($w, $b);
+  $z = cexp($w);
+  return $z;
+}
+//ＰＨＰの終わり
+?>
+]]></record>
+
+<record title="sslib255.php(chrome)" action="script" command="php"  option="chrome"
+	path="F:\php1\sslib\sslib255_utf.php" icon="imagelist:90"/>
+
+<record title="CDATA 読み込みテスト" action="script" command="php" option="Browse"><![CDATA[
+		<?php
+			$msg = "こんにちわ CDATA 読み込み";
+			echo($msg); 
+			//echo(mb_convert_encoding($msg,"utf-8","auto"));
+		?>
+	]]></record>
+</folder>
+
+<folder title="Loadfile">
+	<folder title="ant build.xml">
+		<record title ="Nashorn" action="Loadfile" path="F:\codingground\java\Nashorn\build.xml" />
+	</folder>
+
+	<folder title="gradle build.gradle">
+		<record title ="android" action="Loadfile" path="F:\GitHub\hataka\codingground\android\obj\build.gradle" />
+	</folder>
+
+	<folder title="wsh">
+	<!-- <record title ="EmbedScript.wsf" action="Loadfile" path="F:\WSH\EmbedWsf\EmbedScript.wsf" option="root" />-->
+	<record title ="EmbedScript.wsf" action="Loadfile" path="F:\WSH\EmbedWsf\EmbedScript.wsf" />
+	<record title="EmbedAnt.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\EmbedAnt.wsf" />
+	<record title="Embedphp.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\Embedphp.wsf" />
+	<record title ="hello-csscript.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\hello-csscript.wsf" />
+	<record title="Msxml2.DOMDocument.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\Msxml2.DOMDocument.wsf" />
+	<record title="RunWsScript.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\RunWsScript.wsf" />
+	<record title="SwtSnippet1.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\SwtSnippet1.wsf" />
+	<record title="TemplateEmbedScript1.wsf" action="LoadFile" path="F:\WSH\EmbedWsf\TemplateEmbedScript1.wsf" />
+
+	<record title="CreateXmlDom.js" action="LoadFile" path="F:\WSH\EmbedWsf\CreateXmlDom.js" />
+	<record title="ParseXmlDom.js" action="LoadFile" path="F:\WSH\EmbedWsf\ParseXmlDom.js" />
+	<record title="php_lib.js" action="LoadFile" path="F:\WSH\EmbedWsf\php_lib.js" />
+	</folder>
+	
+	<folder title="fdp">
+	<record title="EmbedWsf.fdp" action="LoadFile" path="F:\WSH\EmbedWsf\EmbedWsf.fdp" />
+	</folder>
+	<folder title="FDTreemenu">
+	<record title="EmbedWsf.fdp" action="LoadFile" path="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\SettingData\XmlTreeMenu.xml" />
+	</folder>
+
+</folder>
+<folder title="KingFM wax">
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070108/MOZART-Piano_Concerto_No.1_in_F,_K.37.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070116/MOZART-Piano_Concerto_No.2_in_B-flat,_K.39.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070111/MOZART-Piano_Concerto_No.3_in_D,_K.40.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070112/MOZART-Piano_Concerto_No.4_in_G,_K.41.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070108/MOZART-Piano_Concerto_No.5_in_D,_K.175.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070119/MOZART-Piano_Concerto_No.6_in_B-flat,_K.238.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070108/MOZART-Piano_Concerto_No.7_in_F,_K.242_Lodron.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070109/MOZART-Piano_Concerto_No.8_in_C,_K.246_Lutzow.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070108/MOZART-Piano_Concerto_No.9_in_E-flat,_K.271_Jeunehomme.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/060825/MOZART-Piano_Concerto_No.10_in_E-flat_K.365.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070109/MOZART-Piano_Concerto_No.11_in_F,_K.413.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070109/MOZART-Piano_Concerto_No.12_in_A,_K.414.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/060804/MOZART-Piano_Concerto_No.13_in_C_K.415_387b.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070110/MOZART-Piano_Concerto_No.14_in_E-flat,_K.449.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070114/MOZART-Piano_Concerto_No.15_in_B-flat,_K.450.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070110/MOZART-Piano_Concerto_No.16_in_D,_K.451.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070110/MOZART-Piano_Concerto_No.17_in_G,_K.453.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/061226/MOZART-Piano_Concerto_No.18_in_B-flat,_K.456.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070110/MOZART-Piano_Concerto_No.19_in_F,_K.459.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070111/MOZART-Piano_Concerto_No.20_in_D_minor,_K.466.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070117/MOZART-Piano_Concerto_No.21_in_C,_K.467.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/061212/MOZART-Piano_Concerto_No.22_in_E-flat,_K.482.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/061124/MOZART-Piano_Concerto_No.23_in_A_K.488.wax1" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070125/MOZART-Piano_Concerto_No.24_in_C_minor,_K.491.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/061120/MOZART-Piano_Concerto_No.25_in_C_K.503.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070112/MOZART-Piano_Concerto_No.26_in_D,_K.537_Coronation.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070112/MOZART-Piano_Concerto_No.27_in_B-flat,_K.595.wax" />
+
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070110/MOZART-Flute_Concerto_No.1_in_G,_K.313.wax" />
+	<record title="Mozart" action="LoadFile" path="F:/My Music/KingFM/070109/MOZART-Flute_Concerto_No.2_in_D,_K.314.wax" />
+</folder>
+	
+</root>

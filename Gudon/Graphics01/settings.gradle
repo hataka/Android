@@ -1,0 +1,13 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-29 20:39:10 kahata>
+/*================================================================
+ * title: グラフィックス（１）-Viewクラスへの描画
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\Graphics01\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/Graphics01/settings.gradle
+ * created: Time-stamp: <2017-06-29 20:39:10 kahata>
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android034_Graphics1_view
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=folder&id=android
+ * description: グラフィックス（１）-Viewクラスへの描画
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.graphics01";
+include ':app'

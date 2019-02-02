@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Theme02!</string>
+    <string name="app_name">Theme02 背景に画像をタイル状に敷き詰める アクティビティ</string>
+
+</resources>

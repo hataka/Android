@@ -1,0 +1,100 @@
+Default tasks: run
+
+Application tasks
+-----------------
+run - Runs this project as a JVM application
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Distribution tasks
+------------------
+assembleDist - Assembles the main distributions
+distTar - Bundles the project as a distribution.
+distZip - Bundles the project as a distribution.
+installDist - Installs the project as a distribution as-is.
+
+Documentation tasks
+-------------------
+groovydoc - Generates Groovydoc API documentation for the main source code.
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'Snippet002'.
+components - Displays the components produced by root project 'Snippet002'. [incubating]
+dependencies - Displays all dependencies declared in root project 'Snippet002'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'Snippet002
+dependentComponents - Displays the dependent components of components in root project 'Snippet0
+help - Displays a help message.
+model - Displays the configuration model of root project 'Snippet002'. [incubating]
+projects - Displays the sub-projects of root project 'Snippet002'.
+properties - Displays the properties of root project 'Snippet002'.
+tasks - Displays the tasks runnable from root project 'Snippet002'.
+
+IDE tasks
+---------
+cleanEclipse - Cleans all Eclipse files.
+eclipse - Generates all Eclipse files.
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the unit tests.
+
+Other tasks
+-----------
+ant.build
+ant.build-eclipse-compiler - compile project with Eclipse compiler
+ant.build-project
+ant.build-refprojects - Build all projects which reference this project. Useful to propagate ch
+ant.build-subprojects
+ant.clean
+ant.cleanall
+ant.clearall
+ant.create_run_jar
+ant.init - Table example snippet2: sort a table by column
+ant.init-eclipse-compiler - copy Eclipse compiler jars to ant lib directory
+ant.open-fd-project - open FD Project
+ant.open-src-in-fd - open source in FD
+ant.run - execute Target
+ant.runjar
+ant.Snippet2
+cleanEclipseClasspath
+cleanEclipseJdt
+cleanEclipseProject
+compileGroovy - Compiles the main Groovy source.
+compileJava - Compiles main Java source.
+compileTestGroovy - Compiles the test Groovy source.
+compileTestJava - Compiles test Java source.
+create_run_jar - Create swt Executable Jar in rootDir
+echo_properties - 組込みプロパティを リストアップします
+eclipseClasspath - Generates the Eclipse classpath file.
+eclipseJdt - Generates the Eclipse JDT settings file.
+eclipseProject - Generates the Eclipse project file.
+install - Installs the 'archives' artifacts into the local Maven repository.
+listPath - src配下の*.javaファイルをリストアップします
+processResources - Processes main resources.
+processTestResources - Processes test resources.
+runJar - Run Executable Jar  at root
+RunScript - 埋め込みgroovy を実行します
+startScripts - Creates OS specific scripts to run the project as a JVM application.
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belonging to a configur

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+res/anim/rotate.xml
+アニメーションの設定を行うXMLファイルである.
+RotateAnimationクラスで指定する属性
+android:fromDegrees	アニメーション開始時の画面要素の角度
+andorid:toDegrees	アニメーション終了時の画面要素の角度
+android:pivotX	回転時のX座標の基点
+android:pivotY	回転時のY座標の基点
+Animationクラスで指定する属性
+android:duration	アニメーションの動作時間(msec)
+android:fillAfter	true:アニメーション終了後にアニメーションの変換が適用
+android:fillBefore	true:アニメーション開始前にアニメーションの変換が適用
+android:fillEnabled	true:fillAfterが適用
+android:repeatCount	アニメーションの繰り返し回数
+android:repeatMode	アニメーションが終了した場合の振る舞い
+android:startOffset	アニメーションが開始する前に置く時間(msec)
+android:zAdjustment	アニメーション実行中のコンテンツについてZ軸方向の調整
+-->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+	android:interpolator="@android:anim/decelerate_interpolator"
+	android:fromDegrees="0"
+	android:toDegrees="90"
+	android:pivotX="50%"
+	android:pivotY="50%"
+	android:fillAfter="true"
+	android:duration="2000"
+	/>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Telephony01!</string>
+    <string name="app_name">Telephony01　端末の識別番号を取得する ハードウェア</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Dialog03Activity!</string>
+    <string name="app_name">Dialog03 アラーとダイアログ作成を簡潔に記述する</string>
+
+</resources>

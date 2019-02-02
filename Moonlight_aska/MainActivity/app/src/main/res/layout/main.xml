@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+res/layout/main.xml
+TextView, Buttonの表示については, 「テキストビューを作成する」, 「ボタンを作成する」を参照.
+http://localhost/android/Moonlight_aska/MainActivity/res/layout/main.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<TextView android:id="@+id/textview01_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text= "@string/textview01_label"
+		/>
+	<Button android:id="@+id/button01_id"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text= "@string/button01_label"
+	/>
+</LinearLayout>

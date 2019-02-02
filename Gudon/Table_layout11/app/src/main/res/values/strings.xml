@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Table_layout11Activity!</string>
+    <string name="app_name">Table_layout11 行の結合に挑戦</string>
+
+</resources>

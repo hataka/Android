@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Table_layout09Activity!</string>
+    <string name="app_name">Table_layout09 コードによりlayout_column属性とlayout_span属性を指定</string>
+
+</resources>

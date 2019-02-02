@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MyLauncherActivity!</string>
+    <string name="app_name">Ya ランチャー</string>
+    <string name="alertDialogTitle">名前入力</string>
+    <string name="alertDialogMessage">名前を入力してください</string>
+    <string name="alertDialogPositiveButton">OK</string>
+   <string name="alertDialogResultFormat">%s</string>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+:lesson021:listAVD
+Available Android Virtual Devices:
+    Name: 3.7_FWVGA_slider_API_25
+  Device: 3.7 FWVGA slider (Generic)
+    Path: C:\Users\˜a•F\.android\avd\3.7_FWVGA_slider_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 854x480
+  Sdcard: C:\Users\˜a•F\.android\avd\3.7_FWVGA_slider_API_25.avd\sdcard.img
+---------
+    Name: 7_WSVGA_Tablet_API_25
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\˜a•F\.android\avd\7_WSVGA_Tablet_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: 7_WSVGA_Tablet_API_25_2
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\˜a•F\.android\avd\7_WSVGA_Tablet_API_25_2.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: Pixel_C_API_25
+  Device: pixel_c (Google)
+    Path: C:\Users\˜a•F\.android\avd\Pixel_C_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: pixel_c
+  Sdcard: C:\Users\˜a•F\.android\avd\Pixel_C_API_25.avd\sdcard.img
+-->
+
+<package title="LaunchAVD" name="LaunchAVD">
+<job id="3.7_FWVGA_slider_API_25">
+</job>
+
+<job id="run">
+<script language="VBScript">
+    Option Explicit
+	Dim shell
+	
+	Set shell = CreateObject("WScript.Shell")
+	shell.CurrentDirectory = Replace(WScript.ScriptFullName, WScript.ScriptName, "")
+
+	if FileExists("build.xml") then
+		CreateObject("WScript.Shell").Run "cmd.exe /c build8.bat run",0
+	end if
+
+	Function FolderExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FolderExists = objFileSys.FolderExists(strFilePath)
+	End Function
+
+	Function FileExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FileExists = objFileSys.FileExists(strFilePath)
+	End Function
+</script>
+</job>
+</package>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="pom.xml">
+<record title="compile" default="true" action="RunProcess" command="cmd.exe" args="/k mvn compile" 
+				path="F:\java\gradle\swt-snippets\Snippet002\pom.xml" 
+				tooltip="target/classes 配下にjavaコンパイルした.classファイルを作成します" />
+<record title="help" default="false" action="RunProcess" command="cmd.exe" args="/k mvn -help" 
+				path="F:\java\gradle\swt-snippets\Snippet002\pom.xml" 
+				tooltip="コマンドライン helpを表示します" />
+</root>

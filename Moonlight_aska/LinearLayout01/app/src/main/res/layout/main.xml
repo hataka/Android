@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+一直線にウィジェットを並べる
+最終更新：moonlight_aska 2011年09月25日(日) 09:32:24履歴
+縦方向又は横方向に一直線にウィジェットを並べる場合, リニアレイアウト(LinearLayout)を使う.
+縦方向に並べる
+res/layout/main.xml
+LinearLayoutを定義する.
+android:orientation属性で, 縦向き/横向きのどちらかの整列方向を設定する.
+表示する順にウィジェットを定義する.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<TextView android:id="@+id/textview01_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/textview01_label"
+		/>
+	<EditText android:id="@+id/edittext01_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		/>
+	<TextView android:id="@+id/textview02_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/textview02_label"
+		/>
+	<EditText android:id="@+id/edittext02_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		/>
+	<Button android:id="@+id/button_id"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/button_label"
+		/>
+</LinearLayout>

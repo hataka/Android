@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+			<item android:id="@+id/menu_aska_all" android:title="全て"></item>
+			<item	android:id="@+id/menu_aska_activity" android:title="アクティビティ" />
+			<item	android:id="@+id/menu_aska_intent" android:title="インテント" />
+			<item	android:id="@+id/menu_aska_widget" android:title="ウィジェット" />
+			<item	android:id="@+id/menu_aska_graphic" android:title="グラフィックス" />
+			<item	android:id="@+id/menu_aska_layout" android:title="レイアウト" />
+			<item	android:id="@+id/menu_aska_system" android:title="システム" />
+			<item	android:id="@+id/menu_aska_hardware" android:title="ハードウェア" />
+			<item	android:id="@+id/menu_aska_keytouch" android:title="キー/タッチ" />
+			<item	android:id="@+id/menu_aska_misc" android:title="未分類" />
+
+	 <item android:id="@+id/menu_submenu" android:title="サブメニュー...">
+		<menu>
+		  <item android:id="@+id/menu_launcher" android:title="ランチャー"></item>
+ 			<item android:id="@+id/menu_kahata" android:title="kahata"/>
+ 			<item android:id="@+id/menu_android" android:title="Android"/>
+			<item android:id="@+id/menu_google" android:title="Google"/>
+			<item android:id="@+id/menu_asus" android:title="ASUS"/>
+    	<item android:id="@+id/menu_nocategory" android:title="未分類"></item>
+    	<item android:id="@+id/menu_test" android:title="テスト"></item>
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+			<item android:id="@+id/menu_website" android:title="Web Site"></item>
+	 </menu>
+	 </item>
+	
+	<item
+		android:id="@+id/menu_tools"
+		android:title="ツール...">
+		<menu>
+			<item android:id="@+id/menu_workspace" android:title="ワークスペース ホルダー"/>
+			<item android:id="@+id/menu_pukiwiki2012" android:title="PukiWiki 2012"/>
+			<item android:id="@+id/menu_frame" android:title="FrameWork"/>
+			<item android:id="@+id/menu_subactivity" android:title="画面遷移"/>
+		</menu>
+	</item>	
+	
+	<item
+		android:id="@+id/menu_search"
+		android:title="検索...">
+		<menu>
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+		</menu>
+	</item>
+		
+</menu>

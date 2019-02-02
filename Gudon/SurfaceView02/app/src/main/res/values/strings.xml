@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SurfaceView02Activity!</string>
+    <string name="app_name">SurfaceView02 SurfaceViewによるイベントに対する応答</string>
+
+</resources>

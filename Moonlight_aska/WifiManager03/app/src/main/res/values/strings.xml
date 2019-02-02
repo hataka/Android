@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, WifiManager03!</string>
+    <string name="app_name">WifiManager03 WiFi設定の一覧取得 ハードウェア</string>
+
+</resources>

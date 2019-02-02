@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Services01!</string>
+    <string name="app_name">Services01 起動中のサービス一覧を取得する システム</string>
+
+</resources>

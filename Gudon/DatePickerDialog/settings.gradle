@@ -1,0 +1,15 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-21 10:49:41 kahata>
+/*================================================================
+ * title: DatePickerDialog 日付を選択するめのダイアログ
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\DatePickerDialog\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/DatePickerDialog/settings.gradle
+ * created: Time-stamp: <2017-06-20 19:16:03 kahata>
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android013_Dialog3
+ * description: 日付を選択するめのダイアログ
+ *================================================================*/
+
+include ':app'

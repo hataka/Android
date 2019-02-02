@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+	
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+		android:id="@+id/menu_ya"
+		android:title="愚鈍人メニュー...">
+		<menu>
+			<item android:id="@+id/menu_gudon_all" android:title="全て"></item>
+			<item	android:id="@+id/menu_gudon_dialog" android:title="ダイアログ" />
+			<item	android:id="@+id/menu_gudon_fileaccess" android:title="ファイルアクセス" />
+			<item	android:id="@+id/menu_gudon_graphic" android:title="グラフィックス" />
+			<item	android:id="@+id/menu_gudon_layout" android:title="レイアウト" />
+			<item	android:id="@+id/menu_gudon_listview" android:title="リストビュー" />
+			<item	android:id="@+id/menu_dudon_menu" android:title="メニュー" />
+			<item	android:id="@+id/menu_gudon_spinner" android:title="スピナー" />
+			<item	android:id="@+id/menu_gudon_sqlite" android:title="データベース(SQLite)" />
+			<item	android:id="@+id/menu_gudon_tablelayout" android:title="テーブルレイアウト" />
+			<item	android:id="@+id/menu_gudon_toast" android:title="トースト" />
+			<item	android:id="@+id/menu_gudon_misc" android:title="未分類" />
+		</menu>
+	</item>
+	
+		<item android:id="@+id/menu_all" android:title="全て"></item>
+		<item android:id="@+id/menu_launcher" android:title="ランチャー"></item><item
+		android:id="@+id/menu_system"
+		android:title="システム...">
+		<menu>
+			<item android:id="@+id/menu_android" android:title="Android"/>
+			<item android:id="@+id/menu_google" android:title="Google"/>
+			<item android:id="@+id/menu_asus" android:title="ASUS"/>
+		</menu>
+	</item>
+	<item
+		android:id="@+id/menu_category"
+		android:title="カテゴリー...">
+		<menu>
+			<item
+				android:id="@+id/menu_kahata"
+				android:title="kahata" />
+			<item
+				android:id="@+id/menu_moonlight"
+				android:title="明日香" />
+			<item android:id="@+id/menu_gudon" android:title="愚鈍人">
+
+			</item>
+			<item android:id="@+id/menu_reverse" android:title="逆引きハンドブック"/>
+			<item android:id="@+id/menu_ya" android:title="Ya"/>
+			<item android:id="@+id/menu_techbooster" android:title="TechBooster"/>
+		</menu>
+	</item>
+	
+	<item
+		android:id="@+id/menu_search"
+		android:title="検索...">
+		<menu>
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+		</menu>
+	</item>
+
+	<item android:id="@+id/menu_nocategory" android:title="未分類"></item>
+	<item android:id="@+id/menu_test" android:title="テスト"></item>
+	
+	<item
+		android:id="@+id/website"
+		android:title="Web Site">
+	</item>
+	
+	
+	
+	
+</menu>

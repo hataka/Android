@@ -1,0 +1,17 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-23 11:13:36 kahata>
+/*================================================================
+ * title: FileAccess05 アプリケーション配下外のデレクトリのファイルへのアクセス-SDカード
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\FileAccess05\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/FileAccess05/settings.gradle
+ * created: Time-stamp: <2017-06-23 11:13:36 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android044_FileAccess
+ * link: http://www.javadrive.jp/android/edittext/index11.html
+ * description: FileAccess05 アプリケーション配下外のデレクトリのファイルへのアクセス-SDカード
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.fileaccess05";
+include ':app'

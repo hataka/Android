@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Layout03!</string>
+    <string name="app_name">Layout03 幅と高さをコードで指定</string>
+
+</resources>

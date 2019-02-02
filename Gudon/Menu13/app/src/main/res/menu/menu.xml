@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+		android:id="@+id/menu_file"
+		android:title="File">
+		<menu>
+			<item
+				android:id="@+id/menu_file_new"
+				android:title="new" />
+			<item
+				android:id="@+id/menu_file_open"
+				android:title="open" />
+			<item
+				android:id="@+id/menu_file_save"
+				android:title="save" />
+		</menu>
+	</item>
+	<item
+		android:id="@+id/menu_edit"
+		android:title="Edit">
+		<menu>
+			<item
+				android:id="@+id/menu_edit_undo"
+				android:title="undo" />
+			<item
+				android:id="@+id/menu_edit_redo"
+				android:title="redo" />
+		</menu>
+	</item>
+	<item
+		android:id="@+id/menu_help"
+		android:title="help">
+	</item>
+	<item
+		android:id="@+id/website"
+		android:title="Web Site">
+	</item>
+</menu>

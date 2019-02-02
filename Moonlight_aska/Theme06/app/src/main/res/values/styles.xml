@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme.ChildTranslucent" parent="android:style/Theme.Translucent">
+		<item name="android:windowBackground">@drawable/backimage2</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+</resources>

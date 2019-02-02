@@ -1,0 +1,3 @@
+
+gradle.ext.applicationId = "gudon.sample.graphics03";
+include ':app'

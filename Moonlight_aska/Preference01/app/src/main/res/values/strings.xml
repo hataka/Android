@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Preference01!</string>
+    <string name="app_name">Preference01 設定画面を作成する アクティビティ</string>
+    <string name="checkbox_summary">ON/OFFによる設定を行い、設定情報を記録する.</string>
+    <string name="title">アプリの設定情報</string>
+    <string name="edittext_title">エディットテキストによる設定</string>
+    <string name="edittext_summary">テキストによる設定を行い設定情報を記録する.</string>
+    <string name="list_title">リストによる設定</string>
+    <string name="list_summary">選択項目による設定を行い、設定情報を記録する.</string>
+    <string name="ringtone_title">着信音の設定</string>
+    <string name="ringtone_summary">着信音の設定を行い、設定情報を記録する.</string>
+    <string name="checkbox_title">チェックボックスによる設定</string>
+
+</resources>

@@ -1,0 +1,24 @@
+#Internal package file, do not edit.
+#Sun Dec 23 15:27:55 JST 2018
+2.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+5.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-ldpi-v4\\ic_launcher.png
+5.set=ANDROID_RESOURCE
+3.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+6.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-mdpi-v4\\ic_launcher.png
+2.set=ANDROID_RESOURCE
+4.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+count=7
+0.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+5.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+4.set=ANDROID_RESOURCE
+6.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+1.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+1.set=DEX
+2.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
+6.set=ANDROID_RESOURCE
+0.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_
+3.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\main.xml
+3.set=ANDROID_RESOURCE
+1.base=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+4.file=F\:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\ic_launcher.png
+0.set=ANDROID_RESOURCE

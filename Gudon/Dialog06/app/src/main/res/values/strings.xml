@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Dialog06Activity!</string>
+    <string name="app_name">Dialog06 ダイアログにラジオボタンを表示する</string>
+
+</resources>

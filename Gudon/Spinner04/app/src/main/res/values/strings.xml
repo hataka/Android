@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Spinner03Activity!</string>
+    <string name="app_name">Spinner04 スピナーの複数配置</string>
+	<string name="planet_prompt">惑星を選択</string>
+</resources>

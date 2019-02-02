@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Sensor02!</string>
+    <string name="app_name">Sensor02 加速度センサーの値を取得する ハードウェア</string>
+
+</resources>

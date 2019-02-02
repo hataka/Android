@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///F:/ant/etc/antex/antprettybuild/antprettybuild-3.2.0.xsl"?>
+<!-- // -*- mode: xml -*-  Time-stamp: <2017-04-10 19:58:49 kahata>
+/*================================================================
+ * title:
+ * file: build.xml
+ * path: F:\codingground\java\swt.snippets8\Snippet001\build.xml
+ * url:  file:///F:/codingground/java/swt.snippets8/Snippet001/build.xml
+ * created: Time-stamp: <2017-04-10 19:58:49 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: "C:\Program Files\Internet Explorer\iexplore.exe" file:///F:/codingground/java/swt.snippets8/Snippet001/build.xml
+ * link:
+ * description:
+ *================================================================*/ -->
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="Snippet1">
+<description>example snippet: Hello World</description>
+	<property environment="env"/>
+		<dirname property="ant.file.dir" file="${ant.file}"/>
+<!--
+    <property name="${env.JAVA_HOME}" value="C:\Program Files\Java\jdk1.8.0_102"/>
+    <property name="PATH" value="C:/Program Files/Java/jdk1.8.0_102/bin"/>
+-->
+    <property name="debuglevel" value="source,lines,vars"/>
+    <!--
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    -->
+    <property name="appname" value="Snippet1"/>
+    <path id="Snippet1.classpath">
+        <pathelement location="."/>
+        <pathelement location="${java.home}/lib/javaws.jar" />
+        <pathelement path="${java.class.path}" />
+        <!-- pathelement location="../CommonLibrary/Lib.class"/ -->
+        <!-- <pathelement location="../swt-4.5-win32-win32-x86_64/swt.jar"/>-->
+        <!-- <pathelement location="F:/codingground/swt.snippets/java/swt-4.5-win32-win32-x86_64/swt.jar"/> -->
+    	<pathelement path="C:/eclipse461/workspace/CommonLibrary"/>
+    	<pathelement location="f:/java/lib/swt.jar"/>
+    </path>
+
+    <target name="init" description="example snippet: Hello World">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="**/*.bak"/>
+        </delete>
+      <!--  <delete dir="./commonLibrary"/> -->
+    </target>
+
+    <target name="clearall">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <!--
+            <fileset dir="." includes="**/.classpath"/>
+            <fileset dir="." includes="**/.project"/>
+            <fileset dir="." includes="**/*.bat"/>
+            -->
+            <fileset dir="." includes="**/.gitignore"/>
+            <fileset dir="." includes="**/*.wsf"/>
+            <fileset dir="." includes="**/*.bak"/>
+            <fileset dir="." includes="**/*.ppr"/>
+            <fileset dir="." includes="**/*.fdp"/>
+            <fileset dir="." includes="**/FDTreeMenu.xml"/>
+            <fileset dir="." includes="**/Manifest.txt"/>
+        </delete>
+<!--
+        <delete dir="./commomLibrary"/>
+        <delete dir="./CommonLibrary"/>
+        <delete dir="./commonLibrary"/>
+-->
+    </target>
+
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+      <!--  <javac debug="true" encoding="utf-8" debuglevel="${debuglevel}" destdir="." source="${source}" target="${target}"> -->
+
+    <javac srcdir="."
+           includes="**/*.java"
+           excludes="src/**"
+           destdir="."
+           encoding="utf-8"
+           debug="true"
+           includeAntRuntime="no"
+           fork="true"
+           classpathref="${appname}.classpath">
+<!--        <javac debug="true" encoding="utf-8" debuglevel="${debuglevel}" destdir="." > -->
+            <src path="."/>
+        <!--    <src path="../CommonLibrary/src" /> -->
+            <classpath refid="${appname}.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar" depends="build">
+      <!--  <jar destfile="F:/java/SWT/git.eclipse/Snippet1/${appname}.jar" filesetmanifest="mergewithoutmain"> -->
+        <jar destfile="${basedir}/${appname}.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="${appname}"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <!-- <fileset dir="F:/java/SWT/git.eclipse/Snippet1"/> -->
+            <fileset dir="${basedir}" includes="*.class"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/java/lib/swt.jar"/>
+        </jar>
+    </target>
+<!--
+		<target name="exe" depends="create_run_jar">
+			<property name="launch4j.dir" location="F:/Programs/launch4j" />
+				<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar
+		    	:${launch4j.dir}/lib/xstream.jar" />
+				<launch4j configFile="launch4j.xml" />
+		</target>
+
+-->
+    <target name="run" description="execute Target" depends="build">
+    	<java classname="${appname}" failonerror="true" classpathref="${appname}.classpath" fork="yes">
+    		<classpath refid="${appname}.classpath" />
+    	</java>
+    </target>
+
+    <target name="runjar">
+        <java jar="${basedir}/${appname}.jar" failonerror="true" fork="yes">
+            <classpath refid="${appname}.classpath"/>
+        </java>
+    </target>
+
+    <target name="Snippet1">
+        <java classname="${appname}" failonerror="true" fork="yes">
+            <classpath refid="${appname}.classpath"/>
+        </java>
+    </target>
+		<target name="open-fd-project" description="open FD Project" >
+		<exec executable="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\FlashDevelop.exe" spawn="true">
+			<arg value="-reuse" />
+			<arg value="${ant.file.dir}/${appname}.fdp" />
+		</exec>
+		</target>
+			<target name="open-src-in-fd" description="open source in FD">
+			<exec executable="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\FlashDevelop.exe" spawn="true">
+				<arg value="-reuse" />
+				<arg value="${ant.file.dir}/${appname}.java" />
+			</exec>
+		</target>
+
+</project>

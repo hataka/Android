@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, IntentMail01!</string>
+    <string name="app_name">IntentMail01 メールを呼び出す インテント</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">MainActivity 画面を遷移する インテント</string>
+    <string name="textview01_label">メイン画面\n\nサブ画面に切り替える場合、ボタンをクリックする.\n</string>
+    <string name="button01_label">切り替え</string>
+    <string name="textview02_label">サブ画面\n\nメイン画面に戻る場合、ボタンをクリックする.\n</string>
+    <string name="button02_label">戻る</string>
+
+</resources>

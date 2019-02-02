@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Intent01Activity!</string>
+    <string name="app_name">Intent01他のアプリを起動する 明示的Intentを使う インテント</string>
+
+</resources>

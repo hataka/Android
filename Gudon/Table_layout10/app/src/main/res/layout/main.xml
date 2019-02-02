@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:paddingLeft="1dp"
+	android:paddingTop="1dp"
+	android:background="#f0ff"
+	>
+	<TableRow>
+		<TextView
+			android:text="[0,0]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[0,1]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[0,2]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+	</TableRow>
+	<TableRow>
+		<TextView android:text="[1,0]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[1,1]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[1,2]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+	</TableRow>
+	<TableRow>
+		<TextView android:text="[2,0]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[2,1]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+		<TextView android:text="[2,2]"
+			android:layout_marginRight="1dp"
+			android:layout_marginBottom="1dp"
+			android:background="#f000"
+			/>
+	</TableRow>
+</TableLayout>

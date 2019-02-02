@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+表形式にウィジェットを並べる
+最終更新：moonlight_aska 2011年09月25日(日) 09:31:21履歴
+表形式にウィジェットを並べる場合, テーブルレイアウト(TableLayout)を使う.
+表形式に並べる
+res/values/strings.xml
+表示する文字列を定義する.
+-->
+<resources>
+	<string name="app_name">TableLayout01 表形式にWidgetを並べる レイアウト</string>
+	<string name="textview01_label">名　前</string>
+	<string name="textview02_label">住　所</string>
+	<string name="button_label">登　録</string>
+</resources>

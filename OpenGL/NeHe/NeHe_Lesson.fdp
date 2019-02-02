@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <XmlTreeMenu title="NeHe Lesson" icon="" expand="false">
+  <folder title="Menu">
+    <record title="XmlTreeMenu" action="menu" path="$(AppDir)\MDIFormData\XmlTreeMenu.xml" />
+  </folder>
+  <folder title="Launch AVD">
+    <record title="3.7_FWVGA_slider_API_25" action="RunProcess" command="C:/AndroidStudio/tools/emulator.exe" args="-avd 3.7_FWVGA_slider_API_25" path="C:/AndroidStudio/tools"/>
+  </folder>
+  <folder title="RunApp">
+    <record title="Lesson02" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson02/com.nea.nehe.lesson02.Run" path="C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\lesson021\src\com\nea\nehe\lesson02\lesson02.java"/>
+    <record title="Lesson03" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson03/com.nea.nehe.lesson03.Run" path="C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\lesson031\src\com\nea\nehe\lesson03\lesson03.java"/>
+    <record title="Lesson04" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson04/com.nea.nehe.lesson04.Run" path="C:/AndroidStudio/platform-tools"/>
+    <record title="Lesson05" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson05/com.nea.nehe.lesson05.Run" path="C:/AndroidStudio/platform-tools"/>
+    <record title="Lesson06" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson06/com.nea.nehe.lesson06.Run" path="C:/AndroidStudio/platform-tools"/>
+    <record title="Lesson07" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson07/com.nea.nehe.lesson07.Run" path="C:/AndroidStudio/platform-tools"/>
+    <record title="Lesson08" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson08/com.nea.nehe.lesson08.Run" path="C:/AndroidStudio/platform-tools"/>
+    <record title="Lesson09" action="RunProcess" command="C:/AndroidStudio/platform-tools/adb.exe" args="shell am start -n com.nea.nehe.lesson09/com.nea.nehe.lesson09.Run" path="C:/AndroidStudio/platform-tools"/>
+  </folder>
+ 
+ </XmlTreeMenu>
+</project>

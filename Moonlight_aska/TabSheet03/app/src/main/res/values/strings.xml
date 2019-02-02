@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TabSheet03!</string>
+    <string name="app_name">TabSheet03 タブにアイコンを貼り付ける アクティビティ</string>
+
+</resources>

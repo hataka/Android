@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="Menu01 TreeMenu" icon="" expand="true">
+
+<!--
+<settings>
+ 	<documentroot>C:\eclipse461\xampp\htdocs</documentroot>
+ 	<serverroot>http://localhost:8081</serverroot>
+</settings>
+-->
+<toolbar>
+	<dropdownbutton name="ExecDropdownButton3" label="現在開いているファイルを外部プログラムで起動します" image="486">
+		<menu label="サクラエディタ" click="RunProcess" tag="C:\TiuDevTools\sakura\sakura.exe;$(Quote)$(CurFile)$(Quote)" imagelist="147" />
+		<menu label="PS Pad" click="RunProcess" tag="F:\Programs\PSPad editor\PSPad.exe;$(Quote)$(CurFile)$(Quote)" imagelist="148" />
+		<menu label="XML Editor" click="RunProcess" tag="F:\Programs\XMLEDITOR.NET\xml.exe;$(Quote)$(CurFile)$(Quote)" imagelist="98" />
+		<menu label="RichText Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;RichTextEditor|$(CurFile)" imagelist="151" />
+		<menu label="Azuki Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;AzukiEditor|$(CurFile)" imagelist="150" />
+		<separator />
+		<menu label="エクスプローラ" click="PluginCommand" tag="FileExplorer.Explore;$(CurDir)" imagelist="152" />
+		<menu label="コマンド・プロンプト" click="PluginCommand" tag="FileExplorer.PromptHere;$(CurDir)" imagelist="153" />
+		<menu label="現在のファイルをBrowserで開く(&amp;W)" click="PluginCommand" tag="XMLTreeMenu.BrowseEx;$(CurFile)" image="480" />
+	</dropdownbutton>
+</toolbar>
+<!--
+<launch>
+	<record title="PukiWki2016" action="Browse" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+  <record title="snippets" action="Browse" path="https://www.eclipse.org/swt/snippets/" icon="F:\icons\pukiwiki.ico" />
+</launch>
+-->
+
+<folder title="Menu">
+    <record title="ツリーデーターを開く" action="menu" command="OpenTreeDataDialog" />
+    <record title="Flashdevelop XmlTreeMenu" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\XmlTreeMenu.xml" />
+    <record title="Projoectメニュー" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FlashProject.xml" />
+<!--
+    <record title="ビルド実行環境" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FDTreeMenu_work.xml" />
+-->  
+    <record title="elcipse MainMenu" action="menu" path="F:\eclipse3.5.1EE\SettingData\XmlTreeMenu.xml" />
+    <record title="SWT MainMenu" action="menu" path="F:\java\SWT\SWTFrameWork\XmlTreeMenu.xml" />
+<!--
+    <record title="VC++2008 Sample" action="menu" path="F:\VCSharp\MDI\FlashDevelop\FlashDevelop\Bin\Debug\MDIFormData\VCPP2008_menu.xml" />
+-->
+  </folder>
+  <folder title="Links">
+  <folder title="WebSite">
+    <record title="PukiWki2016" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+    <record title="Google" path="http://www.google.co.jp/" icon="http://www.google.co.jp/favicon.ico" />
+<!--
+    <record title="@nifty" path="http://www.nifty,com" />
+    <record title="yahoo" path="http://www.yahoo.co.jp/" />
+    <record title="SWT Snippets" path="https://www.eclipse.org/swt/snippets/" />
+-->
+  </folder>
+    <record title="愚鈍人"      path="http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=folder&amp;id=android" />
+    <record title="Moonlight 明日香" action="browse" path="http://seesaawiki.jp/w/moonlight_aska/" />
+  </folder>
+
+  <folder title="Gradle Tasks" expand="true">
+<record title="assembleDebug" action="RunProcess" command="cmd.exe" args="/k gradle assembleDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="Assembles and create apk" />
+
+<record title="androidDependencies" action="RunProcess" command="cmd.exe" args="/k gradle androidDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="Displays the Android dependencies of the project" />
+
+<record title="assemble" action="RunProcess" command="cmd.exe" args="/k gradle assemble -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assemble" />
+<record title="assembleAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle assembleAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assembleAndroidTest" />
+
+<record title="assembleDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle assembleDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assembleDebugAndroidTest" />
+<record title="assembleDebugUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle assembleDebugUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assembleDebugUnitTest" />
+<record title="assembleRelease" action="RunProcess" command="cmd.exe" args="/k gradle assembleRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assembleRelease" />
+<record title="assembleReleaseUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle assembleReleaseUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="assembleReleaseUnitTest" />
+<record title="buildDependents" action="RunProcess" command="cmd.exe" args="/k gradle buildDependents -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="buildDependents" />
+<record title="buildNeeded" action="RunProcess" command="cmd.exe" args="/k gradle buildNeeded -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="buildNeeded" />
+<record title="check" action="RunProcess" command="cmd.exe" args="/k gradle check -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="check" />
+<record title="checkDebugManifest" action="RunProcess" command="cmd.exe" args="/k gradle checkDebugManifest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="checkDebugManifest" />
+<record title="checkReleaseManifest" action="RunProcess" command="cmd.exe" args="/k gradle checkReleaseManifest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="checkReleaseManifest" />
+<record title="cleanBuildCache" action="RunProcess" command="cmd.exe" args="/k gradle cleanBuildCache -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="cleanBuildCache" />
+<record title="clear" action="RunProcess" command="cmd.exe" args="/k gradle clear -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="clear" />
+<record title="compileDebugAidl" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAidl -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAidl" />
+<record title="compileDebugAndroidTestAidl" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestAidl -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestAidl" />
+<record title="compileDebugAndroidTestJavaWithJavac" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestJavaWithJavac -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestJavaWithJavac" />
+<record title="compileDebugAndroidTestNdk" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestNdk -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestNdk" />
+<record title="compileDebugAndroidTestRenderscript" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestRenderscript -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestRenderscript" />
+<record title="compileDebugAndroidTestShaders" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestShaders" />
+<record title="compileDebugAndroidTestSources" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugAndroidTestSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugAndroidTestSources" />
+<record title="compileDebugJavaWithJavac" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugJavaWithJavac -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugJavaWithJavac" />
+<record title="compileDebugNdk" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugNdk -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugNdk" />
+<record title="compileDebugRenderscript" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugRenderscript -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugRenderscript" />
+<record title="compileDebugShaders" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugShaders" />
+<record title="compileDebugSources" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugSources" />
+<record title="compileDebugUnitTestJavaWithJavac" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugUnitTestJavaWithJavac -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugUnitTestJavaWithJavac" />
+<record title="compileDebugUnitTestSources" action="RunProcess" command="cmd.exe" args="/k gradle compileDebugUnitTestSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileDebugUnitTestSources" />
+<record title="compileLint" action="RunProcess" command="cmd.exe" args="/k gradle compileLint -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileLint" />
+<record title="compileReleaseAidl" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseAidl -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseAidl" />
+<record title="compileReleaseJavaWithJavac" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseJavaWithJavac -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseJavaWithJavac" />
+<record title="compileReleaseNdk" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseNdk -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseNdk" />
+<record title="compileReleaseRenderscript" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseRenderscript -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseRenderscript" />
+<record title="compileReleaseShaders" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseShaders" />
+<record title="compileReleaseSources" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseSources" />
+<record title="compileReleaseUnitTestJavaWithJavac" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseUnitTestJavaWithJavac -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseUnitTestJavaWithJavac" />
+<record title="compileReleaseUnitTestSources" action="RunProcess" command="cmd.exe" args="/k gradle compileReleaseUnitTestSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="compileReleaseUnitTestSources" />
+<record title="connectedAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle connectedAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="connectedAndroidTest" />
+<record title="connectedCheck" action="RunProcess" command="cmd.exe" args="/k gradle connectedCheck -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="connectedCheck" />
+<record title="connectedDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle connectedDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="connectedDebugAndroidTest" />
+<record title="deviceAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle deviceAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="deviceAndroidTest" />
+<record title="deviceCheck" action="RunProcess" command="cmd.exe" args="/k gradle deviceCheck -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="deviceCheck" />
+<record title="extractProguardFiles" action="RunProcess" command="cmd.exe" args="/k gradle extractProguardFiles -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="extractProguardFiles" />
+<record title="generateDebugAndroidTestAssets" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAndroidTestAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAndroidTestAssets" />
+<record title="generateDebugAndroidTestBuildConfig" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAndroidTestBuildConfig -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAndroidTestBuildConfig" />
+<record title="generateDebugAndroidTestResValues" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAndroidTestResValues -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAndroidTestResValues" />
+<record title="generateDebugAndroidTestResources" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAndroidTestResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAndroidTestResources" />
+<record title="generateDebugAndroidTestSources" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAndroidTestSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAndroidTestSources" />
+<record title="generateDebugAssets" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugAssets" />
+<record title="generateDebugBuildConfig" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugBuildConfig -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugBuildConfig" />
+<record title="generateDebugResValues" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugResValues -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugResValues" />
+<record title="generateDebugResources" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugResources" />
+<record title="generateDebugSources" action="RunProcess" command="cmd.exe" args="/k gradle generateDebugSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateDebugSources" />
+<record title="generateReleaseAssets" action="RunProcess" command="cmd.exe" args="/k gradle generateReleaseAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateReleaseAssets" />
+<record title="generateReleaseBuildConfig" action="RunProcess" command="cmd.exe" args="/k gradle generateReleaseBuildConfig -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateReleaseBuildConfig" />
+<record title="generateReleaseResValues" action="RunProcess" command="cmd.exe" args="/k gradle generateReleaseResValues -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateReleaseResValues" />
+<record title="generateReleaseResources" action="RunProcess" command="cmd.exe" args="/k gradle generateReleaseResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateReleaseResources" />
+<record title="generateReleaseSources" action="RunProcess" command="cmd.exe" args="/k gradle generateReleaseSources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="generateReleaseSources" />
+<record title="incrementalDebugAndroidTestJavaCompilationSafeguard" action="RunProcess" command="cmd.exe" args="/k gradle incrementalDebugAndroidTestJavaCompilationSafeguard -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="incrementalDebugAndroidTestJavaCompilationSafeguard" />
+<record title="incrementalDebugJavaCompilationSafeguard" action="RunProcess" command="cmd.exe" args="/k gradle incrementalDebugJavaCompilationSafeguard -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="incrementalDebugJavaCompilationSafeguard" />
+<record title="incrementalDebugUnitTestJavaCompilationSafeguard" action="RunProcess" command="cmd.exe" args="/k gradle incrementalDebugUnitTestJavaCompilationSafeguard -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="incrementalDebugUnitTestJavaCompilationSafeguard" />
+<record title="incrementalReleaseJavaCompilationSafeguard" action="RunProcess" command="cmd.exe" args="/k gradle incrementalReleaseJavaCompilationSafeguard -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="incrementalReleaseJavaCompilationSafeguard" />
+<record title="incrementalReleaseUnitTestJavaCompilationSafeguard" action="RunProcess" command="cmd.exe" args="/k gradle incrementalReleaseUnitTestJavaCompilationSafeguard -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="incrementalReleaseUnitTestJavaCompilationSafeguard" />
+<record title="install" action="RunProcess" command="cmd.exe" args="/k gradle install -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="install" />
+<record title="installDebug" action="RunProcess" command="cmd.exe" args="/k gradle installDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="installDebug" />
+<record title="installDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle installDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="installDebugAndroidTest" />
+<record title="jarDebugClasses" action="RunProcess" command="cmd.exe" args="/k gradle jarDebugClasses -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="jarDebugClasses" />
+<record title="jarReleaseClasses" action="RunProcess" command="cmd.exe" args="/k gradle jarReleaseClasses -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="jarReleaseClasses" />
+<record title="javaPreCompileDebug" action="RunProcess" command="cmd.exe" args="/k gradle javaPreCompileDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="javaPreCompileDebug" />
+<record title="javaPreCompileDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle javaPreCompileDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="javaPreCompileDebugAndroidTest" />
+<record title="javaPreCompileDebugUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle javaPreCompileDebugUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="javaPreCompileDebugUnitTest" />
+<record title="javaPreCompileRelease" action="RunProcess" command="cmd.exe" args="/k gradle javaPreCompileRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="javaPreCompileRelease" />
+<record title="javaPreCompileReleaseUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle javaPreCompileReleaseUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="javaPreCompileReleaseUnitTest" />
+<record title="lint" action="RunProcess" command="cmd.exe" args="/k gradle lint -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="lint" />
+<record title="lintDebug" action="RunProcess" command="cmd.exe" args="/k gradle lintDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="lintDebug" />
+<record title="lintRelease" action="RunProcess" command="cmd.exe" args="/k gradle lintRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="lintRelease" />
+<record title="lintVitalRelease" action="RunProcess" command="cmd.exe" args="/k gradle lintVitalRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="lintVitalRelease" />
+<record title="listAVD" action="RunProcess" command="cmd.exe" args="/k gradle listAVD -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="listAVD" />
+<record title="mergeDebugAndroidTestAssets" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugAndroidTestAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugAndroidTestAssets" />
+<record title="mergeDebugAndroidTestJniLibFolders" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugAndroidTestJniLibFolders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugAndroidTestJniLibFolders" />
+<record title="mergeDebugAndroidTestResources" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugAndroidTestResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugAndroidTestResources" />
+<record title="mergeDebugAndroidTestShaders" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugAndroidTestShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugAndroidTestShaders" />
+<record title="mergeDebugAssets" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugAssets" />
+<record title="mergeDebugJniLibFolders" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugJniLibFolders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugJniLibFolders" />
+<record title="mergeDebugResources" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugResources" />
+<record title="mergeDebugShaders" action="RunProcess" command="cmd.exe" args="/k gradle mergeDebugShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeDebugShaders" />
+<record title="mergeReleaseAssets" action="RunProcess" command="cmd.exe" args="/k gradle mergeReleaseAssets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeReleaseAssets" />
+<record title="mergeReleaseJniLibFolders" action="RunProcess" command="cmd.exe" args="/k gradle mergeReleaseJniLibFolders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeReleaseJniLibFolders" />
+<record title="mergeReleaseResources" action="RunProcess" command="cmd.exe" args="/k gradle mergeReleaseResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeReleaseResources" />
+<record title="mergeReleaseShaders" action="RunProcess" command="cmd.exe" args="/k gradle mergeReleaseShaders -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mergeReleaseShaders" />
+<record title="mockableAndroidJar" action="RunProcess" command="cmd.exe" args="/k gradle mockableAndroidJar -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="mockableAndroidJar" />
+<record title="open_src_in_fd" action="RunProcess" command="cmd.exe" args="/k gradle open_src_in_fd -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="open_src_in_fd" />
+<record title="packageDebug" action="RunProcess" command="cmd.exe" args="/k gradle packageDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="packageDebug" />
+<record title="packageDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle packageDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="packageDebugAndroidTest" />
+<record title="packageRelease" action="RunProcess" command="cmd.exe" args="/k gradle packageRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="packageRelease" />
+<record title="preBuild" action="RunProcess" command="cmd.exe" args="/k gradle preBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preBuild" />
+<record title="preDebugAndroidTestBuild" action="RunProcess" command="cmd.exe" args="/k gradle preDebugAndroidTestBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preDebugAndroidTestBuild" />
+<record title="preDebugBuild" action="RunProcess" command="cmd.exe" args="/k gradle preDebugBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preDebugBuild" />
+<record title="preDebugUnitTestBuild" action="RunProcess" command="cmd.exe" args="/k gradle preDebugUnitTestBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preDebugUnitTestBuild" />
+<record title="preReleaseBuild" action="RunProcess" command="cmd.exe" args="/k gradle preReleaseBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preReleaseBuild" />
+<record title="preReleaseUnitTestBuild" action="RunProcess" command="cmd.exe" args="/k gradle preReleaseUnitTestBuild -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="preReleaseUnitTestBuild" />
+<record title="prepareDebugAndroidTestDependencies" action="RunProcess" command="cmd.exe" args="/k gradle prepareDebugAndroidTestDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="prepareDebugAndroidTestDependencies" />
+<record title="prepareDebugDependencies" action="RunProcess" command="cmd.exe" args="/k gradle prepareDebugDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="prepareDebugDependencies" />
+<record title="prepareDebugUnitTestDependencies" action="RunProcess" command="cmd.exe" args="/k gradle prepareDebugUnitTestDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="prepareDebugUnitTestDependencies" />
+<record title="prepareReleaseDependencies" action="RunProcess" command="cmd.exe" args="/k gradle prepareReleaseDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="prepareReleaseDependencies" />
+<record title="prepareReleaseUnitTestDependencies" action="RunProcess" command="cmd.exe" args="/k gradle prepareReleaseUnitTestDependencies -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="prepareReleaseUnitTestDependencies" />
+<record title="printTasks" action="RunProcess" command="cmd.exe" args="/k gradle printTasks -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="printTasks" />
+<record title="processDebugAndroidTestJavaRes" action="RunProcess" command="cmd.exe" args="/k gradle processDebugAndroidTestJavaRes -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugAndroidTestJavaRes" />
+<record title="processDebugAndroidTestManifest" action="RunProcess" command="cmd.exe" args="/k gradle processDebugAndroidTestManifest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugAndroidTestManifest" />
+<record title="processDebugAndroidTestResources" action="RunProcess" command="cmd.exe" args="/k gradle processDebugAndroidTestResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugAndroidTestResources" />
+<record title="processDebugJavaRes" action="RunProcess" command="cmd.exe" args="/k gradle processDebugJavaRes -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugJavaRes" />
+<record title="processDebugManifest" action="RunProcess" command="cmd.exe" args="/k gradle processDebugManifest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugManifest" />
+<record title="processDebugResources" action="RunProcess" command="cmd.exe" args="/k gradle processDebugResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugResources" />
+<record title="processDebugUnitTestJavaRes" action="RunProcess" command="cmd.exe" args="/k gradle processDebugUnitTestJavaRes -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processDebugUnitTestJavaRes" />
+<record title="processReleaseJavaRes" action="RunProcess" command="cmd.exe" args="/k gradle processReleaseJavaRes -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processReleaseJavaRes" />
+<record title="processReleaseManifest" action="RunProcess" command="cmd.exe" args="/k gradle processReleaseManifest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processReleaseManifest" />
+<record title="processReleaseResources" action="RunProcess" command="cmd.exe" args="/k gradle processReleaseResources -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processReleaseResources" />
+<record title="processReleaseUnitTestJavaRes" action="RunProcess" command="cmd.exe" args="/k gradle processReleaseUnitTestJavaRes -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="processReleaseUnitTestJavaRes" />
+<record title="runAVD" action="RunProcess" command="cmd.exe" args="/k gradle runAVD -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="runAVD" />
+<record title="runApp" action="RunProcess" command="cmd.exe" args="/k gradle runApp -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="runApp" />
+<record title="sakura" action="RunProcess" command="cmd.exe" args="/k gradle sakura -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="sakura" />
+<record title="signingReport" action="RunProcess" command="cmd.exe" args="/k gradle signingReport -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="signingReport" />
+<record title="sourceSets" action="RunProcess" command="cmd.exe" args="/k gradle sourceSets -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="sourceSets" />
+<record title="studio" action="RunProcess" command="cmd.exe" args="/k gradle studio -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="studio" />
+<record title="test" action="RunProcess" command="cmd.exe" args="/k gradle test -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="test" />
+<record title="testDebugUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle testDebugUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="testDebugUnitTest" />
+<record title="testReleaseUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle testReleaseUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="testReleaseUnitTest" />
+<record title="transformClassesWithDexForDebug" action="RunProcess" command="cmd.exe" args="/k gradle transformClassesWithDexForDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformClassesWithDexForDebug" />
+<record title="transformClassesWithDexForDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle transformClassesWithDexForDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformClassesWithDexForDebugAndroidTest" />
+<record title="transformClassesWithDexForRelease" action="RunProcess" command="cmd.exe" args="/k gradle transformClassesWithDexForRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformClassesWithDexForRelease" />
+<record title="transformNativeLibsWithMergeJniLibsForDebug" action="RunProcess" command="cmd.exe" args="/k gradle transformNativeLibsWithMergeJniLibsForDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformNativeLibsWithMergeJniLibsForDebug" />
+<record title="transformNativeLibsWithMergeJniLibsForDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle transformNativeLibsWithMergeJniLibsForDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformNativeLibsWithMergeJniLibsForDebugAndroidTest" />
+<record title="transformNativeLibsWithMergeJniLibsForRelease" action="RunProcess" command="cmd.exe" args="/k gradle transformNativeLibsWithMergeJniLibsForRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformNativeLibsWithMergeJniLibsForRelease" />
+<record title="transformNativeLibsWithStripDebugSymbolForDebug" action="RunProcess" command="cmd.exe" args="/k gradle transformNativeLibsWithStripDebugSymbolForDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformNativeLibsWithStripDebugSymbolForDebug" />
+<record title="transformNativeLibsWithStripDebugSymbolForRelease" action="RunProcess" command="cmd.exe" args="/k gradle transformNativeLibsWithStripDebugSymbolForRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformNativeLibsWithStripDebugSymbolForRelease" />
+<record title="transformResourcesWithMergeJavaResForDebug" action="RunProcess" command="cmd.exe" args="/k gradle transformResourcesWithMergeJavaResForDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformResourcesWithMergeJavaResForDebug" />
+<record title="transformResourcesWithMergeJavaResForDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle transformResourcesWithMergeJavaResForDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformResourcesWithMergeJavaResForDebugAndroidTest" />
+<record title="transformResourcesWithMergeJavaResForDebugUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle transformResourcesWithMergeJavaResForDebugUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformResourcesWithMergeJavaResForDebugUnitTest" />
+<record title="transformResourcesWithMergeJavaResForRelease" action="RunProcess" command="cmd.exe" args="/k gradle transformResourcesWithMergeJavaResForRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformResourcesWithMergeJavaResForRelease" />
+<record title="transformResourcesWithMergeJavaResForReleaseUnitTest" action="RunProcess" command="cmd.exe" args="/k gradle transformResourcesWithMergeJavaResForReleaseUnitTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="transformResourcesWithMergeJavaResForReleaseUnitTest" />
+<record title="uninstallAll" action="RunProcess" command="cmd.exe" args="/k gradle uninstallAll -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="uninstallAll" />
+<record title="uninstallDebug" action="RunProcess" command="cmd.exe" args="/k gradle uninstallDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="uninstallDebug" />
+<record title="uninstallDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle uninstallDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="uninstallDebugAndroidTest" />
+<record title="uninstallRelease" action="RunProcess" command="cmd.exe" args="/k gradle uninstallRelease -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="uninstallRelease" />
+<record title="validateSigningDebug" action="RunProcess" command="cmd.exe" args="/k gradle validateSigningDebug -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="validateSigningDebug" />
+<record title="validateSigningDebugAndroidTest" action="RunProcess" command="cmd.exe" args="/k gradle validateSigningDebugAndroidTest -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="validateSigningDebugAndroidTest" />
+<record title="viewSrc" action="RunProcess" command="cmd.exe" args="/k gradle viewSrc -b $(CurProjectDir)\build.gradle" path="$(CurProjectDir)\build.gradle" tooltip="viewSrc" />
+
+
+
+
+
+
+<!--
+    <record title="build.bat" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k $(CurProjectDir)\build.bat" />
+    <record title="VC# 2010 rebuild(cmd)" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe&quot; $(CurProjectName).csproj /rebuild"/>
+    <record title="resgen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\resgen.exe&quot; $(CurProjectName).resx $(CurProjectName).resources"/>
+    <record title="VC# 2010  Express 起動" action="winexe" command="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe" args="$(CurProjectDir)\$(CurProjectName).sln"  path="$(CurProjectDir)\$(CurProjectName).sln" icon="F:\icons\VCSExpress1.ico" />
+-->
+  </folder>
+<!--
+  <folder title="実行" expand="true">
+    <record title="Console Output" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="Windows Output" action="RunProcess" command="&quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="RunApp.wsf" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="WsScript" action="RunProcess" command="F:\Programs\csscript\csws.exe" args="$(CurProjectDir)\$(CurProjectName).cs" />
+    <record title="RunWsScript.wsf" action="RunProcess" command="C:\WINDOWS\system32\Wscript.exe" args="//nologo $(CurProjectDir)\RunWsScript.wsf" />
+  </folder>
+-->
+<!--
+  <folder title="ツール">
+     <record title="NextFTP" action="winexe" path="C:\Program Files\NextFTP\NEXTFTP.EXE" />
+    <record title="PSPad プロジェクト" action="winexe" path="$(CurProjectDir)\$(CurProjectName).ppr" />
+    <record title="akura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\Sakura_MultiOpen.wsf&quot;" />
+
+  </folder>
+-->
+  <folder title="ExecuteScript" expand="false">
+    <record title="RunScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="Build" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:build" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="RunWsScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:RunWsScript" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+<!--
+    <record title="Sakura_MultiOpen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:Sakura_MultiOpen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+-->
+    <record title="clean" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:clean" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="doxygen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:doxygen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="make_ppr" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:make_ppr" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+
+  </folder>
+
+<!--
+  <folder title="RunAppメニュー" expand="false">
+    <record title="build" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:build &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="run" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:run &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="RunWsScript" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:RunWsScript &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="clean" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:clean &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="Sakura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:Sakura_MultiOpen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+
+
+    <record title="doxygen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:doxygen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+   
+    <record title="make_ppr" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:make_ppr &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+  
+    <record title="doxydoc" action="Browse" path="$(CurProjectUrl)/doxygen/html/index.html" />
+  
+  
+  </folder>
+-->
+
+  <folder title="Source" expand="true">
+    <record title="$(CurProjectName).cs" path="$(CurProjectDir)\$(CurProjectName).cs" />
+  </folder>
+
+</root>

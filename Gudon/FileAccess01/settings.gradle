@@ -1,0 +1,64 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-22 12:10:30 kahata>
+/*================================================================
+ * title: FileAccess01 filesデレクトリにアクセスする
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\FileAccess01\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/FileAccess01/settings.gradle
+ * created: Time-stamp: <2017-06-22 12:10:30 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android011_Dialog1
+ * link: http://chocolattips.hatenablog.com/entry/2017/01/22/000000
+ * description: FileAccess01 filesデレクトリにアクセスする
+ 
+ 【Android/Java】アプリ内のファイルの操作
+ files/までのpathを取得
+  String filesDirectoryPath = context.getFilesDir().getPath(); //=> /data/data/[package name]/files
+ 直接/data/data/[package name]/filesを入力すると、 将来ファイル構成に変更があった場合に動作しなくなる可能性があります。
+
+ files内のファイルまでのpathを取得
+  String absolutePath = context.getFilesDir().getPath() + "/" + relativePath //=> /data/data/[package name]/files/[relativePath]
+
+  Fileを取得
+  File file = new File(absolutePath);
+
+  Fileのディレクトリのpathを取得
+  String path = file.getParent();
+
+  特定のファイルのディレクトリFileを取得
+  File directory = new File(file.getParent());
+  
+  特定のファイルまでのディレクトリを作成
+  relativePathに"/“を含んだ階層化も全て作成されます。 注意点として、ディレクトリではなく、ファイルに対してmkdirs()をしてしまうと、 ファイル名の部分もディレクトリになってしまいます。
+  directory.mkdirs();
+  ディレクトリ内のファイル一覧を取得
+
+  String[] fileNames = directory.list();
+  Fileも取得できますが、Fileでないと困る場合を除いてStringの方が速いです。
+
+ディレクトリ内のファイル一覧をフィルタを設定して取得
+
+String[] fileNames = directory.list(new FilenameFilter(){
+    @Override
+    public boolean accept(File dir, String fileName) {
+        //trueの場合、fileNamesに含まれる
+    }   
+});
+書き込みなどをする場合はfileNamesにdirectoryまでのpathを加えたものにする必要があります。
+
+読み込み
+
+FileInputStream fs = new FileInputStream(absolutePath);
+
+//以下読み込み処理
+Androidではcontext.openFileInput(fileName)を使うこともできますが、 fileNameに"/“が含まれていると例外が投げられます。 階層化をするならFileInputStreamを使用する必要があります。
+
+書き込み
+
+FileOutputStream fs = new FileOutputStream(absolutePath);
+ *================================================================*/
+gradle.ext.applicationId = "gudon.sample.fileaccess01";
+
+include ':app'

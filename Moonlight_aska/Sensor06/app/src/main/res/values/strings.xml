@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Sensor06!</string>
+    <string name="app_name">Sensor06 照度センサーの値を取得する ハードウェア</string>
+
+</resources>

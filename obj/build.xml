@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--// -*- mode: xml -*-  Time-stamp: <2017-05-18 20:43:47 kahata>-->
+<!--/*================================================================
+ * title: 
+ * file: build.xml
+ * path: F:\java\gradle\swt-snippets\Snippet1\build.xml
+ * url:  F:/java/gradle/swt-snippets/Snippet1/build.xml
+ * created: Time-stamp: <2017-05-18 20:43:47 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: 
+ * description: 
+ *================================================================*/-->
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project name="ant-android" basedir="." default="assembleDebug" >
+<description>example snippet: Hello World</description>
+	<property environment="env"/>
+		<dirname property="ant.file.dir" file="${ant.file}"/>
+<!--
+    <property name="${env.JAVA_HOME}" value="C:\Program Files\Java\jdk1.8.0_102"/>
+    <property name="PATH" value="C:/Program Files/Java/jdk1.8.0_102/bin"/>
+-->
+    <property name="debuglevel" value="source,lines,vars"/>
+    <!--
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    -->
+    <property name="appname" value="gradle"/>
+    <!--
+			antからgradleのタスクを実行する（ベタにexecで）
+			http://d.hatena.ne.jp/sonota88/20131011/1381509852
+		-->
+		<property name="gradle_bin" value="F:/gradle-3.5/bin/gradle.bat" />
+    <macrodef name="gradle">
+        <attribute name="target" />
+        <sequential>
+            <exec executable="${gradle_bin}" dir="${basedir}">
+              <arg line="@{target}" />
+            </exec>
+        </sequential>
+    </macrodef>
+	
+    <target name="init" description="example snippet: Hello World">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+  <!-- commandline ant test -Dparam1=aaa -Dparam2=bbb -->
+	<target name="property-test">
+    <echo message="ant.file   = ${ant.file}" />
+    <echo message="basedir    = ${basedir}" />
+    <echo message="projectDir = ${projectDir}" />
+    <echo message="curDir     = ${curDir}" />
+	</target>
+	
+	<target name="assembleDebug">
+		<description>basedirを ${projectDir} に変更して自分自身のtargetを実行</description>
+		<ant antfile="${ant.file.dir}\build_base.xml" dir="${projectDir}" target="assembleDebug"/>
+	</target>
+</project>

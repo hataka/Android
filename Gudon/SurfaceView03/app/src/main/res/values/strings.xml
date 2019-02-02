@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SurfaceView03Activity!</string>
+    <string name="app_name">SurfaceView03 壁にあたって跳ね返る図形のアニメーション (SV版)</string>
+
+</resources>

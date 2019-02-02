@@ -1,0 +1,14 @@
+// -*- mode: gradle -*-  Time-stamp: <2017-06-26 6:45:47 kahata>
+/*================================================================
+ * title: FileAccess07 filesデレクトリのサブデレクトリにアクセスする
+ * file: settings.gradle
+ * path: F:\GitHub\hataka\codingground\android\Gudon\FileAccess07\settings.gradle
+ * url:  http://192.168.1.53/f/GitHub/hataka/codingground/android/Gudon/FileAccess07/settings.gradle
+ * created: Time-stamp: <2017-06-26 6:45:47 kahata>
+ * link: http://ichitcltk.hustle.ne.jp/gudon2/index.php?pageType=file&id=Android044_FileAccess
+ * link: http://www.javadrive.jp/android/edittext/index11.html
+ * description: FileAccess07 filesデレクトリのサブデレクトリにアクセスする
+ *================================================================*/
+
+gradle.ext.applicationId = "gudon.sample.fileaccess07";
+include ':app'

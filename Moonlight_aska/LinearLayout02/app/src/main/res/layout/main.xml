@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+縦方向のレイアウトに横方向のレイアウトを入れ子にする
+res/layout/main.xml
+縦方向のLinearLayoutを定義する.
+入れ子にする横方向のLinearLayoutを定義する.
+横方向に表示するウィジェットを定義する.
+縦方向に表示するウィジェットを定義する.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView android:id="@+id/textview01_id"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/textview01_label"
+			/>
+		<EditText android:id="@+id/edittext01_id"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			/>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<TextView android:id="@+id/textview02_id"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/textview02_label"
+			/>
+		<EditText android:id="@+id/edittext02_id"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			/>
+	</LinearLayout>
+	<Button android:id="@+id/button_id"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/button_label"
+		/>
+</LinearLayout>

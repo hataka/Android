@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:id="@+id/menuItem1"
+		android:title="menuItem1"
+		android:alphabeticShortcut="a"
+		android:numericShortcut="1"
+		android:icon="@android:drawable/alert_dark_frame">
+	</item>
+	<item
+		android:id="@+id/menuItem2"
+		android:title="menuItem2"
+		android:alphabeticShortcut="b"
+		android:numericShortcut="2"
+		android:icon="@drawable/ic_launcher">
+	</item>
+	<item
+		android:id="@+id/website"
+		android:title="Web Site">
+	</item>
+</menu>

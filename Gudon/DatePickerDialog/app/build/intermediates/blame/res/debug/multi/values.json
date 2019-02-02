@@ -1,0 +1,45 @@
+[
+    {
+        "outputFile": "F:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 68,
+                    "endOffset": 119
+                },
+                "from": {
+                    "file": "F:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 124,
+                        "endColumn": 68,
+                        "endOffset": 188
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 124,
+                    "endColumn": 63,
+                    "endOffset": 183
+                },
+                "from": {
+                    "file": "F:\\GitHub\\hataka\\codingground\\android\\Gudon\\DatePickerDialog\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endColumn": 63,
+                        "endOffset": 118
+                    }
+                }
+            }
+        ]
+    }
+]

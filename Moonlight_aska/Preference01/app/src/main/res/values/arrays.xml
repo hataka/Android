@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+res/values/arrays.xml
+リストに表示する内容及び選択されたときの値をstring-arrayで定義する.
+-->
+<resources>
+	<string-array name="list_entries">
+		<item>Item 1</item>
+		<item>Item 2</item>
+		<item>Item 3</item>
+	</string-array>
+	<string-array name="list_entryvalues">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+	</string-array>
+</resources>

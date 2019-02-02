@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+res/anim/translate.xml
+アニメーションの設定を行うXMLファイルである.
+RotateAnimationクラスで指定する属性
+android:fromXDelta	アニメーション開始時のX座標の値
+andorid:toXDelta	アニメーション終了時のX座標の値
+android:fromYDelta	アニメーション開始時のY座標の値
+android:toYDelta	アニメーション終了時のY座標の値
+Animationクラスで指定する属性
+android:duration	アニメーションの動作時間(msec)
+android:fillAfter	true:アニメーション終了後にアニメーションの変換が適用
+android:fillBefore	true:アニメーション開始前にアニメーションの変換が適用
+android:fillEnabled	true:fillAfterが適用
+android:repeatCount	アニメーションの繰り返し回数
+android:repeatMode	アニメーションが終了した場合の振る舞い
+android:startOffset	アニメーションが開始する前に置く時間(msec)
+android:zAdjustment	アニメーション実行中のコンテンツについてZ軸方向の調整
+-->
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+	android:interpolator="@android:anim/decelerate_interpolator"
+	android:fromXDelta="0"
+	android:toXDelta="100"
+	android:fromYDelta="0"
+	android:toYDelta="120"
+	android:fillAfter="true"
+	android:duration="10000"
+	/>

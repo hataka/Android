@@ -1,0 +1,348 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+defaultTasks 'app:assembleDebug'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+////////////////////////////////////////////////////////////////////////////////////
+// Additional tasks
+// rootproject tasks
+/**
+ * clean
+ * build, .gladle のディレクトリの削除は可能
+ * ただし直後にシステムによって再生される
+ */
+/*
+if (!project.tasks.findByName('clean')){ 
+	def srcFile = 'app/src/main/java/ya/' +project.name +'/' + project.name + '.java';
+	task clean(type: Delete) {
+		delete 'build'
+		delete '.gradle'
+	}
+}
+*/
+/**
+ * viewSrc
+ */
+if (!project.tasks.findByName('viewSrc')){ 
+	task viewSrc {
+		doLast {
+			//def java = project.name+".java";
+			ant.loadfile(srcFile: 'app/src/main/java/ya/' +project.name +'/' + project.name + '.java', property: "encodedfile",encoding: "utf-8")
+			println(ant.properties['encodedfile']);
+		}
+	}
+}
+
+/**
+ * printTasks
+ */
+if (!project.tasks.findByName('printTasks')){ 
+	task printTasks( overwrite: true) << {
+ 		//original  
+		//project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+		project.tasks.collect { task -> println(task) }
+	}
+}	
+	
+/**
+ * open_src_in_fd
+ */
+if (!project.tasks.findByName('open_src_in_fd')){ 
+	task open_src_in_fd {
+		def srcFile = 'app/src/main/java/ya/' +project.name +'/' + project.name + '.java';
+		doLast {
+			ant.exec(executable: "F:\\VCSharp\\Flashdevelop5.1.1-LL\\FlashDevelop\\Bin\\Debug\\FlashDevelop.exe",spawn:"true"){
+				arg(value: "-reuse")
+				arg(value: "${srcFile}")
+			}
+		}
+	}
+}
+
+/**
+ * sakura
+ */
+if (!project.tasks.findByName('sakura')){ 
+	def srcFile = 'app/src/main/java/ya/' +project.name +'/' + project.name + '.java';
+	task sakura {
+		doLast {
+			ant.exec(executable: "C:\\Program Files (x86)\\sakura\\sakura.exe",spawn:"true"){
+				arg(value: "${srcFile}")
+			}
+		}
+	}
+}
+
+/**
+ * studio
+ */
+if (!project.tasks.findByName('studio')){ 
+	task studio {
+		doLast {
+			ant.exec(executable: "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+				dir: "C:\\Program Files\\Android\\Android Studio\\bin",
+				spawn:"true"){
+					arg(value: "${projectDir}")
+			}
+		}
+	}
+}
+	
+/**
+ * listAVD
+ */
+if (!project.tasks.findByName('listAVD')){ 
+	task listAVD {
+		doLast {
+			 //"C:\Users\和彦\AppData\Local\Android\sdk\tools\bin\avdmanager" list avd
+			ant.exec(executable: "C:\\androidstudio\\tools\\bin\\avdmanager.bat",
+				dir: "C:\\androidstudio\\tools",
+				//outputproperty:"output",
+				//spawn:"true"){
+				outputproperty:"output"){
+					arg(value: "list")
+					arg(value: "avd")
+			}
+			//println ant.properties.output; //これでもOK
+			println ant.properties['output'];
+		}
+	}
+}
+
+
+/**
+ * listPackages
+ * adb shell pm list packages
+ * [ant:exec] Result: 127
+ * system/bin/sh: list: not found
+ */
+if (!project.tasks.findByName('listPackages')){ 
+	task listPackages {
+		doLast {
+			ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+				dir: 'C:/AndroidStudio/tools',
+				//resultproperty: "App.state",
+				outputproperty:"output"){
+				arg(value: "shell")
+				arg(value: "list")
+				arg(value: "packages")
+			}
+			//println ant.properties.output; //これでもOK
+			println ant.properties['output'];
+		}
+	}
+}
+
+/**
+ * runAVD
+ */
+if (!project.tasks.findByName('runAVD')){ 
+	task runAVD {
+		doFirst {
+			def avd = "3.7_FWVGA_slider_API_25"
+			ant.exec(executable: "C:/AndroidStudio/tools/emulator.exe",
+				dir: 'C:/AndroidStudio/tools',
+				//resultproperty: "App.state",
+				spawn:"true"
+			){
+				arg(value: """-avd""")
+				arg(value: "${avd}")
+			}
+		}
+	}
+}
+
+/*
+ * install
+ */
+if (!project.tasks.findByName('install')){ 
+	task install {
+		doLast {
+			ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+				//dir: 'C:/AndroidStudio/platform-tools',
+				//resultproperty: "App.state",
+				spawn:"true"
+			){
+				arg(value: "installDebug")
+				arg(value: "app/build/outputs/apk/app-debug.apk")
+			}			
+		}
+	}
+}
+
+/**
+ * runApp
+ */
+if (!project.tasks.findByName('runApp')){ 
+	//task runApp(dependsOn: "runAVD") {
+	task runApp {
+		doLast {
+			//project.tasks['runAVD'].execute();
+			//https://stackoverflow.com/questions/6613889/how-to-start-an-android-application-from-the-command-line
+			//adb shell am start -n com.package.name/com.package.name.ActivityName
+			def packageName = "ya."+ project.name;
+			def mainActivity = project.name;
+			ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+			dir: 'C:/AndroidStudio/platform-tools',
+			spawn:"true"){
+				arg(value: "shell")
+				arg(value: "am")
+				arg(value: "start")
+				arg(value: """-n""")
+				//arg(value: "ya."+ project.name +"/"+  "ya."+ project.name + "." + project.name)
+				arg(value: packageName + "/"+ packageName + "." + mainActivity)
+			}
+		}		
+	}
+}
+
+/**
+ * startGrails
+ */
+if (!project.tasks.findByName('startGrails')){ 
+	task startGrails(type: ExecWait) {
+   	command "C:\\AndroidStudio\\tools\\emulator.exe -avd 3.7_FWVGA_slider_API_25"
+   	ready 'Server running.'
+   	directory 'C:/AndroidStudio/tools'
+	}	
+}	
+	
+/**
+ * task_test
+ */
+if (!project.tasks.findByName('task_test')){ 
+	task task_test {
+		doLast {
+			println(projectDir)
+		}
+	}
+}
+	
+	
+	/*
+	if (!project.tasks.findByName('copyProjFiles')){ 
+		task copyProjFiles {
+			doLast {
+				ant.copy(todir: '.', encoding: 'UTF-8') {
+					fileset(dir: "$rootDir/maven-template", includes: "** / *.*", excludes: "** / *.fdp") //fixme
+					filterset(begintoken:'%%', endtoken:'%%') {
+						filter( token:'TARGET', value: project.name)
+					}
+				}		
+				ant.copy(file: "$rootDir/maven-template/DirName.fdp", tofile: project.name+".fdp");
+			}
+		}
+	}
+	*/
+	/*
+	if (!project.tasks.findByName('applyFont')){ 
+		task applyFont {
+			doLast {
+				//project.tasks['ant.prepare-src'].execute();
+				exec{
+					//workingDir '../tomcat/bin'
+					commandLine 'cmd', '/c', 'ant','prepare-src'
+				}
+				String patch1 ="package example;\n" \
+											+"import java.util.*;\n" \
+											+"import java.util.List;\n";
+				
+				String patch2 ="UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());\n" \
+											+ "            setUIFont (new javax.swing.plaf.FontUIResource(\"Meiryo UI\", Font.PLAIN, 24));\n";						
+				
+				String patch3 ="public static void setUIFont (javax.swing.plaf.FontUIResource f) {\n" \
+			           +"\t\t\tEnumeration<Object> keys = UIManager.getDefaults().keys();\n" \
+			           + "\t\t\twhile (keys.hasMoreElements()) {\n" \
+				         + "\t\t\t\tObject key = keys.nextElement();\n" \
+				         + "\t\t\t\tObject value = UIManager.get (key);\n" \
+				         + "\t\t\t\tif (value != null && value instanceof javax.swing.plaf.FontUIResource)\n" \
+				         + "\t\t\t\tUIManager.put (key, f);\n" \
+			           + "\t\t}\n\t}\n\n" \
+                 + "\tpublic static void main(String... args)";							
+				
+				String patch4 = "frame.pack();\n" + "\t\t\t\tframe.setSize(800,600);"
+				
+				ant.loadfile(property: "encodedfile",
+					srcFile: "target/src/example/MainPanel.java",
+					encoding: "utf-8");
+				String code =ant.properties.encodedfile 
+				code = code.replace("package example;",patch1);
+				code = code.replace("UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());",patch2);
+				code = code.replace("public static void main(String... args)",patch3);
+				code = code.replace("frame.pack();",patch4);
+				//println(code);
+				ant.echo(message: code, file:"target/src/example/MainPanel.java");  
+			}
+		}
+	}
+	*/
+	
+	/*
+	// 不具合あり 5{user_name}など勝手に解釈変換してしまう
+	if (!project.tasks.findByName('antName')){ 
+		task antName {
+			doLast {
+				String patch1= "<project name=\"" + project.name + "\" default=\"compile\" basedir=\".\">";
+				ant.loadfile(property: "encodedfile",
+					srcFile: "build.xml",
+					encoding: "utf-8");
+				String code =ant.properties.encodedfile 
+				code = code.replace("<project name=\"example\" default=\"compile\" basedir=\".\">",patch1);
+				//println(code);
+				ant.echo(message: code, file:"build.xml");  
+			}
+		}
+	}
+	*/
+////////////////////////////////////////////////////////////////////////////////////
+// End of Additional tasks
+
+/**
+ * ExecWait 
+ * startGrailsで使用
+ */
+class ExecWait extends DefaultTask {
+	String command
+	String ready
+	String directory
+
+	@TaskAction
+	def spawnProcess() {
+    ProcessBuilder builder = new ProcessBuilder(command.split(' '))
+    builder.redirectErrorStream(true)
+    builder.directory(new File(directory))
+    Process process = builder.start()
+
+    InputStream stdout = process.getInputStream()
+    BufferedReader reader = new BufferedReader(new InputStreamReader(stdout))
+
+    def line = ""
+    while ((line = reader.readLine()) != null) {
+        println line
+        if (line.contains(ready)) {
+            println "$command is ready"
+            break;
+        }
+    }
+	}
+}
+

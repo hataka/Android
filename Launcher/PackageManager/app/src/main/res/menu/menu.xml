@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:id="@+id/menu_all" android:title="全て"></item><item android:id="@+id/menu_launcher" android:title="ランチャー"></item><item
+		android:id="@+id/menu_system"
+		android:title="システム...">
+		<menu>
+			<item android:id="@+id/menu_android" android:title="Android"/>
+			<item android:id="@+id/menu_google" android:title="Google"/>
+			<item android:id="@+id/menu_asus" android:title="ASUS"/>
+		</menu>
+	</item>
+	<item
+		android:id="@+id/menu_category"
+		android:title="カテゴリー...">
+		<menu>
+			<item
+				android:id="@+id/menu_kahata"
+				android:title="kahata" />
+			<item
+				android:id="@+id/menu_ndk"
+				android:title="ndk" />
+			<item
+				android:id="@+id/menu_moonlight"
+				android:title="明日香" />
+			<item android:id="@+id/menu_gudon" android:title="愚鈍人">
+
+			</item>
+			<item android:id="@+id/menu_reverse" android:title="逆引きハンドブック"/>
+			<item android:id="@+id/menu_ya" android:title="Ya"/>
+			<item android:id="@+id/menu_techbooster" android:title="TechBooster"/>
+		</menu>
+	</item>
+	<item
+		android:id="@+id/menu_search"
+		android:title="検索...">
+		<menu>
+			<item android:id="@+id/menu_package" android:title="パッケージから検索"/>
+			<item android:id="@+id/menu_title" android:title="タイトルから検索"/>
+		</menu>
+	</item>
+	<item android:id="@+id/menu_nocategory" android:title="未分類"></item>
+	<item android:id="@+id/menu_test" android:title="テスト"></item>
+	<item
+		android:id="@+id/website"
+		android:title="Web Site">
+	</item>
+	
+	
+	
+	
+</menu>

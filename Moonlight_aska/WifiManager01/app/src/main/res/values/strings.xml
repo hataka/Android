@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, WifiManager01Activity!</string>
+    <string name="app_name">WifiManager01 WiFiをON/OFFする ハードウェア</string>
+    <string name="on_label">WIFI On→Off</string>
+    <string name="off_label">WIFI Off→On</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Preference02Activity!</string>
+    <string name="app_name">Preference02 設定情報を読み出す(NG) /DATA/DATA許可なし アクティビティ</string>
+
+</resources>

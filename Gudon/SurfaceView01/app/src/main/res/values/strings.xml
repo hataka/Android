@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SurfaceView01Activity!</string>
+    <string name="app_name">SurfaceView01 SurfaceViewによる基本形-静止した画像の描画</string>
+
+</resources>

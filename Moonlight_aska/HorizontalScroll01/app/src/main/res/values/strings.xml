@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+水平方向にスクロールする
+最終更新：moonlight_aska 2011年09月25日(日) 09:28:20履歴
+画面に貼り付けたウィジェットが画面からあふれた場合, そのあふれた部分は見えなくなる. そこで, 画面サイズをカバーするために, スクロール機能を実装することで, あふれた部分を見ることができるようになる. 
+水平方向のスクロールを行いたい場合, ホリゾンタルスクロールビュー(HorizontalScrollView)を使う.
+水平方向にスクロールする.
+res/values/strings.xml
+ボタンに表示する文字列を定義する.
+-->
+<resources>
+	<string name="app_name">HorizontalScroll01 水平方向にスクロールする レイアウト</string>
+	<string name="hokkaido">北海道</string>
+	<string name="aomori">青森県</string>
+	<string name="iwate">岩手県</string>
+	<string name="miyagi">宮城県</string>
+	<string name="akita">秋田県</string>
+	<string name="yamagata">山形県</string>
+	<string name="fukushima">福島県</string>
+	<string name="ibaragi">茨城県</string>
+	<string name="tochigi">栃木県</string>
+	<string name="gunma">群馬県</string>
+	<string name="saitama">埼玉県</string>
+	<string name="chiba">千葉県</string>
+	<string name="tokyo">東京都</string>
+	<string name="kanagawa">神奈川県</string>
+	<string name="niigata">新潟県</string>
+	<string name="toyama">富山県</string>
+	<string name="kagoshima">鹿児島県</string>
+	<string name="okinawa">沖縄県</string>
+</resources>

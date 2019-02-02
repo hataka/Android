@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+相対指定によりウィジェットを並べる
+最終更新：moonlight_aska 2011年09月25日(日) 09:29:14履歴
+ウィジェットとの相対的な位置を指定してウィジェットを並べる場合, リラティブレイアウト(RelativeLayout)を使う.
+相対位置指定する
+res/values/strings.xml
+
+表示する文字列を定義する.
+-->
+<resources>
+	<string name="app_name">RelativeLayout01 相対指定によりWidgetを並べる レイアウト</string>
+	<string name="button_top">↑</string>
+	<string name="button_bottom">↓</string>
+	<string name="button_left">←</string>
+	<string name="button_right">→</string>
+	<string name="button_center">決定</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+表形式にウィジェットを並べる
+最終更新：moonlight_aska 2011年09月25日(日) 09:31:21履歴
+表形式にウィジェットを並べる場合, テーブルレイアウト(TableLayout)を使う.
+表形式に並べる
+res/layout/main.xml
+TableLayoutを定義する.
+1行を表すTableRowを定義する.
+1行に表示する順にウィジェットを定義する.
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:stretchColumns="1"
+	>
+	<TableRow>
+		<TextView android:text="@string/textview01_label" />
+		<EditText />
+	</TableRow>
+	<TableRow>
+		<TextView android:text="@string/textview02_label" />
+		<EditText />
+	</TableRow>
+	<TableRow>
+		<Button android:text="@string/button_label" />
+	</TableRow>
+</TableLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, FileAccess01Activity!</string>
+    <string name="app_name">FileAccess01 filesデレクトリにアクセスする</string>
+
+</resources>

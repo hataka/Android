@@ -1,0 +1,8 @@
+C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\NeHe_Lesson.fdp
+//C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\obj\FDTreeMenu.xml
+C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\obj\LaunchAVD.wsf
+C:\AndroidStudio\AndroidStudioProjects\OpenGL\NeHe\build.gradle
+//F:\java\gradle\swing-tips\java-swing-tips\build.xml
+//F:\java\gradle\swing-tips\java-swing-tips\pom.xml
+//F:\java\gradle\swing-tips\java-swing-tips\obj\
+//F:\java\gradle\swing-tips\java-swing-tips\obj\

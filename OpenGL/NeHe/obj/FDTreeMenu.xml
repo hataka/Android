@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="java-swing-tips TreeMenu" icon="" expand="true">
+<!--
+<settings>
+ 	<documentroot>C:\eclipse461\xampp\htdocs</documentroot>
+ 	<serverroot>http://localhost:8081</serverroot>
+</settings>
+-->
+<toolbar>
+	<dropdownbutton name="ExecDropdownButton3" label="現在開いているファイルを外部プログラムで起動します" image="486">
+		<menu label="サクラエディタ" click="RunProcess" tag="C:\TiuDevTools\sakura\sakura.exe;$(Quote)$(CurFile)$(Quote)" imagelist="147" />
+		<menu label="PS Pad" click="RunProcess" tag="F:\Programs\PSPad editor\PSPad.exe;$(Quote)$(CurFile)$(Quote)" imagelist="148" />
+		<menu label="XML Editor" click="RunProcess" tag="F:\Programs\XMLEDITOR.NET\xml.exe;$(Quote)$(CurFile)$(Quote)" imagelist="98" />
+		<menu label="RichText Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;RichTextEditor|$(CurFile)" imagelist="151" />
+		<menu label="Azuki Editor" click="PluginCommand" tag="XMLTreeMenu.CreateCustomDocument;AzukiEditor|$(CurFile)" imagelist="150" />
+		<separator />
+		<menu label="エクスプローラ" click="PluginCommand" tag="FileExplorer.Explore;$(CurDir)" imagelist="152" />
+		<menu label="コマンド・プロンプト" click="PluginCommand" tag="FileExplorer.PromptHere;$(CurDir)" imagelist="153" />
+		<menu label="現在のファイルをBrowserで開く(&amp;W)" click="PluginCommand" tag="XMLTreeMenu.BrowseEx;$(CurFile)" image="480" />
+	</dropdownbutton>
+</toolbar>
+<!--
+<launch>
+	<record title="PukiWki2016" action="Browse" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+  <record title="snippets" action="Browse" path="https://www.eclipse.org/swt/snippets/" icon="F:\icons\pukiwiki.ico" />
+</launch>
+-->
+ <folder title="Menu">
+    <record title="ツリーデーターを開く" action="menu" command="OpenTreeDataDialog" />
+    <record title="Flashdevelop XmlTreeMenu" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\XmlTreeMenu.xml" />
+    <record title="Projoectメニュー" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FlashProject.xml" />
+<!--
+    <record title="ビルド実行環境" action="menu" path="C:\Documents and Settings\kazuhiko\Local Settings\Application Data\FlashDevelop\SettingData\FDTreeMenu_work.xml" />
+-->  
+    <record title="elcipse MainMenu" action="menu" path="F:\eclipse3.5.1EE\SettingData\XmlTreeMenu.xml" />
+    <record title="SWT MainMenu" action="menu" path="F:\java\SWT\SWTFrameWork\XmlTreeMenu.xml" />
+<!--
+    <record title="VC++2008 Sample" action="menu" path="F:\VCSharp\MDI\FlashDevelop\FlashDevelop\Bin\Debug\MDIFormData\VCPP2008_menu.xml" />
+-->
+  </folder>
+
+  <folder title="Links">
+  <folder title="LocalSite">
+    <record title="PukiWki2016" path="http://kahata.travel.coocan.jp/pukiwiki2016/index.php" icon="F:\icons\pukiwiki.ico" />
+  </folder>
+  <folder title="WebSite">
+    <record title="@nifty" path="http://www.nifty,com" />
+    <record title="Google" path="http://www.google.co.jp/" icon="http://www.google.co.jp/favicon.ico" />
+    <record title="yahoo" path="http://www.yahoo.co.jp/" />
+    <record title="SWT Snippets" path="https://www.eclipse.org/swt/snippets/" />
+  </folder>
+  </folder>
+  
+  <folder title="ビルド" expand="true">
+    <record title="build.bat" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k $(CurProjectDir)\build.bat" />
+    <record title="VC# 2010 rebuild(cmd)" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe&quot; $(CurProjectName).csproj /rebuild"/>
+<!--
+    <record title="resgen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\resgen.exe&quot; $(CurProjectName).resx $(CurProjectName).resources"/>
+-->
+    <record title="VC# 2010  Express 起動" action="winexe" command="C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\VCSExpress.exe" args="$(CurProjectDir)\$(CurProjectName).sln"  path="$(CurProjectDir)\$(CurProjectName).sln" icon="F:\icons\VCSExpress1.ico" />
+  </folder>
+
+  <folder title="実行" expand="true">
+    <record title="Console Output" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args=" /k &quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="Windows Output" action="RunProcess" command="&quot;$(CurProjectDir)\$(CurProjectName).exe&quot;" />
+    <record title="RunApp.wsf" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="WsScript" action="RunProcess" command="F:\Programs\csscript\csws.exe" args="$(CurProjectDir)\$(CurProjectName).cs" />
+<!--
+    <record title="RunWsScript.wsf" action="RunProcess" command="C:\WINDOWS\system32\Wscript.exe" args="//nologo $(CurProjectDir)\RunWsScript.wsf" />
+-->
+  </folder>
+
+  <folder title="ツール">
+     <record title="NextFTP" action="winexe" path="C:\Program Files\NextFTP\NEXTFTP.EXE" />
+    <record title="PSPad プロジェクト" action="winexe" path="$(CurProjectDir)\$(CurProjectName).ppr" />
+    <record title="akura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\wscript.exe" args="//nologo &quot;$(CurProjectDir)\Sakura_MultiOpen.wsf&quot;" />
+
+  </folder>
+
+
+  <folder title="ExecuteScript" expand="false">
+    <record title="RunScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="Build" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:build" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="RunWsScript" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:RunWsScript" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+<!--
+    <record title="Sakura_MultiOpen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:Sakura_MultiOpen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+-->
+    <record title="clean" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:clean" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="doxygen" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:doxygen" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+    <record title="make_ppr" action="executescript" command="development" args="F:\Programs\PSPad editor\Template_01\VCS2008_WindowsApplication\RunApp2.wsf;temp;//job:make_ppr" path = "F:\codingground\java\swt.snippets8\Snippet001\build.xml" icon="F:\icons\shell32_112.ico" />
+
+  </folder>
+
+
+  <folder title="RunAppメニュー" expand="false">
+    <record title="build" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:build &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="run" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:run &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="RunWsScript" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:RunWsScript &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="clean" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:clean &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+    <record title="Sakura_MultiOpen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:Sakura_MultiOpen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+
+
+    <record title="doxygen" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:doxygen &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+   
+    <record title="make_ppr" action="RunProcess" command="C:\WINDOWS\system32\cmd.exe" args="/k cscript //nologo //job:make_ppr &quot;$(CurProjectDir)\RunApp.wsf&quot;" />
+  
+    <record title="doxydoc" action="Browse" path="$(CurProjectUrl)/doxygen/html/index.html" />
+  
+  
+  </folder>
+
+
+  <folder title="Source" expand="true">
+    <record title="$(CurProjectName).cs" path="$(CurProjectDir)\$(CurProjectName).cs" />
+  </folder>
+</root>

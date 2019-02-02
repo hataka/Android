@@ -1,0 +1,266 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+defaultTasks 'assembleDebug'
+/*
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+	//dependencies {
+	//}
+	//group = 'ya.Sample'
+	//version = '1.0-SNAPSHOT'
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+	}
+}
+*/
+/////////////////////////////////////////////////////////////////////////////
+// subprojects
+subprojects {
+	apply plugin: 'com.android.application'
+
+	gradle.ext.srcPath = 'src/main/java/' +gradle.ext.applicationId.replace(".","/") +'/' + "MainActivity.java";
+	
+	// rootDirにbuild.xmlがあるとエラー(例外発生)
+	try{
+		ant.importBuild("build.xml") {
+			antTaskName -> "ant.${antTaskName}".toString()
+		}
+	}catch(Exception ex){}
+
+
+	android {
+    compileSdkVersion 13
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+    	applicationId "${gradle.ext.applicationId}"
+        minSdkVersion 13
+        targetSdkVersion 13
+    }
+		
+		//Android Studioでプロジェクト名のapkを生成する
+    //http://shekeenlab.hatenablog.com/entry/2015/04/28/004252
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals("debug")) {
+            variant.outputs.each { output ->
+                if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                    def list = defaultConfig.applicationId.split("\\.")
+                    def appname = list[list.length - 1]
+                    output.outputFile = new File(output.outputFile.parent, "${appname}.apk")
+                }
+            }
+        }
+    }    
+	
+    // How to set -source 1.7 in Android Studio and Gradle
+    //https://stackoverflow.com/questions/17637179/how-to-set-source-1-7-in-android-studio-and-gradle
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }    
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	// subprojects tasks
+	if (!project.tasks.findByName('printTasks')){ 
+		task printTasks( overwrite: true) << {
+  		//original  
+			//project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+  			project.tasks.collect { task -> println(task) }
+		}
+	}	
+	
+	if (!project.tasks.findByName('open_src_in_fd')){ 
+		task open_src_in_fd {
+			doLast {
+				ant.exec(executable: "F:\\VCSharp\\Flashdevelop5.1.1-LL\\FlashDevelop\\Bin\\Debug\\FlashDevelop.exe",spawn:"true"){
+					arg(value: "-reuse")
+					arg(value: "app/${gradle.ext.srcPath}")
+				}
+			}
+		}
+	}
+	
+	if (!project.tasks.findByName('viewSrc')){ 
+		task viewSrc {
+			doLast {
+			def srcPath = 'src/main/java/' +gradle.ext.applicationId.replace(".","/") +'/' + "MainActivity.java";
+				//def java = project.name+".java";
+				ant.loadfile(srcFile: srcPath, property: "encodedfile",encoding: "utf-8")
+				println(ant.properties['encodedfile']);
+			}
+		}
+	}
+
+	if (!project.tasks.findByName('sakura')){ 
+		//def srcFile = 'app/src/main/java/ya/' +project.name +'/' + project.name + '.java';
+		task sakura {
+			doLast {
+				ant.exec(executable: "C:\\Program Files (x86)\\sakura\\sakura.exe",spawn:"true"){
+					arg(value: "${gradle.ext.srcPath}")
+				}
+			}
+		}
+	}
+
+	if (!project.tasks.findByName('studio')){ 
+		task studio {
+			doLast {
+				ant.exec(executable: "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+					dir: "C:\\Program Files\\Android\\Android Studio\\bin",
+					spawn:"true"){
+						arg(value: "${projectDir}")
+				}
+			}
+		}
+	}
+	
+	if (!project.tasks.findByName('listAVD')){ 
+		task listAVD {
+			doLast {
+				 //"C:\Users\和彦\AppData\Local\Android\sdk\tools\bin\avdmanager" list avd
+				ant.exec(executable: "C:\\androidstudio\\tools\\bin\\avdmanager.bat",
+					dir: "C:\\androidstudio\\tools",
+					//outputproperty:"output",
+					//spawn:"true"){
+					outputproperty:"output"){
+					arg(value: "list")
+					arg(value: "avd")
+				}
+				//println ant.properties.output; //これでもOK
+				println ant.properties['output'];
+			}
+		}
+	}
+
+	if (!project.tasks.findByName('clear')){ 
+		task clear {
+			ConfigurableFileTree ft = fileTree('build')
+			def binDir = new File('build')
+			//ft.include("xxx")
+			//ft.exclude("yyy")
+			doLast {
+	    	 ft.visit { FileVisitDetails fvd ->
+            //// for test
+            //println "----- " + file.absolutePath
+            delete fvd.file
+        }
+				binDir.deleteDir()
+				//delete fileTree('build').include('**/*')
+			}
+		}			
+	}	
+
+/*	
+	// adb shell pm list packages
+	//[ant:exec] Result: 127
+	//system/bin/sh: list: not found
+	if (!project.tasks.findByName('listPackages')){ 
+		task listPackages {
+			doLast {
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+					dir: 'C:/AndroidStudio/tools',
+					//resultproperty: "App.state",
+					outputproperty:"output"){
+					arg(value: "shell")
+					arg(value: "list")
+					arg(value: "packages")
+				}
+				//println ant.properties.output; //これでもOK
+				println ant.properties['output'];
+			}
+		}
+	}
+*/
+
+	if (!project.tasks.findByName('runAVD')){ 
+		task runAVD {
+			doFirst {
+				def avd = "3.7_FWVGA_slider_API_25"
+				ant.exec(executable: "C:/AndroidStudio/tools/emulator.exe",
+					dir: 'C:/AndroidStudio/tools',
+					//resultproperty: "App.state",
+					spawn:"true"
+				){
+					arg(value: """-avd""")
+					arg(value: "${avd}")
+				}
+				
+				/*
+				//println(ant.properties.App.state)
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+					dir: 'C:/AndroidStudio/platform-tools',
+					spawn:"true"){
+						arg(value: "shell")
+						arg(value: "ya."+ project.name +"/"+  "ya."+ project.name + "." + project.name)
+						//arg(value: "Sample011.apk")
+				}
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+				dir: 'C:/AndroidStudio/platform-tools',
+				spawn:"true"){
+					arg(value: "shell")
+					arg(value: "am")
+					arg(value: "start")
+					arg(value: """-n""")
+					arg(value: "ya."+ project.name +"/"+  "ya."+ project.name + "." + project.name)
+				}
+			*/
+			}
+		}
+	}
+
+	if (!project.tasks.findByName('install')){ 
+		task install {
+			doLast {
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+					//dir: 'C:/AndroidStudio/platform-tools',
+					//resultproperty: "App.state",
+					spawn:"true"
+				){
+					arg(value: "installDebug")
+					arg(value: "app/build/outputs/apk/app-debug.apk")
+				}			
+			}
+		}
+	}
+	
+	if (!project.tasks.findByName('runApp')){ 
+		task runApp {
+			doLast {
+				//project.tasks['runAVD'].execute();
+				//https://stackoverflow.com/questions/6613889/how-to-start-an-android-application-from-the-command-line
+				//adb shell am start -n com.package.name/com.package.name.ActivityName
+				def packageName = "ya."+ project.name;
+				def mainActivity = project.name;
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+				dir: 'C:/AndroidStudio/platform-tools',
+				spawn:"true"){
+					arg(value: "shell")
+					arg(value: "am")
+					arg(value: "start")
+					arg(value: """-n""")
+					//arg(value: "ya."+ project.name +"/"+  "ya."+ project.name + "." + project.name)
+					arg(value: packageName + "/"+ packageName + "." + mainActivity)
+				}
+			}		
+		}
+	}
+
+}

@@ -1,0 +1,6 @@
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\obj\FDTreeMenu.xml
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\build.gradle
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\app\src\main\AndroidManifest.xml
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\app\src\main\res\layout\activity_main.xml
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\app\src\main\res\values\strings.xml
+F:\GitHub\android-sdk-pokeri\Chapter01\layout_FrameLayout\obj\antPluginData.txt

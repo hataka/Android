@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Theme04!</string>
+    <string name="app_name">Theme04 Activityの背景を透明にしタイトルバーも消す アクティビティ</string>
+
+</resources>

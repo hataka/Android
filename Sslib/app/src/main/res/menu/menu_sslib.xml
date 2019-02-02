@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:title="複素数の計算...">
+		<menu>
+			<item android:id="@+id/menu_sslib211" android:title="2.1.1 複素数　加減算"/>
+			<item android:id="@+id/menu_sslib212" android:title="2.1.2 複素数　乗除算"/>
+			<item android:id="@+id/menu_sslib213" android:title="2.1.3 複素数　対数、指数、ベキ乗"/>
+			<item android:id="@+id/menu_sslib214" android:title="2.1.4 複素数　三角関数"/>
+			<item android:id="@+id/menu_sslib215" android:title="2.1.5 複素数 絶対値、平方根"/>
+		</menu>
+	</item>
+	<item android:title="一般・特殊関数...">
+		<menu>
+			<item android:id="@+id/menu_sslib221" android:title="2.2.1 立方根"/>
+			<item android:id="@+id/menu_sslib222" android:title="2.2.2 第１種ベッセル関数"/>
+			<item android:id="@+id/menu_sslib223" android:title="2.2.3 第２種ベッセル関数"/>
+			<item android:id="@+id/menu_sslib224" android:title="2.2.4 第１種変形ベッセル関数"/>
+			<item android:id="@+id/menu_sslib225" android:title="2.2.5 第２種変形ベッセル関数"/>
+			<item android:id="@+id/menu_sslib226" android:title="2.2.6 誤差関数"/>
+			<item android:id="@+id/menu_sslib227" android:title="2.2.7 ガンマ関数"/>
+			<item android:id="@+id/menu_sslib228" android:title="2.2.8 ルジャンドルの多項式"/>
+			<item android:id="@+id/menu_sslib229" android:title="2.2.9 第１種、第２種完全楕円積分"/>
+			<item android:id="@+id/menu_sslib22a" android:title="2.2.10 ベキ級数"/>
+		</menu>
+	</item>
+	<item android:title="微積分...">
+		<menu>
+			<item android:id="@+id/menu_sslib231" android:title="2.3.1 数値微分 ラグランジェ法"/>
+			<item android:id="@+id/menu_sslib232" android:title="2.3.2 数値微分 ３次スプライン関数法"/>
+			<item android:id="@+id/menu_sslib233" android:title="2.3.3 １次元有限区間積分 等間隔シンプソン法"/>
+			<item android:id="@+id/menu_sslib234" android:title="2.3.4 １次元有限区間積分不等間隔Simpson法"/>
+			<item android:id="@+id/menu_sslib235" android:title="2.3.5 １次元有限区間積分 ３次スプライン関数法"/>
+			<item android:id="@+id/menu_sslib236" android:title="2.3.6 １次元有限区間積分 ガウス・ルジャンドル法"/>
+			<item android:id="@+id/menu_sslib237" android:title="2.3.7 １次元半無限区間積分 ガウス・ラーゲル法"/>
+			<item android:id="@+id/menu_sslib238" android:title="2.3.8 １次元全無限区間積分 ガウス・エルミート法"/>
+			<item android:id="@+id/menu_sslib239" android:title="2.3.9 ２次元有限区間積分 等間隔シンプソン法"/>
+		</menu>
+	</item>
+	
+	<item android:title="代数方程式...">
+		<menu>
+			<item android:id="@+id/menu_sslib241" android:title="2.4.1 ３次代数方程式　カルダノ法"/>
+			<item android:id="@+id/menu_sslib242" android:title="2.4.2 高次代数方程式　ニュートン法"/>
+			<item android:id="@+id/menu_sslib243" android:title="2.4.3 高次代数方程式　ベアストウ法"/>
+			<item android:id="@+id/menu_sslib244" android:title="2.4.4 超越代数方程式　レギュラ・ファルシ法"/>
+			<item android:id="@+id/menu_sslib245" android:title="2.4.5 複素係数高次代数方程式　ニュートン法"/>
+		</menu>
+	</item>
+	
+	<item android:title="連立１次方程式...">
+		<menu>
+			<item android:id="@+id/menu_sslib251" android:title="2.5.1 実係数連立１次方程式　ガウス・ザイデル法"/>
+			<item android:id="@+id/menu_sslib252" android:title="2.5.2 実係数連立１次方程式　ガウス消去法"/>
+			<item android:id="@+id/menu_sslib253" android:title="2.5.3 実係数連立１次方程式　ガウス・ジョルダン法"/>
+			<item android:id="@+id/menu_sslib254" android:title="2.5.4 実係数連立１次方程式　ＬＵ分解法"/>
+			<item android:id="@+id/menu_sslib255" android:title="2.5.5 複素係数連立１次方程式　ガウス・ジョルダン法"/>
+		</menu>
+	</item>
+	
+	<item android:title="常微分方程式...">
+		<menu>
+			<item android:id="@+id/menu_sslib261" android:title="2.6.1 １階常微分方程式　ルンゲ・クッタ・ギル法"/>
+			<item android:id="@+id/menu_sslib262" android:title="2.6.2 １階常微分方程式　ハミング法"/>
+			<item android:id="@+id/menu_sslib263" android:title="2.6.3 連立１階常微分方程式　ルンゲ・クッタ・ギル法"/>
+			<item android:id="@+id/menu_sslib264" android:title="2.6.4 ２階同時常微分方程式　定数決定法"/>
+		</menu>
+	</item>
+	
+	<item android:title="行列...">
+		<menu>
+			<item android:id="@+id/menu_sslib271" android:title="2.7.1 行列の加減算"/>
+			<item android:id="@+id/menu_sslib272" android:title="2.7.2 行列の乗算"/>
+			<item android:id="@+id/menu_sslib273" android:title="2.7.3 行列の転置"/>
+			<item android:id="@+id/menu_sslib274" android:title="2.7.4 逆行列と行列式"/>
+			<item android:id="@+id/menu_sslib275" android:title="2.7.5 実対称行列の固有値と固有ベクトル　ヤコビ法"/>
+		</menu>
+	</item>
+	
+	<item android:title="フーリエ変換...">
+		<menu>
+			<item android:id="@+id/menu_sslib281" android:title="2.8.1 高速フーリエ変換"/>
+		</menu>
+	</item>
+	<item android:title="関数近似...">
+		<menu>
+			<item android:id="@+id/menu_sslib291" android:title="2.9.1 最小自乗近似"/>
+			<item android:id="@+id/menu_sslib292" android:title="2.9.2 ラグランジェ補間"/>
+			<item android:id="@+id/menu_sslib293" android:title="2.9.3 スプライン補間"/>
+		</menu>
+	</item>
+	
+	<item android:title="その他...">
+		<menu>
+			<item android:id="@+id/menu_sslib2a1" android:title="2.10.1 正規乱数"/>
+			<item android:id="@+id/menu_sslib2a2" android:title="2.10.2 ポアソン乱数"/>
+			<item android:id="@+id/menu_sslib2a3" android:title="2.10.3 ２項係数"/>
+		</menu>
+	</item>
+
+	<item 
+		android:id="@+id/menu_test"
+		android:title="テスト...">
+		<menu>
+			<item android:id="@+id/menu_browse" android:title="ソースをブラウザで表示"/>
+			<item android:id="@+id/menu_output" android:title="結果を表示"/>
+			<item android:id="@+id/menu_switchview" android:title="View切り替え"/>
+			<item android:id="@+id/menu_texttoggle" android:title="テキストトグル"/>
+			<item android:id="@+id/menu_moveactivity" android:title="画面遷移"/>
+			<item android:id="@+id/menu_fontsize" android:title="フォントサイズ"/>
+		</menu>
+	</item>
+</menu>

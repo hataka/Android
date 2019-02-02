@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root title="Gudon.DatePickerDialog Treemenu" icon="" expand="false">
+	<record title="Gudon" action="OpenProject" path="F:\GitHub\hataka\codingground\android\Gudon\gudon.fdp" />
+	<include path="F:\GitHub\hataka\codingground\android\Gudon\DatePickerDialog"/>
+</root>

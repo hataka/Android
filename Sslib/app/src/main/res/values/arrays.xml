@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="sslib1">
+		<item>2.1.1 複素数　加減算</item>
+		<item>2.1.2 複素数　乗除算</item>
+		<item>2.1.3 複素数　対数、指数、ベキ乗</item>
+		<item>2.1.4 複素数　三角関数</item>
+		<item>2.1.5 複素数 絶対値、平方根</item>
+	</string-array>
+
+	<string-array name="sslib2">
+		<item>2.2.1 立方根</item>
+		<item>2.2.2 第１種ベッセル関数</item>
+		<item>2.2.3 第２種ベッセル関数</item>
+		<item>2.2.4 第１種変形ベッセル関数</item>
+		<item>2.2.5 第２種変形ベッセル関数</item>
+		<item>2.2.6 誤差関数</item>
+		<item>2.2.7 ガンマ関数</item>
+		<item>2.2.8 ルジャンドルの多項式</item>
+		<item>2.2.9 第１種、第２種完全楕円積分</item>
+		<item>2.2.10 ベキ級数</item>
+	</string-array>
+
+	<string-array name="sslib3">
+		<item>2.3.1 数値微分 ラグランジェ法</item>
+		<item>2.3.2 数値微分 ３次スプライン関数法</item>
+		<item>2.3.3 １次元有限区間積分 等間隔シンプソン法</item>
+		<item>2.3.4 １次元有限区間積分不等間隔Simpson法</item>
+		<item>2.3.5 １次元有限区間積分 ３次スプライン関数法</item>
+		<item>2.3.6 １次元有限区間積分 ガウス・ルジャンドル法</item>
+		<item>2.3.7 １次元半無限区間積分 ガウス・ラーゲル法</item>
+		<item>2.3.8 １次元全無限区間積分 ガウス・エルミート法</item>
+		<item>2.3.9 ２次元有限区間積分 等間隔シンプソン法</item>
+	</string-array>
+
+	<string-array name="planets">
+		<item>Mercury</item>
+		<item>Venus</item>
+		<item>Earth</item>
+		<item>Mars</item>
+		<item>Jupiter</item>
+		<item>Saturn</item>
+		<item>Uranus</item>
+		<item>Neptune</item>
+	</string-array>
+</resources>

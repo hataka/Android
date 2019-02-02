@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, AlertDialog02!</string>
+    <string name="app_name">AlertDialog02 リストを配置したアラートダイアログ ウィジェット</string>
+
+</resources>

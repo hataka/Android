@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+テキストビュー(TextView)を作成する方法は2通りある.
+静的に決定しているものはXMLで定義して, 動的に決定するものはコードで定義するというのが一般的である.
+XMLファイルにより定義
+res/values/strings.xml
+テキストビューに表示する文字列を定義する.
+-->
+<resources>
+	<string name="app_name">TextView02 テキストビューを作成する　XMLファイルにより定義 ウィジェット</string>
+	<string name="textview_label">This is a TextView sample.</string>
+</resources>

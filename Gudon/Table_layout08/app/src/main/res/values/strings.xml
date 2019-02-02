@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Table_layout08Activity!</string>
+    <string name="app_name">Table_layout08 layout_span-列を結合</string>
+
+</resources>

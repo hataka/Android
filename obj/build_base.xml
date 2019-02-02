@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--// -*- mode: xml -*-  Time-stamp: <2017-05-18 20:43:47 kahata>-->
+<!--/*================================================================
+ * title: 
+ * file: build.xml
+ * path: F:\java\gradle\swt-snippets\Snippet1\build.xml
+ * url:  F:/java/gradle/swt-snippets/Snippet1/build.xml
+ * created: Time-stamp: <2017-05-18 20:43:47 kahata>
+ * revision: $Id$
+ * Programmed By: kahata
+ * To compile:
+ * To run: 
+ * link: 
+ * description: 
+ *================================================================*/-->
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project name="ant-android-base" basedir="." default="assembleDebug" >
+<description>example snippet: Hello World</description>
+	<property environment="env"/>
+		<dirname property="ant.file.dir" file="${ant.file}"/>
+<!--
+    <property name="${env.JAVA_HOME}" value="C:\Program Files\Java\jdk1.8.0_102"/>
+    <property name="PATH" value="C:/Program Files/Java/jdk1.8.0_102/bin"/>
+-->
+    <property name="debuglevel" value="source,lines,vars"/>
+    <!--
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    -->
+    <property name="appname" value="gradle"/>
+    <!--
+			antからgradleのタスクを実行する（ベタにexecで）
+			http://d.hatena.ne.jp/sonota88/20131011/1381509852
+		-->
+		<property name="gradle_bin" value="F:/gradle-3.5/bin/gradle.bat" />
+    <macrodef name="gradle">
+        <attribute name="target" />
+        <sequential>
+            <exec executable="${gradle_bin}" dir="${basedir}">
+              <arg line="@{target}" />
+            </exec>
+        </sequential>
+    </macrodef>
+	
+    <target name="init" description="example snippet: Hello World">
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+  <!-- commandline ant test -Dparam1=aaa -Dparam2=bbb -->
+	<target name="property-test">
+    <echo message="ant.file   = ${ant.file}" />
+    <echo message="basedir    = ${basedir}" />
+    <echo message="projectDir = ${projectDir}" />
+    <echo message="curDir     = ${curDir}" />
+	</target>
+	
+	<target name="assembleDebug">
+      <gradle target="assembleDebug" />
+  </target>
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="**/*.bak"/>
+        </delete>
+      <!--   <delete dir="./commonLibrary"/>  -->
+    </target>
+
+    <target name="clearall">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <!--
+            <fileset dir="." includes="**/.classpath"/>
+            <fileset dir="." includes="**/.project"/>
+            <fileset dir="." includes="**/*.bat"/>
+            -->
+            <fileset dir="." includes="**/.gitignore"/>
+            <fileset dir="." includes="**/*.wsf"/>
+            <fileset dir="." includes="**/*.bak"/>
+            <fileset dir="." includes="**/*.ppr"/>
+            <fileset dir="." includes="**/*.fdp"/>
+            <fileset dir="." includes="**/FDTreeMenu.xml"/>
+            <fileset dir="." includes="**/Manifest.txt"/>
+        </delete>
+<!--
+        <delete dir="./commomLibrary"/>
+        <delete dir="./CommonLibrary"/>
+        <delete dir="./commonLibrary"/>
+-->
+    </target>
+
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+      <!--  <javac debug="true" encoding="utf-8" debuglevel="${debuglevel}" destdir="." source="${source}" target="${target}"> -->
+
+    <javac srcdir="."
+           includes="**/*.java"
+           excludes="src/**"
+           destdir="."
+           encoding="utf-8"
+           debug="true"
+           includeAntRuntime="no"
+           fork="true"
+           classpathref="${appname}.classpath">
+<!--        <javac debug="true" encoding="utf-8" debuglevel="${debuglevel}" destdir="." > -->
+            <src path="."/>
+        <!--    <src path="../CommonLibrary/src" /> -->
+            <classpath refid="${appname}.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar" description="create_run_jar" depends="build">
+      <!--  <jar destfile="F:/java/SWT/git.eclipse/Snippet1/${appname}.jar" filesetmanifest="mergewithoutmain"> -->
+        <jar destfile="${basedir}/${appname}.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="${appname}"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <!-- <fileset dir="F:/java/SWT/git.eclipse/Snippet1"/> -->
+            <fileset dir="${basedir}" includes="*.class"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/java/lib/CommonLibrary.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="F:/java/lib/swt.jar"/>
+        </jar>
+    </target>
+<!--
+		<target name="exe" depends="create_run_jar">
+			<property name="launch4j.dir" location="F:/Programs/launch4j" />
+				<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar
+		    	:${launch4j.dir}/lib/xstream.jar" />
+				<launch4j configFile="launch4j.xml" />
+		</target>
+
+-->
+    <target name="run" description="execute Target" depends="build">
+    	<java classname="${appname}" failonerror="true" classpathref="${appname}.classpath" fork="yes">
+    		<classpath refid="${appname}.classpath" />
+    	</java>
+    </target>
+
+    <target name="runjar">
+        <java jar="${basedir}/${appname}.jar" failonerror="true" fork="yes">
+            <classpath refid="${appname}.classpath"/>
+        </java>
+    </target>
+
+    <target name="runScript">
+      <script language="javascript"><![CDATA[
+/*******************************************************************************
+ * Copyright (c) 2000, 2004 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+//package org.eclipse.swt.snippets;
+
+/* 
+ * example snippet: Hello World
+ *
+ * For a list of all SWT example snippets see
+ * http://www.eclipse.org/swt/snippets/
+ */
+// Load compatibility script
+		try{
+			load("nashorn:mozilla_compat.js");
+		}catch(e){
+		}
+		importPackage(org.eclipse.swt);
+		importPackage(org.eclipse.swt.widgets);
+		importPackage(org.eclipse.swt.layout);
+		importPackage(org.eclipse.swt.graphics);
+		//import org.eclipse.swt.widgets.*;
+		//var Display= org.eclipse.swt.Display; //エラーになる
+	
+	function centerScreen(shell) {
+		bds = shell.getDisplay().getBounds();
+		p = shell.getSize();
+		nLeft = (bds.width - p.x) / 2;
+		nTop = (bds.height - p.y) / 2;
+		shell.setBounds(nLeft, nTop, p.x, p.y);
+	}
+
+	
+	display = new Display();
+   if (display == null) display = Display.getDefault();
+	//Shell 
+	shell = new Shell(display);
+	shell.setText("example Snippet1: Hello World");
+	//shell.setSize(800, 600);
+	centerScreen(shell);
+
+	shell.open ();
+	while (!shell.isDisposed ()) {
+		if (!display.readAndDispatch ()) display.sleep ();
+	}
+	display.dispose ();
+      ]]></script>
+    </target>
+
+    <target name="Snippet1">
+        <java classname="${appname}" failonerror="true" fork="yes">
+            <classpath refid="${appname}.classpath"/>
+        </java>
+    </target>
+		<target name="open-fd-project" description="open FD Project" >
+		<exec executable="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\FlashDevelop.exe" spawn="true">
+			<arg value="-reuse" />
+			<arg value="${ant.file.dir}/${appname}.fdp" />
+		</exec>
+		</target>
+			<target name="open-src-in-fd" description="open source in FD">
+			<exec executable="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\FlashDevelop.exe" spawn="true">
+				<arg value="-reuse" />
+				<arg value="${ant.file.dir}/${appname}.java" />
+			</exec>
+		</target>
+
+</project>

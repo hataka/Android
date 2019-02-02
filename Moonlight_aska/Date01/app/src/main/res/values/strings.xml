@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Date01!</string>
+    <string name="app_name">Date01 現在の日時を取得する (android.text.format.Timeクラス) システム</string>
+
+</resources>

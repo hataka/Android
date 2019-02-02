@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="30px"
+    android:background="#ff00ffff"
+    >
+<TextView
+	android:id="@+id/tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="padding=30px"
+    android:background="#ffff0000"
+    android:padding="30px"
+    />
+<TextView
+	android:id="@+id/tvLeft"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="paddingLeft=30px"
+    android:background="#ff00ff00"
+    android:paddingLeft="30px"
+    />
+<TextView
+	android:id="@+id/tvTop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="paddingTop=30px"
+    android:background="#ff0000ff"
+    android:paddingTop="30px"
+    />
+<TextView
+	android:id="@+id/tvRight"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="paddingRight=30px"
+    android:background="#ffffff00"
+    android:paddingRight="30px"
+    />
+<TextView
+	android:id="@+id/tvBottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="paddingBottom=30px"
+    android:background="#ffff00ff"
+    android:paddingBottom="30px"
+    />
+<TextView
+	android:id="@+id/tvNone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="padding未指定"
+    android:background="#ffffffff"
+    />
+<Button
+	android:id="@+id/button"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:text="padding値をLogに表示"
+    />
+</LinearLayout>

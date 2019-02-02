@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package title="LaunchAVD" name="LaunchAVD">
+<job id="3.7_FWVGA_slider_API_25">
+<script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+<script language="javascript"><![CDATA[
+  //  アプリケーション操作
+  //  パスを指定してアプリケーションを起動する。
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var WS_ACT_NOMAL    = 1;    //ウインドウはアクティブ、サイズは通常(規定値)
+  var WS_ACT_MIN      = 2;    //ウインドウはアクティブ、サイズは最小
+  var WS_ACT_MAX      = 3;    //ウインドウはアクティブ、サイズは最大
+  var WS_NOTACT_NOMAL = 4;    //ウインドウは非アクティブ、サイズは通常
+  var WS_ACT_DEF      = 5;    //ウインドウはアクティブ、サイズは前回終了時と同じ
+                              //(アプリによって動作は異なる)
+  var WS_NOTACT_MIN   = 7;    //ウインドウは非アクティブ、サイズは最小
+  var avd = "3.7_FWVGA_slider_API_25";
+  //  Shell関連の操作を提供するオブジェクトを取得
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  // 現在のカレントディレクトリを表示
+  //WScript.Echo(fs.getParentFolderName(WScript.ScriptFullName))
+  //WScript.Echo( sh.CurrentDirectory );
+  // C: ドライブの直下にカレントディレクトリを設定
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="7_WSVGA_Tablet_API_25">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var avd = "7_WSVGA_Tablet_API_25";
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="Pixel_C_API_25">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var avd = "Pixel_C_API_25";
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+
+/*
+:lesson021:listAVD
+Available Android Virtual Devices:
+    Name: 3.7_FWVGA_slider_API_25
+  Device: 3.7 FWVGA slider (Generic)
+    Path: C:\Users\和彦\.android\avd\3.7_FWVGA_slider_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 854x480
+  Sdcard: C:\Users\和彦\.android\avd\3.7_FWVGA_slider_API_25.avd\sdcard.img
+---------
+    Name: 7_WSVGA_Tablet_API_25
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\和彦\.android\avd\7_WSVGA_Tablet_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: 7_WSVGA_Tablet_API_25_2
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\和彦\.android\avd\7_WSVGA_Tablet_API_25_2.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: Pixel_C_API_25
+  Device: pixel_c (Google)
+    Path: C:\Users\和彦\.android\avd\Pixel_C_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: pixel_c
+  Sdcard: C:\Users\和彦\.android\avd\Pixel_C_API_25.avd\sdcard.img
+*/
+  /*
+    	Set shell = CreateObject("WScript.Shell")
+	    Set objFSO = WScript.CreateObject("Scripting.FileSystemObject")
+    	Set objExecCmd = shell.Exec(compiler & " " & AppName & ".csproj /rebuild ")
+      Do While objExecCmd.Status = 0
+            ' １秒待ってみる
+        WScript.Sleep(1000)
+      Loop
+  */
+  
+  ]]></script>
+</job>
+
+<job id="clear">
+  <script language="javascript"><![CDATA[
+		var strScriptFolder, f, s,l, projectRoot, projectName;
+    var fs = new ActiveXObject( "Scripting.FileSystemObject" );
+   	f = fs.GetFile(WScript.ScriptFullName);
+    strScriptFolder = f.ParentFolder; 
+    
+    //http://3rd.geocities.jp/kaito_extra/Source/FileFolderCtrl.html
+    //  相対パスで指定したフォルダを削除する。
+    //  ファイル関連の操作を提供するオブジェクトを取得
+    try {
+      // テストする文
+      fs.CopyFile("../app/build/outputs/apk/*.apk", "../",true );
+    }
+    catch (e) {
+     //logMyErrors(e) // 例外オブジェクトをエラー処理部分に渡す
+      WScript.Echo("copy apk file to rootFolder exception  " + e)
+    }
+    //  本ファイルと同階層にある「EX」フォルダを削除
+    if( fs.FolderExists( "../.gradle")) fs.DeleteFolder( "../.gradle" );
+    if( fs.FolderExists( "../build"))fs.DeleteFolder( "../build" );
+    if( fs.FolderExists( "../app/build"))fs.DeleteFolder( "../app/build" );
+    //  オブジェクトを解放
+    fs = null;
+    WScript.Echo( "clear 正常終了" );  
+  ]]></script>
+</job>
+
+<job id="test">
+  <script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+  <script language="javascript"><![CDATA[
+  //  https://msdn.microsoft.com/ja-jp/library/cc428142.aspx
+  //  ファイル＆フォルダ操作
+  //  カレントディレクトリの設定と取得。
+		var strScriptFolder, fso, f, s,l, projectRoot, projectName;
+		//スクリプト名を含まないフルパスを編集する
+		//strScriptFolder = String(WScript.ScriptFullName).replace(WScript.ScriptName,"");    //  ファイル＆フォルダ操作
+
+		l = WScript.ScriptFullName.split("\\");
+   	fso = new ActiveXObject("Scripting.FileSystemObject");
+   	f = fso.GetFile(WScript.ScriptFullName);
+		strScriptFolder =  f.ParentFolder;
+   	f = fso.GetFolder(strScriptFolder);
+		projectRoot = f.ParentFolder;
+		projectName = l[l.length-3];
+		//packageName = l[l.length-3];
+		WScript.Echo("strScriptFolder = " + strScriptFolder);
+		WScript.Echo("projectRoot = " + projectRoot);
+		WScript.Echo("projectName = " + projectName);
+
+
+		//  Folderオブジェクトを取得
+		var folder = fso.GetFolder(projectRoot);
+		//  EnumeratorオブジェクトにFolderオブジェクトに
+		//  含まれている全てのFileオブジェクトを格納
+		var em = new Enumerator( folder.Files );
+		//  格納したFileオブジェクトのファイル名を全て表示
+		for( em.moveFirst(); !em.atEnd(); em.moveNext() )	WScript.Echo( em.item().Name );
+
+		var files = listFiles(projectRoot);
+		for(i= 0; i<files.length;i++) WScript.Echo(files[i] );
+//  Shell関連の操作を提供するオブジェクトを取得
+
+	//var sh = new ActiveXObject( "WScript.Shell" );
+	//  現在のカレントディレクトリを表示
+	//WScript.Echo(sh.CurrentDirectory );
+	//  オブジェクトを解放
+	//sh = null;
+  
+/*	
+  //https://kujirahand.com/blog/index.php?JScript%E3%81%A7%E5%86%8D%E5%B8%B0%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E4%B8%80%E8%A6%A7%E3%81%AE%E5%8F%96%E5%BE%97
+// 指定パス以下のファイル全部を配列形式で取得する
+function enumFiles(target) {
+  var fso = new ActiveXObject("Scripting.FileSystemObject");
+  if (fso.FileExists(target)) {
+    return [target];
+  }
+  if (!fso.FolderExists(target)) return [];
+  var result = [];
+  // 指定パスのファイル一覧を得る
+  var dir = fso.GetFolder(target);
+  // ファイルを一つずつ処理する
+  var e = new Enumerator(dir.Files);
+  for ( ; !e.atEnd(); e.moveNext()) {
+    var file = e.item();
+    result.push(file.Path);
+  }
+  // 再帰的にディレクトリを処理する
+  e = new Enumerator(dir.SubFolders);
+  for ( ; !e.atEnd(); e.moveNext()) {
+    var r = enumFiles(e.item());
+    result = result.concat(r);
+  }
+  return result;
+}  
+  //http://okazu.air-nifty.com/blog/2011/01/wsh---dirnameba.html
+  //https://msdn.microsoft.com/ja-jp/library/cc428010.aspx
+function ShowBaseName(filespec)
+{
+   var fso, s = "";
+   fso = new ActiveXObject("Scripting.FileSystemObject");
+   s += fso.GetBaseName(filespec);
+   return(s);
+}
+*/
+
+  ]]></script>
+</job>
+
+
+<job id="run">
+<script language="VBScript">
+    Option Explicit
+		Dim shell
+	
+	Set shell = CreateObject("WScript.Shell")
+	shell.CurrentDirectory = Replace(WScript.ScriptFullName, WScript.ScriptName, "")
+
+	if FileExists("build.xml") then
+		CreateObject("WScript.Shell").Run "cmd.exe /c build8.bat run",0
+	end if
+
+	Function FolderExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FolderExists = objFileSys.FolderExists(strFilePath)
+	End Function
+
+	Function FileExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FileExists = objFileSys.FileExists(strFilePath)
+	End Function
+
+</script>
+</job>
+</package>
