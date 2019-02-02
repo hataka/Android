@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package>
+<job id="installRun">
+<script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+<script language="javascript"><![CDATA[
+  //  アプリケーション操作
+  //  パスを指定してアプリケーションを起動する。
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var WS_ACT_NOMAL    = 1;    //ウインドウはアクティブ、サイズは通常(規定値)
+  var WS_ACT_MIN      = 2;    //ウインドウはアクティブ、サイズは最小
+  var WS_ACT_MAX      = 3;    //ウインドウはアクティブ、サイズは最大
+  var WS_NOTACT_NOMAL = 4;    //ウインドウは非アクティブ、サイズは通常
+  var WS_ACT_DEF      = 5;    //ウインドウはアクティブ、サイズは前回終了時と同じ
+                              //(アプリによって動作は異なる)
+  var WS_NOTACT_MIN   = 7;    //ウインドウは非アクティブ、サイズは最小
+  var avd = "Tablet28";
+  // Shell関連の操作を提供するオブジェクトを取得
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  // 現在のカレントディレクトリを表示
+  // WScript.Echo(fs.getParentFolderName(WScript.ScriptFullName))
+  // WScript.Echo( sh.CurrentDirectory );
+  // C: ドライブの直下にカレントディレクトリを設定
+  sh.CurrentDirectory = "C:/AndroidStudio32/sdk/emulator";
+  var oExec = sh.Run("C:/AndroidStudio32/sdk/emulator/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  WScript.Sleep(60000);
+  
+  
+   objArgs = WScript.Arguments;
+   //WScript.Echo(objArgs.length);
+   
+   //for (i = 0; i < objArgs.length; i++)
+   //{
+   //   WScript.Echo(objArgs(i));
+   //}
+  
+  var adb = "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe";
+  //var curProjectdir = "F:\\mnt\\sdcard\\www\\public\\android\\android-sdk-pokeri-v2\\Chapter01\\layout_ConstraintLayout\\";
+  //var curProjectName =  "layout_constraintlayout";
+  var curProjectdir = objArgs(0);
+  var curProjectName =  objArgs(1);
+  
+  var cmdline = "cmd.exe /k " + adb + " install "
+  		+ curProjectdir + "app\\build\\outputs\\apk\\debug\\app-debug.apk";
+//WScript.Echo("done");
+  sh.Run(cmdline, WS_ACT_NOMAL );
+
+  var cmdline2 = "cmd.exe /k " + adb 
+    + " shell am start -n net.buildbox.pokeri." 
+    + curProjectName  + "/net.buildbox.pokeri." + curProjectName + ".MainActivity"; 
+  WScript.Sleep(2000);
+
+  sh.Run(cmdline2, WS_ACT_NOMAL );
+
+//WshRunning ( = 0)ジョブはまだ実行中です。
+//WshFinished ( = 1)ジョブの実行が完了しました。
+//	var WshShell = new ActiveXObject("WScript.Shell");
+	//var oExec = WshShell.Exec("calc");
+//	var oExec = WshShell.Exec("C:/AndroidStudio32/sdk/emulator/emulator.exe -avd "+ avd);
+
+//	while (oExec.Status != 0)
+//	{
+//     WScript.Sleep(100);
+//	}
+	//WScript.Echo("koko");
+
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+</package>

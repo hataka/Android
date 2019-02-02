@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title = "All tasks runnable from root project">
+
+	<folder title="Android tasks">
+		<record title="app:androidDependencies" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:androidDependencies"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the Android dependencies of the project."
+		 	icon="image:33" />
+		
+		<record title="app:signingReport" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:signingReport"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the signing info for each variant."
+		 	icon="image:33" />
+		
+		<record title="app:sourceSets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:sourceSets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Prints out all the source sets defined in this project."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Build tasks">
+		<record title="app:assemble" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assemble"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles all variants of all applications and secondary packages."
+		 	icon="image:33" />
+		
+		<record title="app:assembleAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles all the Test applications."
+		 	icon="image:33" />
+		
+		<record title="app:assembleDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles all Debug builds."
+		 	icon="image:33" />
+		
+		<record title="app:assembleRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles all Release builds."
+		 	icon="image:33" />
+		
+		<record title="app:build" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:build"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles and tests this project."
+		 	icon="image:33" />
+		
+		<record title="app:buildDependents" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:buildDependents"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles and tests this project and all projects that depend on it."
+		 	icon="image:33" />
+		
+		<record title="app:buildNeeded" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:buildNeeded"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Assembles and tests this project and all projects it depends on."
+		 	icon="image:33" />
+		
+		<record title="app:bundleDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundleDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Creates all Debug bundles."
+		 	icon="image:33" />
+		
+		<record title="app:bundleRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundleRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Creates all Release bundles."
+		 	icon="image:33" />
+		
+		<record title="app:clean" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:clean"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Deletes the build directory."
+		 	icon="image:33" />
+		
+		<record title="app:cleanB" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:cleanB"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+		
+		
+		<record title="uildCache" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat uildCache"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Deletes the build cache directory."
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugUnitTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugUnitTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseUnitTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseUnitTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip=""
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Build Setup tasks">
+		<record title="init" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat init"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Initializes a new Gradle build."
+		 	icon="image:33" />
+		
+		<record title="wrapper" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat wrapper"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Generates Gradle wrapper files."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Cleanup tasks">
+		<record title="app:lintFix" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:lintFix"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs lint on all variants and applies any safe suggestions to the source code."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Help tasks">
+		<record title="buildEnvironment" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat buildEnvironment"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays all buildscript dependencies declared in root project 'layout_ConstraintLayout'."
+		 	icon="image:33" />
+		
+		<record title="app:buildEnvironment" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:buildEnvironment"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays all buildscript dependencies declared in project ':app'."
+		 	icon="image:33" />
+		
+		<record title="components" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat components"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the components produced by root project 'layout_ConstraintLayout'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="app:components" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:components"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the components produced by project ':app'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="dependencies" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat dependencies"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays all dependencies declared in root project 'layout_ConstraintLayout'."
+		 	icon="image:33" />
+		
+		<record title="app:dependencies" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:dependencies"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays all dependencies declared in project ':app'."
+		 	icon="image:33" />
+		
+		<record title="dependencyInsight" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat dependencyInsight"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the insight into a specific dependency in root project 'layout_ConstraintLayout'."
+		 	icon="image:33" />
+		
+		<record title="app:dependencyInsight" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:dependencyInsight"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the insight into a specific dependency in project ':app'."
+		 	icon="image:33" />
+		
+		<record title="dependentComponents" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat dependentComponents"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the dependent components of components in root project 'layout_ConstraintLayout'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="app:dependentComponents" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:dependentComponents"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the dependent components of components in project ':app'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="help" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat help"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays a help message."
+		 	icon="image:33" />
+		
+		<record title="app:help" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:help"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays a help message."
+		 	icon="image:33" />
+		
+		<record title="model" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat model"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the configuration model of root project 'layout_ConstraintLayout'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="app:model" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:model"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the configuration model of project ':app'. [incubating]"
+		 	icon="image:33" />
+		
+		<record title="projects" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat projects"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the sub-projects of root project 'layout_ConstraintLayout'."
+		 	icon="image:33" />
+		
+		<record title="app:projects" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:projects"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the sub-projects of project ':app'."
+		 	icon="image:33" />
+		
+		<record title="properties" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat properties"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the properties of root project 'layout_ConstraintLayout'."
+		 	icon="image:33" />
+		
+		<record title="app:properties" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:properties"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the properties of project ':app'."
+		 	icon="image:33" />
+		
+		<record title="tasks" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat tasks"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the tasks runnable from root project 'layout_ConstraintLayout' (some of the displayed tasks may belong to subprojects)."
+		 	icon="image:33" />
+		
+		<record title="app:tasks" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:tasks"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Displays the tasks runnable from project ':app'."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Install tasks">
+		<record title="app:installDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:installDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Installs the Debug build."
+		 	icon="image:33" />
+		
+		<record title="app:installDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:installDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Installs the android (on device) tests for the Debug build."
+		 	icon="image:33" />
+		
+		<record title="app:uninstallAll" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:uninstallAll"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Uninstall all applications."
+		 	icon="image:33" />
+		
+		<record title="app:uninstallDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:uninstallDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Uninstalls the Debug build."
+		 	icon="image:33" />
+		
+		<record title="app:uninstallDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:uninstallDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Uninstalls the android (on device) tests for the Debug build."
+		 	icon="image:33" />
+		
+		<record title="app:uninstallRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:uninstallRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Uninstalls the Release build."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Verification tasks">
+		<record title="app:check" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:check"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs all checks."
+		 	icon="image:33" />
+		
+		<record title="app:connectedAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:connectedAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Installs and runs instrumentation tests for all flavors on connected devices."
+		 	icon="image:33" />
+		
+		<record title="app:connectedCheck" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:connectedCheck"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs all device checks on currently connected devices."
+		 	icon="image:33" />
+		
+		<record title="app:connectedDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:connectedDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Installs and runs the tests for debug on connected devices."
+		 	icon="image:33" />
+		
+		<record title="app:deviceAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:deviceAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Installs and runs instrumentation tests using all Device Providers."
+		 	icon="image:33" />
+		
+		<record title="app:deviceCheck" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:deviceCheck"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs all device checks using Device Providers and Test Servers."
+		 	icon="image:33" />
+		
+		<record title="app:lint" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:lint"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs lint on all variants."
+		 	icon="image:33" />
+		
+		<record title="app:lintDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:lintDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs lint on the Debug build."
+		 	icon="image:33" />
+		
+		<record title="app:lintRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:lintRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs lint on the Release build."
+		 	icon="image:33" />
+		
+		<record title="app:lintVitalRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:lintVitalRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Runs lint on just the fatal issues in the release build."
+		 	icon="image:33" />
+		
+		<record title="app:test" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:test"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Run unit tests for all variants."
+		 	icon="image:33" />
+		
+		<record title="app:testDebugUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:testDebugUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Run unit tests for the debug build."
+		 	icon="image:33" />
+		
+		<record title="app:testReleaseUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:testReleaseUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="Run unit tests for the release build."
+		 	icon="image:33" />
+	</folder>
+
+	<folder title="Other tasks">
+		<record title="app:assembleDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:assembleDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:assembleDebugUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleDebugUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:assembleDebugUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:assembleReleaseUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:assembleReleaseUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:assembleReleaseUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:buildDebugPreBundle" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:buildDebugPreBundle"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:buildDebugPreBundle"
+		 	icon="image:33" />
+		
+		<record title="app:buildReleasePreBundle" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:buildReleasePreBundle"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:buildReleasePreBundle"
+		 	icon="image:33" />
+		
+		<record title="app:bundle" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundle"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:bundle"
+		 	icon="image:33" />
+		
+		<record title="app:bundleDebugAndroidTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundleDebugAndroidTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:bundleDebugAndroidTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:bundleDebugResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundleDebugResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:bundleDebugResources"
+		 	icon="image:33" />
+		
+		<record title="app:bundleReleaseResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:bundleReleaseResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:bundleReleaseResources"
+		 	icon="image:33" />
+		
+		<record title="app:checkDebugAndroidTestClasspath" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkDebugAndroidTestClasspath"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkDebugAndroidTestClasspath"
+		 	icon="image:33" />
+		
+		<record title="app:checkDebugClasspath" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkDebugClasspath"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkDebugClasspath"
+		 	icon="image:33" />
+		
+		<record title="app:checkDebugLibraries" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkDebugLibraries"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkDebugLibraries"
+		 	icon="image:33" />
+		
+		<record title="app:checkDebugManifest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkDebugManifest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkDebugManifest"
+		 	icon="image:33" />
+		
+		<record title="app:checkReleaseClasspath" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkReleaseClasspath"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkReleaseClasspath"
+		 	icon="image:33" />
+		
+		<record title="app:checkReleaseLibraries" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkReleaseLibraries"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkReleaseLibraries"
+		 	icon="image:33" />
+		
+		<record title="app:checkReleaseManifest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:checkReleaseManifest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:checkReleaseManifest"
+		 	icon="image:33" />
+		
+		<record title="clean" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat clean"
+		 	path="$(CurProjectDir)"
+		 	tooltip="clean"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAidl" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAidl"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAidl"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestAidl" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestAidl"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAndroidTestAidl"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestJavaWithJavac" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestJavaWithJavac"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAndroidTestJavaWithJavac"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestNdk" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestNdk"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAndroidTestNdk"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestRenderscript" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestRenderscript"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAndroidTestRenderscript"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugAndroidTestShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugAndroidTestShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugAndroidTestShaders"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugJavaWithJavac" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugJavaWithJavac"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugJavaWithJavac"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugNdk" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugNdk"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugNdk"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugRenderscript" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugRenderscript"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugRenderscript"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugShaders"
+		 	icon="image:33" />
+		
+		<record title="app:compileDebugUnitTestJavaWithJavac" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileDebugUnitTestJavaWithJavac"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileDebugUnitTestJavaWithJavac"
+		 	icon="image:33" />
+		
+		<record title="app:compileLint" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileLint"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileLint"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseAidl" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseAidl"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseAidl"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseJavaWithJavac" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseJavaWithJavac"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseJavaWithJavac"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseNdk" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseNdk"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseNdk"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseRenderscript" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseRenderscript"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseRenderscript"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseShaders"
+		 	icon="image:33" />
+		
+		<record title="app:compileReleaseUnitTestJavaWithJavac" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:compileReleaseUnitTestJavaWithJavac"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:compileReleaseUnitTestJavaWithJavac"
+		 	icon="image:33" />
+		
+		<record title="app:consumeConfigAttr" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:consumeConfigAttr"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:consumeConfigAttr"
+		 	icon="image:33" />
+		
+		<record title="app:createDebugCompatibleScreenManifests" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:createDebugCompatibleScreenManifests"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:createDebugCompatibleScreenManifests"
+		 	icon="image:33" />
+		
+		<record title="app:createMockableJar" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:createMockableJar"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:createMockableJar"
+		 	icon="image:33" />
+		
+		<record title="app:createReleaseCompatibleScreenManifests" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:createReleaseCompatibleScreenManifests"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:createReleaseCompatibleScreenManifests"
+		 	icon="image:33" />
+		
+		<record title="app:extractApksForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:extractApksForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:extractApksForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:extractApksForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:extractApksForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:extractApksForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:extractProguardFiles" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:extractProguardFiles"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:extractProguardFiles"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAndroidTestAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAndroidTestAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAndroidTestAssets"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAndroidTestBuildConfig" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAndroidTestBuildConfig"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAndroidTestBuildConfig"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAndroidTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAndroidTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAndroidTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAndroidTestResValues" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAndroidTestResValues"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAndroidTestResValues"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAndroidTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAndroidTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAndroidTestSources"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugAssets"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugBuildConfig" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugBuildConfig"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugBuildConfig"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugFeatureMetadata" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugFeatureMetadata"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugFeatureMetadata"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugFeatureTransitiveDeps" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugFeatureTransitiveDeps"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugFeatureTransitiveDeps"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugResources"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugResValues" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugResValues"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugResValues"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugSources"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugUnitTestAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugUnitTestAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugUnitTestAssets"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugUnitTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugUnitTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugUnitTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:generateDebugUnitTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateDebugUnitTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateDebugUnitTestSources"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseAssets"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseBuildConfig" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseBuildConfig"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseBuildConfig"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseFeatureMetadata" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseFeatureMetadata"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseFeatureMetadata"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseFeatureTransitiveDeps" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseFeatureTransitiveDeps"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseFeatureTransitiveDeps"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseResources"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseResValues" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseResValues"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseResValues"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseSources"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseUnitTestAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseUnitTestAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseUnitTestAssets"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseUnitTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseUnitTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseUnitTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:generateReleaseUnitTestSources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:generateReleaseUnitTestSources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:generateReleaseUnitTestSources"
+		 	icon="image:33" />
+		
+		<record title="app:javaPreCompileDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:javaPreCompileDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:javaPreCompileDebug"
+		 	icon="image:33" />
+		
+		<record title="app:javaPreCompileDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:javaPreCompileDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:javaPreCompileDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:javaPreCompileDebugUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:javaPreCompileDebugUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:javaPreCompileDebugUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:javaPreCompileRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:javaPreCompileRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:javaPreCompileRelease"
+		 	icon="image:33" />
+		
+		<record title="app:javaPreCompileReleaseUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:javaPreCompileReleaseUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:javaPreCompileReleaseUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:mainApkListPersistenceDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mainApkListPersistenceDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mainApkListPersistenceDebug"
+		 	icon="image:33" />
+		
+		<record title="app:mainApkListPersistenceDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mainApkListPersistenceDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mainApkListPersistenceDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:mainApkListPersistenceRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mainApkListPersistenceRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mainApkListPersistenceRelease"
+		 	icon="image:33" />
+		
+		<record title="app:makeApkFromBundleForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:makeApkFromBundleForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:makeApkFromBundleForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:makeApkFromBundleForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:makeApkFromBundleForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:makeApkFromBundleForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugAndroidTestAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugAndroidTestAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugAndroidTestAssets"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugAndroidTestJniLibFolders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugAndroidTestJniLibFolders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugAndroidTestJniLibFolders"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugAndroidTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugAndroidTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugAndroidTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugAndroidTestShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugAndroidTestShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugAndroidTestShaders"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugAssets"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugJniLibFolders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugJniLibFolders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugJniLibFolders"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugResources"
+		 	icon="image:33" />
+		
+		<record title="app:mergeDebugShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeDebugShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeDebugShaders"
+		 	icon="image:33" />
+		
+		<record title="app:mergeReleaseAssets" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeReleaseAssets"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeReleaseAssets"
+		 	icon="image:33" />
+		
+		<record title="app:mergeReleaseJniLibFolders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeReleaseJniLibFolders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeReleaseJniLibFolders"
+		 	icon="image:33" />
+		
+		<record title="app:mergeReleaseResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeReleaseResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeReleaseResources"
+		 	icon="image:33" />
+		
+		<record title="app:mergeReleaseShaders" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:mergeReleaseShaders"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:mergeReleaseShaders"
+		 	icon="image:33" />
+		
+		<record title="app:packageAppClassesDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageAppClassesDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageAppClassesDebug"
+		 	icon="image:33" />
+		
+		<record title="app:packageAppClassesDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageAppClassesDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageAppClassesDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:packageAppClassesDebugUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageAppClassesDebugUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageAppClassesDebugUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:packageAppClassesRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageAppClassesRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageAppClassesRelease"
+		 	icon="image:33" />
+		
+		<record title="app:packageAppClassesReleaseUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageAppClassesReleaseUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageAppClassesReleaseUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:packageDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageDebug"
+		 	icon="image:33" />
+		
+		<record title="app:packageDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:packageDebugBundle" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageDebugBundle"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageDebugBundle"
+		 	icon="image:33" />
+		
+		<record title="app:packageDebugUniversalApk" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageDebugUniversalApk"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageDebugUniversalApk"
+		 	icon="image:33" />
+		
+		<record title="app:packageRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageRelease"
+		 	icon="image:33" />
+		
+		<record title="app:packageReleaseBundle" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageReleaseBundle"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageReleaseBundle"
+		 	icon="image:33" />
+		
+		<record title="app:packageReleaseUniversalApk" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:packageReleaseUniversalApk"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:packageReleaseUniversalApk"
+		 	icon="image:33" />
+		
+		<record title="app:preBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preBuild"
+		 	icon="image:33" />
+		
+		<record title="app:preDebugAndroidTestBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preDebugAndroidTestBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preDebugAndroidTestBuild"
+		 	icon="image:33" />
+		
+		<record title="app:preDebugBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preDebugBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preDebugBuild"
+		 	icon="image:33" />
+		
+		<record title="app:preDebugUnitTestBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preDebugUnitTestBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preDebugUnitTestBuild"
+		 	icon="image:33" />
+		
+		<record title="app:prepareLintJar" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:prepareLintJar"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:prepareLintJar"
+		 	icon="image:33" />
+		
+		<record title="app:preReleaseBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preReleaseBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preReleaseBuild"
+		 	icon="image:33" />
+		
+		<record title="app:preReleaseUnitTestBuild" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:preReleaseUnitTestBuild"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:preReleaseUnitTestBuild"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugAndroidTestJavaRes" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugAndroidTestJavaRes"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugAndroidTestJavaRes"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugAndroidTestManifest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugAndroidTestManifest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugAndroidTestManifest"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugAndroidTestResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugAndroidTestResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugAndroidTestResources"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugJavaRes" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugJavaRes"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugJavaRes"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugManifest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugManifest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugManifest"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugResources"
+		 	icon="image:33" />
+		
+		<record title="app:processDebugUnitTestJavaRes" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processDebugUnitTestJavaRes"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processDebugUnitTestJavaRes"
+		 	icon="image:33" />
+		
+		<record title="app:processReleaseJavaRes" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processReleaseJavaRes"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processReleaseJavaRes"
+		 	icon="image:33" />
+		
+		<record title="app:processReleaseManifest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processReleaseManifest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processReleaseManifest"
+		 	icon="image:33" />
+		
+		<record title="app:processReleaseResources" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processReleaseResources"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processReleaseResources"
+		 	icon="image:33" />
+		
+		<record title="app:processReleaseUnitTestJavaRes" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:processReleaseUnitTestJavaRes"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:processReleaseUnitTestJavaRes"
+		 	icon="image:33" />
+		
+		<record title="app:reportBuildArtifactsDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportBuildArtifactsDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportBuildArtifactsDebug"
+		 	icon="image:33" />
+		
+		<record title="app:reportBuildArtifactsRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportBuildArtifactsRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportBuildArtifactsRelease"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformAndroidTestDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformAndroidTestDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformAndroidTestDebug"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformDebug"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformMain" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformMain"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformMain"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformRelease"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformTest"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformTestDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformTestDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformTestDebug"
+		 	icon="image:33" />
+		
+		<record title="app:reportSourceSetTransformTestRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:reportSourceSetTransformTestRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:reportSourceSetTransformTestRelease"
+		 	icon="image:33" />
+		
+		<record title="app:resolveConfigAttr" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:resolveConfigAttr"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:resolveConfigAttr"
+		 	icon="image:33" />
+		
+		<record title="app:splitsDiscoveryTaskDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:splitsDiscoveryTaskDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:splitsDiscoveryTaskDebug"
+		 	icon="image:33" />
+		
+		<record title="app:splitsDiscoveryTaskRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:splitsDiscoveryTaskRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:splitsDiscoveryTaskRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformClassesWithDexBuilderForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformClassesWithDexBuilderForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformClassesWithDexBuilderForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformClassesWithDexBuilderForDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformClassesWithDexBuilderForDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformClassesWithDexBuilderForDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformClassesWithDexBuilderForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformClassesWithDexBuilderForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformClassesWithDexBuilderForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithDexMergerForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithDexMergerForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithDexMergerForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithDexMergerForDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithDexMergerForDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithDexMergerForDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithDexMergerForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithDexMergerForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithDexMergerForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithExternalLibsDexMergerForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithExternalLibsDexMergerForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithExternalLibsDexMergerForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformDexArchiveWithExternalLibsDexMergerForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformDexArchiveWithExternalLibsDexMergerForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformDexArchiveWithExternalLibsDexMergerForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformNativeLibsWithMergeJniLibsForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformNativeLibsWithMergeJniLibsForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformNativeLibsWithMergeJniLibsForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformNativeLibsWithMergeJniLibsForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformNativeLibsWithMergeJniLibsForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformNativeLibsWithMergeJniLibsForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformNativeLibsWithStripDebugSymbolForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformNativeLibsWithStripDebugSymbolForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformNativeLibsWithStripDebugSymbolForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformNativeLibsWithStripDebugSymbolForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformNativeLibsWithStripDebugSymbolForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformNativeLibsWithStripDebugSymbolForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformResourcesWithMergeJavaResForDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformResourcesWithMergeJavaResForDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformResourcesWithMergeJavaResForDebug"
+		 	icon="image:33" />
+		
+		<record title="app:transformResourcesWithMergeJavaResForDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformResourcesWithMergeJavaResForDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformResourcesWithMergeJavaResForDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformResourcesWithMergeJavaResForDebugUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformResourcesWithMergeJavaResForDebugUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformResourcesWithMergeJavaResForDebugUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:transformResourcesWithMergeJavaResForRelease" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformResourcesWithMergeJavaResForRelease"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformResourcesWithMergeJavaResForRelease"
+		 	icon="image:33" />
+		
+		<record title="app:transformResourcesWithMergeJavaResForReleaseUnitTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:transformResourcesWithMergeJavaResForReleaseUnitTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:transformResourcesWithMergeJavaResForReleaseUnitTest"
+		 	icon="image:33" />
+		
+		<record title="app:validateSigningDebug" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:validateSigningDebug"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:validateSigningDebug"
+		 	icon="image:33" />
+		
+		<record title="app:validateSigningDebugAndroidTest" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:validateSigningDebugAndroidTest"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:validateSigningDebugAndroidTest"
+		 	icon="image:33" />
+		
+		<record title="app:writeDebugApplicationId" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:writeDebugApplicationId"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:writeDebugApplicationId"
+		 	icon="image:33" />
+		
+		<record title="app:writeReleaseApplicationId" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:writeReleaseApplicationId"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app:writeReleaseApplicationId"
+		 	icon="image:33" />
+	</folder>
+
+</root>

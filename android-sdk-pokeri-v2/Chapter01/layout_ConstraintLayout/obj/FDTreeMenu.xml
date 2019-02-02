@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- root title="$(CurProjectName)" icon="" expand="true" -->
+<root title="layout_ConstraintLayout" icon="" expand="true">
+	<folder title="build" expand="true">
+		<record title="compile" action="conexe" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k gradlew.bat assembleDebug"
+			path ="$(CurProjectDir)"
+			icon="image:127" />
+	<record title="apk to Top" action="conexe" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\cp.exe ./app/build/outputs/apk/debug/app-debug.apk ./$(CurProjectName).apk"
+			path ="$(CurProjectDir)"
+			icon="image:127" />
+	<record title="copy to sdcard2" action="RunProcess" 
+		command="c:\windows\system32\cmd.exe"
+		args="/k c:\cygwin64\bin\cp $(CurProjectDir)/$(CurProjectName).apk F:/mnt/sdcard2/backups/apps/PocketReference/Chapter01" 
+		path ="$(CurProjectDir)" 
+		icon="image:127"/>
+
+	<record title="clean" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k gradlew.bat clean"
+			path ="$(CurProjectDir)" 
+			icon="image:127"/>
+		
+	<record title="compact" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k c:\cygwin64\bin\rm.exe -rf .idea *.apk .gitignore *.iml ./.gradle ./build ./app/build ./app/.gitignore ./app/*.iml ./app/*.pro ./app/src/test ./app/src/androidtest"
+			path ="$(CurProjectDir)" 
+			icon="image:127"/>
+	</folder>
+	
+	<folder title="run">
+		<record title="runAVD" action="RunProcess"
+			command="C:\AndroidStudio32\sdk\emulator\emulator.exe"
+			args="-avd Tablet28"
+			path ="C:\AndroidStudio32\sdk\emulator" 
+			tooltip ="エミュレータ端末 Tablet28を起動します"
+			icon="image:127"/>
+
+		<record title="Install" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k C:\AndroidStudio32\sdk\platform-tools\adb.exe install $(CurProjectDir)\app\build\outputs\apk\debug\app-debug.apk"
+			path ="$(CurProjectDir)" 
+			tooltip = "実行中の端末にapp-debug.apkをインストールする"
+						icon="image:127"/>
+
+		<record title="runApp" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k C:\AndroidStudio32\sdk\platform-tools\adb.exe shell am start -n net.buildbox.pokeri.$(CurProjectName)/net.buildbox.sample.$(CurProjectName).MainActivity"
+			path ="$(CurProjectDir)" 
+			tooltip ="実行中の端末にインストールした app-debug.apkを起動する"
+			icon="image:127"/>
+<!--
+		<record title="unInstall" action="RunProcess" 
+			command="c:\windows\system32\cmd.exe"
+			args="/k C:\AndroidStudio32\sdk\platform-tools\adb.exe uninstall app-debug.apk"
+			path ="$(CurProjectDir)" 
+			tooltip = "実行中の端末からapp-debug.apkをアンインストールする"
+						icon="image:127"/>
+	-->
+	</folder>
+
+	<folder title="tools">
+		<record title="AllTasks" action="RunProcess"
+			command="gradlew.bat "
+			args="-q tasks --all"
+			path ="$(CurProjectDir)" 
+			option="document \" icon="image:127"/>
+		<record title="open studio" action="RunProcess"
+			command="C:\Program Files\Android\Android Studio\bin\studio64.exe"
+			args="$(CurProjectDir)"
+			path ="$(CurProjectDir)" 
+			icon="image:127"/>
+		<record title="listAVD" action="RunProcess"
+			command="c:\windows\system32\cmd.exe"
+			args="/k C:\AndroidStudio32\sdk\emulator\emulator.exe -list-avds"
+			path ="$(CurProjectDir)" 
+			icon="image:127"/>
+
+		<record title="install to running AVD" action="RunProcess"
+				command="c:\windows\system32\cmd.exe"
+				args="/k gradlew.bat installDebug"
+				path ="$(CurProjectDir)"
+				icon="image:127"/>
+		<record title="listPackages" action="RunProcess"
+			command="c:\windows\system32\cmd.exe"
+			args="/k C:\AndroidStudio32\sdk\platform-tools\adb.exe shell pm list package"
+			path ="$(CurProjectDir)" 
+			tooltip ="実行中の端末にインストールされているパッケージの一覧を表示する【adb】"
+						icon="image:127"/>
+		<!--
+		-->
+	
+		
+		
+		
+		
+	</folder>	
+	<include path="$(CurProjectDir)"/>
+
+
+	<folder title="test">
+		<record title="embedphp" action="script" command="php"><![CDATA[		echo $(CurProjectDir);
+		]]>
+		</record>
+	<record title="CDATA 読み込みテスト" action="script" command="php" option="console"><![CDATA[<?php
+		//$msg = "こんにちわ CDATA 読み込み";
+		$msg = trim("$(CurProjectName)");
+		echo($msg."\n\n"); 
+		//echo(mb_convert_encoding($msg,"utf-8","auto"));
+		?>]]>
+	</record>
+	</folder>
+
+
+
+
+<folder title="viewSrc">
+  <record title="AndroidManifest.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\AndroidManifest.xml" />
+  <record title="MainActivity.java"
+		action="open"
+		path="$(CurProjectDir)\app\src\main\java\net\buildbox\pokeri\$(CurProjectName)\MainActivity.java" />
+  <record title="layout/activity_main.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\res\layout\activity_main.xml" />
+  <record title="values/strings.xml" action="open"
+		path="$(CurProjectDir)\app\src\main\res\values\strings.xml" />
+  <record title="README.md" action="open"
+		path="$(CurProjectDir)\README.md" />
+</folder>
+
+	<folder title="WebSite">
+  <record title="GitHub Site" action="browse"
+		path="https://github.com/shige0501/android-sdk-pokeri" />
+  <record title="GitHub Site(chrome)" action="winexe"
+		command ="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+		path="https://github.com/shige0501/android-sdk-pokeri" />
+ <record title="［改訂新版］Android SDK ポケットリファレンス：書籍案内｜技術評論社]" action="browse"
+ 	path="https://gihyo.jp/book/2018/978-4-7741-9855-2" />
+ <record title="コマンドラインからのアプリ作成  |  Android Developers"
+ 	path="https://developer.android.com/studio/build/building-cmdline?hl=ja" />
+ <record title="SBクリエイティブ:【正誤情報】『やさしいAndroidプログラミング 第3版』"
+ 	path = "https://www.sbcr.jp/support/14003.html" />
+ <record title="[Android] ImageView:画像を表示する | Programming Style -- Android"
+ path="http://www.programing-style.com/android/android-api/android-imageview/" />
+	</folder>
+
+</root>

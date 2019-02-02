@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="EmbedScript" icon="" expand="true">
+		<property name="user_name" value="kazuhiko" />
+		<folder title="embedPHP">
+			<record title="embedphp" action="script" command="embed.php"><![CDATA[
+				<?php
+					echo "$(CurProjectDir)";
+				]]></record>
+		<record title="CDATA 読み込みテスト" action="script" command="embed.php" option="console"><![CDATA[
+			<?php
+			//$msg = "こんにちわ CDATA 読み込み";
+			$msg = "[実行結果]\nCurProjectName: ".trim("$(CurProjectName)");
+			echo($msg); 
+			//echo(mb_convert_encoding($msg,"utf-8","auto"));
+			?>
+		]]></record>
+		<record title="sslib211" action="script" command="embed.php" path="F:\temp" option="console"><![CDATA[
+	<?php
+//-----------------------
+  $a = array( 2.0, 5.0);
+  $b = array( 1.0, 1.0);
+  $z = array( 0.0, 0.0);
+  //printf("              ★ 科学技術計算サブルーチンライブラリー（PHP）\n");
+  printf("                2.1.1 複素数　加減算 （ＣＡＤＤ、ＣＳＵＢ）\n\n");
+
+  $z = cadd($a, $b);
+
+  $format = '    ( %5.2f + %5.2f*i ) + ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )'."\n";
+//  printf( $format, $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+  printf("    ( %5.2f + %5.2f*i ) + ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )\n", $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+
+  $z = csub($a, $b);
+//  $z = &ComplexCalc::csub($a, $b);
+  $format = '    ( %5.2f + %5.2f*i ) - ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )'."\n";
+//  printf( $format, $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+  printf("    ( %5.2f + %5.2f*i ) - ( %5.2f + %5.2f*i ) = ( %5.2f + %5.2f*i )\n", $a[0], $a[1], $b[0], $b[1] , $z[0], $z[1]);
+  //print("</pre>");
+  //print "</center>";
+ 	//print('<hr/><span id="fileurl">http://kahata.travel.coocan.jp/php1/sslib/sslib211.php</span>');
+/**
+ * cadd  複素数の和を求め結果を配列 [re,im]で返す
+
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の和を配列[re,im]で返す
+
+ * @see csub()
+ */
+  function cadd($a, $b){
+    $z = array();
+
+    $z[0] = $a[0] + $b[0];
+    $z[1] = $a[1] + $b[1];
+    return $z;
+  }
+
+/**
+ * csub  複素数の差を求め結果を配列 [re,im]で返す
+
+ * {@source }
+ * @access public
+ * @param array [re,im]
+ * @param array [re,im]
+ * @return array 複素数の差を配列[re,im]で返す
+
+ * @see sslib211::sslib211()
+ */
+  function csub($a, $b){
+    $z[0] = $a[0] - $b[0];
+    $z[1] = $a[1] - $b[1];
+    return $z;
+  }
+
+//ＰＨＰの終わり
+
+?>
+		]]></record>
+	</folder>
+	<folder title="embedWSF">
+		<record title="lauchADV" action="script" command="embed.wsf"><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<package title="LaunchAVD" name="LaunchAVD">
+<job id="Tablet28">
+<script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+<script language="javascript">&lt;![CDATA[
+  // CDATA セクションは入り子にできない
+  //  アプリケーション操作
+  //  パスを指定してアプリケーションを起動する。
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var WS_ACT_NOMAL    = 1;    //ウインドウはアクティブ、サイズは通常(規定値)
+  var WS_ACT_MIN      = 2;    //ウインドウはアクティブ、サイズは最小
+  var WS_ACT_MAX      = 3;    //ウインドウはアクティブ、サイズは最大
+  var WS_NOTACT_NOMAL = 4;    //ウインドウは非アクティブ、サイズは通常
+  var WS_ACT_DEF      = 5;    //ウインドウはアクティブ、サイズは前回終了時と同じ
+                              //(アプリによって動作は異なる)
+  var WS_NOTACT_MIN   = 7;    //ウインドウは非アクティブ、サイズは最小
+  var avd = "Tablet28";
+  //  Shell関連の操作を提供するオブジェクトを取得
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  // 現在のカレントディレクトリを表示
+  //WScript.Echo(fs.getParentFolderName(WScript.ScriptFullName))
+  //WScript.Echo( sh.CurrentDirectory );
+  // C: ドライブの直下にカレントディレクトリを設定
+  sh.CurrentDirectory = "C:/AndroidStudio32/sdk/emulator";
+  sh.Run("C:/AndroidStudio32/sdk/emulator/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+]]&gt;</script>
+</job>
+</package>
+		]]></record>
+	</folder>
+
+	<folder title="embed cs-script">
+		<record title="Hell CS-script" action="script" command="embed.cs"><![CDATA[
+class Test {
+	static void Main() {
+		int x = -10;
+		//System.Console.WriteLine(x  << 1);
+		//System.Console.WriteLine(x >> 1);
+		//System.Console.WriteLine("こんにちわ cs-script !!");
+		System.Console.WriteLine("こんにちわ $(user_name) さん !!");
+	}
+}
+	]]></record>
+	</folder>
+
+	<folder title="embed ant">
+		<record title="Hello Ant" action="script" command="embed.ant"><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Hello" default="usage" basedir=".">
+
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage">
+    <echo message="" />
+    <echo message="" />
+    <echo message="${Name} Build file" />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message=" available targets are:" />
+    <echo message="" />
+    <echo message="   compile  - compiles the source code (default)" />
+    <echo message="   run      - execute the exsample" />
+    <echo message="   package  - generates the ${name}.jar file" />
+    <echo message="   javadoc  - generates the API documentation" />
+    <echo message="   clean    - cleans up the directory" />
+    <echo message="" />
+    <echo message=" See the comments inside the build.xml file for more details." />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message="" />
+  </target>
+
+
+</project>
+		]]></record>
+	</folder>
+
+	<folder title="embed gradle">
+		<record title="HelloWorld" action="script" command="embed.gradle" args="helloWorld"><![CDATA[
+task helloWorld {
+        doLast {
+                println "Hello, world!"
+        }
+}
+		]]></record>
+	</folder>
+</root>

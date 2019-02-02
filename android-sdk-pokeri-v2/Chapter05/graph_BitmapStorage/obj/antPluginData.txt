@@ -1,0 +1,5 @@
+//obj\FDTreeMenu.xml
+..\..\obj\ProjectMenu.xml
+//build.gradle
+..\..\obj\GradleAllTasks.xml
+obj\antPluginData.txt

@@ -1,0 +1,161 @@
+/**
+ * Executes a command line process. Example:
+ * https://docs.gradle.org/3.4.1/dsl/org.gradle.api.tasks.Exec.html
+ * system.out 以外ダメ
+ */
+ task sslib211(type:Exec) {
+	description = "system 標準出力"
+ 	//workingDir '../tomcat/bin'
+  //on windows:
+  commandLine 'cmd.exe', '/c', 'F:\\cpp\\sslib\\Debug\\sslib211.exe'
+	//standardOutput = new ByteArrayOutputStream()
+ 	//project.ext.output = {
+    //return standardOutput.toString()
+  //}
+ }
+
+task sslib213 {
+	description = "ByteArrayOutputStream へのバッファリングをextにセット"
+	doFirst {
+        new ByteArrayOutputStream().withStream { os ->
+            def result = exec {
+                executable = 'F:\\cpp\\sslib\\Debug\\sslib213.exe'
+                standardOutput = os
+            }
+        	 project.ext."sslib213_result" = os.toString()
+        	 //project.ext.sslib213_result = os.toString() //これでもOK
+        }
+    }
+	doLast {
+    println sslib213_result
+	}
+}
+
+//OK
+task print_sslib213 {
+    dependsOn sslib213
+	  description = "ByteArrayOutputStream へのバッファリングをext	からゲット"
+    doLast {
+         println sslib213_result
+    }
+}
+
+//http://www.thejavageek.com/2015/06/20/gradle-project-properties/
+//http://mike-neck.hatenadiary.com/entry/2015/09/01/142537
+// http://stackoverflow.com/questions/11093223/how-to-use-exec-output-in-gradle
+task sslib214 {
+	description = "ByteArrayOutputStream へのバッファリング (最良)"
+	doLast {
+		def stdout = new ByteArrayOutputStream()
+		exec{
+    	commandLine 'cmd.exe', '/c', 'F:\\cpp\\sslib\\Debug\\sslib214.exe'
+    	standardOutput = stdout;
+		}
+		//println "Output:\n$stdout";
+		println "Output:\n"+ stdout;
+	}
+}
+
+task sslib215 {
+	description = "cmdを介さず直接 *.exeを起動"
+	doLast {
+		def stdout = new ByteArrayOutputStream()
+		exec{
+    	commandLine 'F:\\cpp\\sslib\\Debug\\sslib215.exe'
+    	standardOutput = stdout;
+		}
+		//println "Output:\n$stdout";
+		println "Output:\n"+ stdout;
+	}
+}
+
+task sslib221 {
+	description = "cmdを介さず直接 *.exeを起動"
+	doLast {
+		ant.exec(executable:"F:\\cpp\\sslib\\Debug\\sslib221.exe", outputproperty:"output");
+		//println ant.properties.output; //これでもOK
+		println ant.properties['output'];
+	}
+}
+//NG
+task sslib222 {
+	description = "cmdを介さず直接 *.exeを起動"
+	doLast {
+		ant.exec(executable:"cmd.exe",spawn:"true"){
+			arg(value: "/c");
+			arg(value:"F:\\cpp\\sslib\\Debug\\sslib222.exe");
+		}
+	}
+}	
+
+task sslib223 {
+	description = "cmdを介さず直接 *.exeを起動"
+	doLast {
+		ant.exec(executable:"php.exe", outputproperty:"output"){
+			arg(value: "-f");
+			arg(value:"f:\\php1\\sslib\\sslib223.php");
+		}
+		//println ant.properties.output; //これでもOK
+		println ant.properties['output'];
+	}
+}
+
+ /**
+  * Executes a command line process. Example:
+  * https://docs.gradle.org/3.4.1/dsl/org.gradle.api.tasks.Exec.html
+  */
+if (!project.tasks.findByName('stopTomcat')){ //二重定義防止
+ task stopTomcat(type:Exec) {
+	description = "Executes a command line process. Example https://docs.gradle.org/3.4.1/dsl/org.gradle.api.tasks.Exec.html"
+ 	workingDir '../tomcat/bin'
+  //on windows:
+  commandLine 'cmd', '/c', 'stop.bat'
+  //on linux
+  //commandLine './stop.sh'
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+  //extension method stopTomcat.output() can be used to obtain the output:
+ 	ext.output = {
+    return standardOutput.toString()
+  }
+}
+}
+ //build.gradle
+//http://sakebook.hatenablog.com/entry/2014/09/03/084456
+ task push5(type: Exec, dependsOn: 'uploadDeployGateRelease') {
+	description = "http://sakebook.hatenablog.com/entry/2014/09/03/084456"
+    workingDir '../'
+    executable "./pushBullet.sh"
+    args System.properties["pushBullet_token"], System.properties["pushBullet_device_iden"],
+            "title", "body"
+}
+
+
+task printTasks << {
+	description = "build.gradleに定義されたTaskをリストします"
+	//project.tasks.matching
+	//original
+	//project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+	//以下OK
+	//project.defaultTasks.collect { //OK 
+	//project.tasks.findAll {
+	//	println(it.name.startsWith('compile'))
+	//	println(it.name)
+	//}
+	project.tasks.each {
+		def desc = it.description != null ? " - " + it.description : ""
+		println(it.name + desc)
+		//println(it.description)
+	}
+	/****
+	// 以下OK	
+	project.tasks.collect { 
+		task -> println("task="+task.name
+						+" dependsOn="+task.dependsOn
+						+" description="+task.description
+						//+" doLast="+task.doLast //NG
+						//+" type="+task.type //NG
+				) 
+	}
+*/
+}	

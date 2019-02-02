@@ -1,0 +1,550 @@
+/////////////////////////////////////////////////////////////////////////////
+// 設定 allbprojects
+apply from: "F:\\GitHub\\android-sdk-pokeri-v2\\obj\\gradle\\IncludeLib.gradle"
+
+allprojects {
+	repositories {
+//	jcenter()
+  }
+} 
+
+/////////////////////////////////////////////////////////////////////////////
+// 設定 subprojects
+subprojects {
+	repositories {
+//	jcenter()
+	}
+
+	dependencies {
+	}
+	
+	group = 'net.buildbox.pokeri'
+	version = '1.0-SNAPSHOT'
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+	}
+	// rootDirにbuild.xmlがあるとエラー(例外発生)
+	try{
+		ant.importBuild("build.xml") {
+			antTaskName -> "ant.${antTaskName}".toString()
+		}
+	}catch(Exception ex){}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// Tasks
+/*
+task ApplicationID{
+	doLast{
+			println(android.defaultConfig.applicationID);
+	}
+}
+*/
+/**
+ * listPath: app/src配下の*.javaファイルをリストアップします
+ */
+if (!project.tasks.findByName('listPath')){
+	task listPath  {
+		description 'app/src配下の*.javaファイルをリストアップします'
+ 		doLast{
+			def path = ant.path {
+				fileset(dir: 'app/src', includes: '**/*.java')
+			}
+			path.list().each {
+				println it
+			}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////
+
+if (!project.tasks.findByName('includelibtest')){ 
+	task includelibtest {
+		description '外部からインクルードされたライブラリの実行テスト'
+		doLast{
+			//Lib lib= new Lib();
+			//hello();
+			project.ext.srcpath = projectDir.toString()+"\\src\\main\\java\\isemba\\" + project.name + ".java";
+			//project.ext.srcpath = "F:\\src\\main\\java\\isemba\\" + project.name + ".java";
+			println(CHeading());
+			println(timestamp());
+			//GroovyClass g = new GroovyClass()
+  		//g.foo()
+		}
+	}
+}
+
+/**
+ * echo_properties : 組込みプロパティを リストアップします
+ */
+if (!project.tasks.findByName('echo_properties')){ 
+	task echo_properties << {
+		description '組込みプロパティを リストアップします'
+		println 'Hello, Gradle!'
+		println "|rootDir          |$rootDir|"  // $rootDir の代わりに $project.rootDir でも OK
+		println "|project.name     |$project.name|"  // $rootDir の代わりに $project.rootDir でも OK
+  	println "|projectDir       |$projectDir|"
+  	println "|buildDir         |$buildDir|"
+  	println "|gradleHomeDir    |$gradle.gradleHomeDir|"
+  	println "|gradleUserHomeDir|$gradle.gradleUserHomeDir|"
+  	println "|rootProject.name |$rootProject.name|"
+  	println "|description      |$description|"
+  	println "|version          |$version|"
+  	println "|gradleLibraryDir |$gradleLibraryDir|"
+  	//println "|applicationId    |$applicationId|"
+  //println "|userhome         |$user_home|"
+	}
+}
+
+/**
+ * list all tasks
+ * rootDirのbuild.gradleに定義されたTaskをリストします(原版)
+ * http://stackoverflow.com/questions/38362977/how-to-list-all-tasks-for-the-master-project-only-in-gradle
+ */
+if (!project.tasks.findByName('printTasks_org')){ //二重定義防止
+	task printTasks_org {
+		description = "rootDirのbuild.gradleに定義されたTaskをリストします(原版)"
+		doLast {
+			//original  
+			project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+		}
+	}
+}
+
+/**
+ * list all tasks
+ * rootDirのbuild.gradleに定義されたTaskをリストします(簡略版)
+ * http://stackoverflow.com/questions/38362977/how-to-list-all-tasks-for-the-master-project-only-in-gradle
+ */
+if (!project.tasks.findByName('printTasks')){ //二重定義防止
+	task printTasks << {
+		description = "rootDirのbuild.gradleに定義されたTaskをリストします(簡略版)"
+	//project.tasks.matching
+	//original
+	//project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+	//以下OK
+	//project.defaultTasks.collect { //OK 
+	//project.tasks.findAll {
+	//	println(it.name.startsWith('compile'))
+	//	println(it.name)
+	//}
+	project.tasks.each {
+		def desc = it.description != null ? " - " + it.description : ""
+		println(it.name + desc)
+		//println(it.description)
+	}
+	// 以下OK	
+	//project.tasks.collect { 
+	//	task -> println("task="+task.name
+	//					+" dependsOn="+task.dependsOn
+	//					+" description="+task.description
+	//					//+" doLast="+task.doLast //NG
+	//					//+" type="+task.type //NG
+	//			) 
+	//	}
+	//}
+}
+
+/**
+ * list all tasks
+ * rootDirのbuild.gradleに定義されたTaskをリストします(簡略版)
+ * テスト未実施 二重定義防止のため実際は作動しない
+ */
+if (!project.tasks.findByName('printTasks')){ 
+	task printTasks( overwrite: true) << {
+ 		//original  
+		//project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+ 			project.tasks.collect { task -> println(task) }
+	}
+}	
+	
+
+ /**
+	* 不明または未完成
+	*/
+if (!project.tasks.findByName('taskList')){ //二重定義防止
+	task taskList {
+		doLast{
+			def listTasks = gradle.taskGraph.getAllTasks();
+    	//listTasks.each { println(it.name) }
+			//println(tasks.length)
+			tasks.each { task ->
+				//project.gradle.startParameter.taskNames.each { taskName ->
+				//String target = subproject.name;
+				println( task.name);
+				//sb.append("<record title=\"" + target + "\" action=\"RunProcess\" command=\"cmd.exe\" "
+				//	+"args=\"/k gradle --daemon -q " + target + ":run\" path=\"\$(CurProjectDir)\\build.gradle\" "
+				//	+ "tooltip=\"" + target + "\" />\n");
+			}
+		}
+	}
+}
+
+/**
+ * 他のbuild.gradleを呼び出す
+ */
+if (!project.tasks.findByName('weatherReport')){ //二重定義防止
+	task weatherReport(type: GradleBuild) {
+		description = "他のbuild.gradleを呼び出す"
+		buildFile = 'F:\\java\\gradle\\weatherReport\\build.gradle'
+  	tasks = ['weatherReport']
+	}
+}
+if (!project.tasks.findByName('sslib211_test')){ //二重定義防止
+	task sslib211_test(type: GradleBuild) {
+		description = "他のbuild.gradle sslib211を呼び出す"
+		buildFile = 'F:\\java\\gradle\\Exec\\build.gradle'
+  	tasks = ['sslib211']
+	}
+}
+
+/**
+ * viewStc
+ * MainActivity.javaの内容をコンソールに出力します
+ */
+if (!project.tasks.findByName('viewSrc')){ 
+	task viewSrc {
+		description = "MainActivity.javaの内容をコンソールに出力します"
+		doLast {
+			def mainFile = 'app/src/main/java/net/buildbox/pokeri/' +project.name +'/' + 'MainActivity.java';
+			ant.loadfile(srcFile: mainFile, property: "encodedfile",encoding: "utf-8")
+			println(ant.properties['encodedfile']);
+		}
+	}
+}
+
+/**
+ * MainActivity.javaをFlashdevelopで開く
+ */
+if (!project.tasks.findByName('open_src_in_fd')){ 
+	task open_src_in_fd {
+		description = "MainActivity.java を Flashdevelopで開きます"
+		def srcFile = 'app/src/main/java/net/buildbox/pokeri/' +project.name +'/' + 'MainActivity.java';
+		doLast {
+			ant.exec(executable: "F:\\VCSharp\\Flashdevelop5.1.1-LL\\FlashDevelop\\Bin\\Debug\\FlashDevelop.exe",spawn:"true"){
+				arg(value: "-reuse")
+				arg(value: "${srcFile}")
+			}
+		}
+	}
+}
+
+/**
+ * MainActivity.javaをサクラ・エディタで開く
+ */
+if (!project.tasks.findByName('sakura')){ 
+	def srcFile = 'app/src/main/java/net/buildbox/pokeri/' +project.name +'/' + 'MainActivity.java';
+	description = "MainActivity.javaをサクラ・エディタで開く"
+	task sakura {
+		doLast {
+			ant.exec(executable: "C:\\Program Files (x86)\\sakura\\sakura.exe",spawn:"true"){
+				arg(value: "${srcFile}")
+			}
+		}
+	}
+}
+
+/**
+ * 現在の「アンドロイドプロジェクトを Android Studio で開きます
+ */
+if (!project.tasks.findByName('studio')){ 
+	task studio {
+	description = "現在の「アンドロイドプロジェクトを Android Studio で開きます"
+		doLast {
+			ant.exec(executable: "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+				dir: "C:\\Program Files\\Android\\Android Studio\\bin",
+				spawn:"true"){
+					arg(value: "${projectDir}")
+			}
+		}
+	}
+}
+
+	
+/**
+ * listAVD : 実装されているAVDをリストする 
+ */
+if (!project.tasks.findByName('listAVD')){ 
+	task listAVD {
+		doLast {
+			ant.exec(executable: "C:\\AndroidStudio32\\sdk\\emulator\\emulator.exe",
+				dir: "C:\\AndroidStudio32\\sdk\\emulator",
+				outputproperty:"output"){
+					arg(value: "-list-avds")
+				}
+			//println ant.properties.output; //これでもOK
+			println ant.properties['output'];
+		}
+	}
+}
+
+ /**
+  * tooltip="仮想エミュレータ Tablet28 を起動します"
+  */
+if (!project.tasks.findByName('launchAVD')){ 
+	task launchAVD {
+		description = "仮想エミュレータ Tablet28 を起動します"
+		doFirst {
+			def avd = "Tablet28"
+			ant.exec(executable: "C:\\AndroidStudio32\\sdk\\emulator\\emulator.exe",
+				dir: "C:\\AndroidStudio32\\sdk\\emulator",
+				//resultproperty: "App.state",
+				spawn:"true"
+			){
+				arg(value: """-avd""")
+				arg(value: "${avd}")
+			}
+		}
+	}
+}
+/**
+ * listPachage : 実行中の端末にインストールされているパッケージの一覧を表示する【adb】 
+ */
+if (!project.tasks.findByName('listPackages')){ 
+	task listPackages {
+		description = "list installed packages in running emulator"
+		doLast {
+			ant.exec(executable: "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe",
+				dir: "C:\\AndroidStudio32\\sdk\\emulator",
+				outputproperty:"output"){
+					arg(value: "shell")
+					arg(value: "pm")
+					arg(value: "list")
+					arg(value: "packages")
+				}
+			//println ant.properties.output; //これでもOK
+			println ant.properties['output'];
+		}
+	}
+}
+}
+/*
+			if (!project.tasks.findByName('install')){ 
+		task install {
+			doLast {
+				ant.exec(executable: "C:/AndroidStudio/platform-tools/adb.exe",
+					//dir: 'C:/AndroidStudio/platform-tools',
+					//resultproperty: "App.state",
+					spawn:"true"
+				){
+					arg(value: "installDebug")
+					arg(value: "app/build/outputs/apk/app-debug.apk")
+				}			
+			}
+		}
+	}
+*/			
+/*
+	if (!project.tasks.findByName('runAVD')){ 
+	task runAVD {
+		doFirst {
+			def avd = "Tablet28"
+			ant.exec(executable: "C:\\AndroidStudio32\\sdk\\emulator\\emulator.exe",
+				dir: "C:\\AndroidStudio32\\sdk\\emulator",
+				//resultproperty: "App.state",
+				spawn:"true"
+			){
+				arg(value: """-avd""")
+				arg(value: "${avd}")
+			}
+		
+			def packagename = "net.buildbox.pokeri." + project.name
+
+			//println(ant.properties.App.state)
+			ant.exec(executable: "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe",
+				dir: "$projectDir",
+				spawn:"true"){
+					arg(value: "shell")
+					arg(value: "am")
+					arg(value: "start")
+					arg(value: "-n")
+						arg(value: "${packagename} + "/" + ${packagename} + ".MainActivity")
+				}
+		}
+	}
+}
+*/
+
+	if (!project.tasks.findByName('startAVD')){ 
+		task startAVD(type: ExecWait) {
+  		command "wscript.exe F:\\GitHub\\android-sdk-pokeri-v2\\GradleProject\\obj\\script\\launchAVD.wsf"
+    	ready 'Server running.'
+    	directory 'C:/AndroidStudio/tools'
+		}	
+	}	
+
+	/*	
+	if (!project.tasks.findByName('task_test')){ 
+		task task_test {
+			doLast {
+				println(projectDir)
+			}
+		}
+	}
+*/	
+	
+/*			
+task check << {
+    ant.taskdef(name: 'pmd',
+                classname: 'net.sourceforge.pmd.ant.PMDTask',
+                classpath: configurations.pmd.asPath)
+    ant.pmd(shortFilenames: 'true',
+            failonruleviolation: 'true',
+            rulesetfiles: file('pmd-rules.xml').toURI().toString()) {
+        formatter(type: 'text', toConsole: 'true')
+        fileset(dir: 'src')
+    }
+}			
+*/			
+	
+	
+	/*
+	if (!project.tasks.findByName('copyProjFiles')){ 
+		task copyProjFiles {
+			doLast {
+				ant.copy(todir: '.', encoding: 'UTF-8') {
+					fileset(dir: "$rootDir/maven-template", includes: "** / *.*", excludes: "** / *.fdp") //fixme
+					filterset(begintoken:'%%', endtoken:'%%') {
+						filter( token:'TARGET', value: project.name)
+					}
+				}		
+				ant.copy(file: "$rootDir/maven-template/DirName.fdp", tofile: project.name+".fdp");
+			}
+		}
+	}
+	*/
+
+	/*
+	if (!project.tasks.findByName('applyFont')){ 
+		task applyFont {
+			doLast {
+				//project.tasks['ant.prepare-src'].execute();
+				exec{
+					//workingDir '../tomcat/bin'
+					commandLine 'cmd', '/c', 'ant','prepare-src'
+				}
+				String patch1 ="package example;\n" \
+											+"import java.util.*;\n" \
+											+"import java.util.List;\n";
+				
+				String patch2 ="UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());\n" \
+											+ "            setUIFont (new javax.swing.plaf.FontUIResource(\"Meiryo UI\", Font.PLAIN, 24));\n";						
+				
+				String patch3 ="public static void setUIFont (javax.swing.plaf.FontUIResource f) {\n" \
+			           +"\t\t\tEnumeration<Object> keys = UIManager.getDefaults().keys();\n" \
+			           + "\t\t\twhile (keys.hasMoreElements()) {\n" \
+				         + "\t\t\t\tObject key = keys.nextElement();\n" \
+				         + "\t\t\t\tObject value = UIManager.get (key);\n" \
+				         + "\t\t\t\tif (value != null && value instanceof javax.swing.plaf.FontUIResource)\n" \
+				         + "\t\t\t\tUIManager.put (key, f);\n" \
+			           + "\t\t}\n\t}\n\n" \
+                 + "\tpublic static void main(String... args)";							
+				
+				String patch4 = "frame.pack();\n" + "\t\t\t\tframe.setSize(800,600);"
+				
+				ant.loadfile(property: "encodedfile",
+					srcFile: "target/src/example/MainPanel.java",
+					encoding: "utf-8");
+				String code =ant.properties.encodedfile 
+				code = code.replace("package example;",patch1);
+				code = code.replace("UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());",patch2);
+				code = code.replace("public static void main(String... args)",patch3);
+				code = code.replace("frame.pack();",patch4);
+				//println(code);
+				ant.echo(message: code, file:"target/src/example/MainPanel.java");  
+			}
+		}
+	}
+	*/
+	
+
+task runAVD2(type: ExecWait) {
+  //workingDir 'C:/Users/和彦/AppData/Local/Android/sdk/Tools'
+	//workingDir 'C:/AndroidStudio/tools'
+	//spawn "true"
+ 		command "wscript.exe F:\\GitHub\\android-sdk-pokeri-v2\\GradleProject\\obj\\script\\launchAVD.wsf"
+   	ready 'Server running.'
+   	directory 'C:/AndroidStudio/tools'
+
+	
+	//def avd = "3.7_FWVGA_slider_API_25"
+	//def adbCommand = ["emulator","-avd", "$avd"]
+  //commandLine adbCommand
+   //commandLine "adb","-d","install", "app/build/outputs/apk/app-debug.apk"
+	//directory 'C:/AndroidStudio/tools'
+	//command  "emulator -avd $avd"
+
+	doLast {
+    //println "Some test text"
+  	exec {
+			//workingDir 'C:/AndroidStudio/tools'
+			commandLine  "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe install F:\\mnt\\sdcard2\\backups\\apps\\PocketReference_v2\\Chapter01\\layout_constraintlayout.apk"
+  	}
+  }
+}
+
+if (!project.tasks.findByName('installRun')){ 
+	task installRun {
+		//def workingDir='C:/AndroidStudio/tools'
+		//spawn "true"
+		//def avd = "3.7_FWVGA_slider_API_25"
+		//def adbCommand = ["emulator","-avd", "$avd"]
+  	//command "F:\\GitHub\\android-sdk-pokeri-v2\\GradleProject\\obj\\script\\launchAVD.wsf"
+   //commandLine "adb","-d","install", "app/build/outputs/apk/app-debug.apk"
+		//directory 'C:/AndroidStudio/tools'
+		//command  "emulator -avd $avd"
+
+		doLast {
+    	//println "Some test text"
+  		//exec {
+			//workingDir 'C:/AndroidStudio/tools'
+  		//executable "adb"
+  			//command "C:/AndroidStudio/tools/adb.exe","-d","install", "Sample011.apk"
+    		//ready true
+  		//}
+  		project.tasks['startAVD'].execute();
+						//args="/k C:\AndroidStudio32\sdk\platform-tools\adb.exe install $(CurProjectDir)\app\build\outputs\apk\debug\app-debug.apk"
+  		exec {
+				//workingDir 'C:/AndroidStudio/tools'
+  			//executable "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe"
+  			commandLine  "C:\\AndroidStudio32\\sdk\\platform-tools\\adb.exe install F:\\mnt\\sdcard2\\backups\\apps\\PocketReference_v2\\Chapter01\\layout_constraintlayout.apk"
+    		//ready true
+  		}
+			
+			
+			println "ready"
+		}
+	}
+}
+
+/**
+	* Gradle Madness – ExecWait: A task that waits for command line calls to be ready
+	*  https://fbflex.wordpress.com/2013/03/14/gradle-madness-execwait-a-task-that-waits-for-commandline-calls-to-be-ready/
+	*/
+class ExecWait extends DefaultTask {
+	String command
+	String ready
+	String directory
+
+	@TaskAction
+	def spawnProcess() {
+    ProcessBuilder builder = new ProcessBuilder(command.split(' '))
+    builder.redirectErrorStream(true)
+    builder.directory(new File(directory))
+    Process process = builder.start()
+
+    InputStream stdout = process.getInputStream()
+    BufferedReader reader = new BufferedReader(new InputStreamReader(stdout))
+
+    def line = ""
+    while ((line = reader.readLine()) != null) {
+        println line
+        if (line.contains(ready)) {
+            println "$command is ready"
+            break;
+        }
+    }
+	}
+}

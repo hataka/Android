@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title = "All tasks runnable from root project">
+
+	<folder title="Android tasks">
+		<record title="init" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat app:androidDependencies"
+		 	path="$(CurProjectDir"
+		 	tooltip="Displays the Android dependencies of the project.
+		 	icon="image:33" />
+
+
+app:androidDependencies - Displays the Android dependencies of the project.
+app:signingReport - Displays the signing info for each variant.
+app:sourceSets - Prints out all the source sets defined in this project.
+	</folder>
+
+	<folder title="Build tasks">
+app:assemble - Assembles all variants of all applications and secondary packages.
+app:assembleAndroidTest - Assembles all the Test applications.
+app:assembleDebug - Assembles all Debug builds.
+app:assembleRelease - Assembles all Release builds.
+app:build - Assembles and tests this project.
+app:buildDependents - Assembles and tests this project and all projects that depend on it.
+app:buildNeeded - Assembles and tests this project and all projects it depends on.
+app:bundleDebug - Creates all Debug bundles.
+app:bundleRelease - Creates all Release bundles.
+app:clean - Deletes the build directory.
+app:cleanBuildCache - Deletes the build cache directory.
+app:compileDebugAndroidTestSources
+app:compileDebugSources
+app:compileDebugUnitTestSources
+app:compileReleaseSources
+app:compileReleaseUnitTestSources
+	</folder>
+
+	<folder title="Build Setup tasks">
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+	</folder>
+
+	<folder title="Cleanup tasks">
+app:lintFix - Runs lint on all variants and applies any safe suggestions to the source code.
+	</folder>
+
+	<folder title="Help tasks">
+buildEnvironment - Displays all buildscript dependencies declared in root project 'layout_ConstraintLayout'.
+app:buildEnvironment - Displays all buildscript dependencies declared in project ':app'.
+components - Displays the components produced by root project 'layout_ConstraintLayout'. [incubating]
+app:components - Displays the components produced by project ':app'. [incubating]
+dependencies - Displays all dependencies declared in root project 'layout_ConstraintLayout'.
+app:dependencies - Displays all dependencies declared in project ':app'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'layout_ConstraintLayout'.
+app:dependencyInsight - Displays the insight into a specific dependency in project ':app'.
+dependentComponents - Displays the dependent components of components in root project 'layout_ConstraintLayout'. [incubating]
+app:dependentComponents - Displays the dependent components of components in project ':app'. [incubating]
+help - Displays a help message.
+app:help - Displays a help message.
+model - Displays the configuration model of root project 'layout_ConstraintLayout'. [incubating]
+app:model - Displays the configuration model of project ':app'. [incubating]
+projects - Displays the sub-projects of root project 'layout_ConstraintLayout'.
+app:projects - Displays the sub-projects of project ':app'.
+properties - Displays the properties of root project 'layout_ConstraintLayout'.
+app:properties - Displays the properties of project ':app'.
+tasks - Displays the tasks runnable from root project 'layout_ConstraintLayout' (some of the displayed tasks may belong to subprojects).
+app:tasks - Displays the tasks runnable from project ':app'.
+	</folder>
+
+	<folder title="Install tasks">
+app:installDebug - Installs the Debug build.
+app:installDebugAndroidTest - Installs the android (on device) tests for the Debug build.
+app:uninstallAll - Uninstall all applications.
+app:uninstallDebug - Uninstalls the Debug build.
+app:uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.
+app:uninstallRelease - Uninstalls the Release build.
+	</folder>
+
+	<folder title="Verification tasks">
+app:check - Runs all checks.
+app:connectedAndroidTest - Installs and runs instrumentation tests for all flavors on connected devices.
+app:connectedCheck - Runs all device checks on currently connected devices.
+app:connectedDebugAndroidTest - Installs and runs the tests for debug on connected devices.
+app:deviceAndroidTest - Installs and runs instrumentation tests using all Device Providers.
+app:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+app:lint - Runs lint on all variants.
+app:lintDebug - Runs lint on the Debug build.
+app:lintRelease - Runs lint on the Release build.
+app:lintVitalRelease - Runs lint on just the fatal issues in the release build.
+app:test - Run unit tests for all variants.
+app:testDebugUnitTest - Run unit tests for the debug build.
+app:testReleaseUnitTest - Run unit tests for the release build.
+	</folder>
+
+	<folder title="Other tasks">
+app:assembleDebugAndroidTest
+app:assembleDebugUnitTest
+app:assembleReleaseUnitTest
+app:buildDebugPreBundle
+app:buildReleasePreBundle
+app:bundle
+app:bundleDebugAndroidTestResources
+app:bundleDebugResources
+app:bundleReleaseResources
+app:checkDebugAndroidTestClasspath
+app:checkDebugClasspath
+app:checkDebugLibraries
+app:checkDebugManifest
+app:checkReleaseClasspath
+app:checkReleaseLibraries
+app:checkReleaseManifest
+clean
+app:compileDebugAidl
+app:compileDebugAndroidTestAidl
+app:compileDebugAndroidTestJavaWithJavac
+app:compileDebugAndroidTestNdk
+app:compileDebugAndroidTestRenderscript
+app:compileDebugAndroidTestShaders
+app:compileDebugJavaWithJavac
+app:compileDebugNdk
+app:compileDebugRenderscript
+app:compileDebugShaders
+app:compileDebugUnitTestJavaWithJavac
+app:compileLint
+app:compileReleaseAidl
+app:compileReleaseJavaWithJavac
+app:compileReleaseNdk
+app:compileReleaseRenderscript
+app:compileReleaseShaders
+app:compileReleaseUnitTestJavaWithJavac
+app:consumeConfigAttr
+app:createDebugCompatibleScreenManifests
+app:createMockableJar
+app:createReleaseCompatibleScreenManifests
+app:extractApksForDebug
+app:extractApksForRelease
+app:extractProguardFiles
+app:generateDebugAndroidTestAssets
+app:generateDebugAndroidTestBuildConfig
+app:generateDebugAndroidTestResources
+app:generateDebugAndroidTestResValues
+app:generateDebugAndroidTestSources
+app:generateDebugAssets
+app:generateDebugBuildConfig
+app:generateDebugFeatureMetadata
+app:generateDebugFeatureTransitiveDeps
+app:generateDebugResources
+app:generateDebugResValues
+app:generateDebugSources
+app:generateDebugUnitTestAssets
+app:generateDebugUnitTestResources
+app:generateDebugUnitTestSources
+app:generateReleaseAssets
+app:generateReleaseBuildConfig
+app:generateReleaseFeatureMetadata
+app:generateReleaseFeatureTransitiveDeps
+app:generateReleaseResources
+app:generateReleaseResValues
+app:generateReleaseSources
+app:generateReleaseUnitTestAssets
+app:generateReleaseUnitTestResources
+app:generateReleaseUnitTestSources
+app:javaPreCompileDebug
+app:javaPreCompileDebugAndroidTest
+app:javaPreCompileDebugUnitTest
+app:javaPreCompileRelease
+app:javaPreCompileReleaseUnitTest
+app:mainApkListPersistenceDebug
+app:mainApkListPersistenceDebugAndroidTest
+app:mainApkListPersistenceRelease
+app:makeApkFromBundleForDebug
+app:makeApkFromBundleForRelease
+app:mergeDebugAndroidTestAssets
+app:mergeDebugAndroidTestJniLibFolders
+app:mergeDebugAndroidTestResources
+app:mergeDebugAndroidTestShaders
+app:mergeDebugAssets
+app:mergeDebugJniLibFolders
+app:mergeDebugResources
+app:mergeDebugShaders
+app:mergeReleaseAssets
+app:mergeReleaseJniLibFolders
+app:mergeReleaseResources
+app:mergeReleaseShaders
+app:packageAppClassesDebug
+app:packageAppClassesDebugAndroidTest
+app:packageAppClassesDebugUnitTest
+app:packageAppClassesRelease
+app:packageAppClassesReleaseUnitTest
+app:packageDebug
+app:packageDebugAndroidTest
+app:packageDebugBundle
+app:packageDebugUniversalApk
+app:packageRelease
+app:packageReleaseBundle
+app:packageReleaseUniversalApk
+app:preBuild
+app:preDebugAndroidTestBuild
+app:preDebugBuild
+app:preDebugUnitTestBuild
+app:prepareLintJar
+app:preReleaseBuild
+app:preReleaseUnitTestBuild
+app:processDebugAndroidTestJavaRes
+app:processDebugAndroidTestManifest
+app:processDebugAndroidTestResources
+app:processDebugJavaRes
+app:processDebugManifest
+app:processDebugResources
+app:processDebugUnitTestJavaRes
+app:processReleaseJavaRes
+app:processReleaseManifest
+app:processReleaseResources
+app:processReleaseUnitTestJavaRes
+app:reportBuildArtifactsDebug
+app:reportBuildArtifactsRelease
+app:reportSourceSetTransformAndroidTest
+app:reportSourceSetTransformAndroidTestDebug
+app:reportSourceSetTransformDebug
+app:reportSourceSetTransformMain
+app:reportSourceSetTransformRelease
+app:reportSourceSetTransformTest
+app:reportSourceSetTransformTestDebug
+app:reportSourceSetTransformTestRelease
+app:resolveConfigAttr
+app:splitsDiscoveryTaskDebug
+app:splitsDiscoveryTaskRelease
+app:transformClassesWithDexBuilderForDebug
+app:transformClassesWithDexBuilderForDebugAndroidTest
+app:transformClassesWithDexBuilderForRelease
+app:transformDexArchiveWithDexMergerForDebug
+app:transformDexArchiveWithDexMergerForDebugAndroidTest
+app:transformDexArchiveWithDexMergerForRelease
+app:transformDexArchiveWithExternalLibsDexMergerForDebug
+app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest
+app:transformDexArchiveWithExternalLibsDexMergerForRelease
+app:transformNativeLibsWithMergeJniLibsForDebug
+app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest
+app:transformNativeLibsWithMergeJniLibsForRelease
+app:transformNativeLibsWithStripDebugSymbolForDebug
+app:transformNativeLibsWithStripDebugSymbolForRelease
+app:transformResourcesWithMergeJavaResForDebug
+app:transformResourcesWithMergeJavaResForDebugAndroidTest
+app:transformResourcesWithMergeJavaResForDebugUnitTest
+app:transformResourcesWithMergeJavaResForRelease
+app:transformResourcesWithMergeJavaResForReleaseUnitTest
+app:validateSigningDebug
+app:validateSigningDebugAndroidTest
+app:writeDebugApplicationId
+app:writeReleaseApplicationId
+	</folder>
+
+</root>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="echo_properties" name="pokeri-v2">
+  <property environment="env"/>
+  <dirname property="ant.file.dir" file="${ant.file}"/>
+  <property name="appname" value="${ant.project.name}"/>
+	<property name="gradle_bin" value="F:/gradle-3.5/bin/gradle.bat" />
+
+    <macrodef name="gradle">
+        <attribute name="target" />
+        <sequential>
+            <exec executable="${gradle_bin}" dir="${projectDir}">
+              <arg line="@{target}" />
+            </exec>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="gradlew">
+        <attribute name="target" />
+        <sequential>
+            <exec executable="${projectDir}\gradlew.bat" dir="${projectDir}">
+              <arg line="@{target}" />
+            </exec>
+        </sequential>
+    </macrodef>
+
+    <target name="init">
+		</target>		
+
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="echo_properties">
+    <echo message="" />
+    <echo message="" />
+    <echo message="${appname} Build file" />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message=" properties  are:" />
+    <echo message="" />
+    <echo message="projectName  -  ${projectName}" />
+    <echo message="projectDir   -  ${projectDir}" />
+    <echo message="curDir       -  ${curDir}" />
+    <echo message="ant.file.dir -  ${ant.file.dir}" />
+    <echo message="gradle_bin   -  ${gradle_bin}" />
+    <echo message="clean    - cleans up the directory" />
+    <echo message="" />
+    <echo message=" See the comments inside the build.xml file for more details." />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message="" />
+  </target>
+
+  <target name="assembleDebug_gradlew">
+    <gradlew target="assembleDebug" />
+  </target>
+
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="**/*.bak"/>
+        </delete>
+    </target>
+
+    <target name="clearall">
+       <delete>
+          <fileset dir="." includes="**/*.class"/>
+          <fileset dir="." includes="**/.gitignore"/>
+          <fileset dir="." includes="**/*.wsf"/>
+          <fileset dir="." includes="**/*.bak"/>
+          <fileset dir="." includes="**/*.ppr"/>
+          <fileset dir="." includes="**/*.fdp"/>
+          <fileset dir="." includes="**/FDTreeMenu.xml"/>
+          <fileset dir="." includes="**/Manifest.txt"/>
+       </delete>
+    </target>
+    <target name="cleanall" depends="clean" />
+    <target name="build">
+    </target>
+
+	
+</project>
+

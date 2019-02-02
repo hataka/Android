@@ -1,0 +1,161 @@
+/////////////////////////////////////////////////////////////////////////////
+// Tasks
+/**
+ * list all tasks
+ * http://stackoverflow.com/questions/38362977/how-to-list-all-tasks-for-the-master-project-only-in-gradle
+ */
+if (!project.tasks.findByName('printTasks')){ //二重定義防止
+	task printTasks << {
+  	//original  
+		project.tasks.collect { task -> println("task="+task+" dependsOn="+task.dependsOn) }
+  //project.tasks.collect { task -> println(task) }
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// 第17章 GradleからAntを使う
+// http://gradle.monochromeroad.com/docs/userguide/ant.html
+/**
+ *  例17.1 Antタスクの利用
+ */
+if (!project.tasks.findByName('ant_hello')){ //二重定義防止
+	task ant_hello << {
+		String greeting = 'hello from Ant'
+		ant.echo(message: greeting)
+	}
+}
+
+/**
+ *  例17.2 Antタスクにネストされたテキストを渡す
+ */
+if (!project.tasks.findByName('ant_hello')){ //二重定義防止
+	task ant_hello2 << {
+		ant.echo('hello from Ant')
+	}
+}
+
+/**
+ *  17.3 Antタスクにネストされた要素を渡す
+ *		Antでzipする
+ * 	https://blog.codebook-10000.com/entry/20130511/1368294591
+ *  	<target name="zip">
+				<zip destfile="${server_dir}/${module_name}.zip" 
+					basedir="${server_dir}/${module_name}"
+					update="true"
+				/>
+			</target>
+ */
+if (!project.tasks.findByName('ant_zip')){ //二重定義防止
+	task ant_zip << {
+		ant.zip(destfile: 'archive.zip') {
+			fileset(dir: 'src') {
+				include(name: '**.xml')
+				exclude(name: '**.java')
+			}
+		}
+	}
+}
+/**
+ * 例17.4 Antタイプの利用
+ */
+if (!project.tasks.findByName('ant_list')){ //二重定義防止
+	task ant_list << {
+		def path = ant.path {
+			fileset(dir: 'libs', includes: '*.jar')
+		}
+		path.list().each {
+			println it
+		}
+	}
+}
+/** 17.1.1. ビルドでカスタムAntタスクを使う
+ * ビルドでカスタムタスクを有効にするためには、 build.xmlファイルと同じく
+ * Antタスクのtaskdef（大抵はこちらの方が簡単です）かtypedefを利用します。
+ * これにより組み込みのAntタスクと同様にカスタムAntタスクが参照できるようになります。
+*/
+/**
+ * 例17.5 カスタムAntタスクの利用
+ */
+if (!project.tasks.findByName('ant_check')){ //二重定義防止
+	task ant_check << {
+		ant.taskdef(resource: 'checkstyletask.properties') {
+			classpath {
+				fileset(dir: 'libs', includes: '*.jar')
+			}
+		}
+		ant.checkstyle(config: 'checkstyle.xml') {
+			fileset(dir: 'src')
+		}
+	}
+}
+
+//例17.6 カスタムAntタスクに対するクラスパスの宣言
+/*
+configurations {
+    pmd
+}
+dependencies {
+    pmd group: 'pmd', name: 'pmd', version: '4.2.5'
+}
+*/
+/**
+ * 例17.7 カスタムAntタスクと依存関係管理を併用
+ */
+if (!project.tasks.findByName('ant_check2')){ //二重定義防止
+	task ant_check2 << {
+		ant.taskdef(name: 'pmd',
+			classname: 'net.sourceforge.pmd.ant.PMDTask',
+				classpath: configurations.pmd.asPath)
+				ant.pmd(shortFilenames: 'true',
+				failonruleviolation: 'true',
+				rulesetfiles: file('pmd-rules.xml').toURI().toString()) {
+					formatter(type: 'text', toConsole: 'true')
+					fileset(dir: 'src')
+				}
+	}
+}
+/**
+ * 17.3. Antプロパティとリファレンス
+ * Antタスクで利用できるようにAntプロパティを設定する方法は複数あります。 
+ * AntBuilderインスタンスのプロパティを直接設定できます。 Antプロパティは変更可能なMapとしても利用可能です。 
+ * Antのpropertyタスクも利用できます。 以下はこれらをどのように実行するのかを示すサンプルです。
+ */
+ //例17.13 Antプロパティの設定
+/*
+ ant.buildDir = buildDir
+ant.properties.buildDir = buildDir
+ant.properties['buildDir'] = buildDir
+ant.property(name: 'buildDir', location: buildDir)
+build.xml
+<echo>buildDir = ${buildDir}</echo>
+多くのAntタスクは実行時にプロパティを設定します。 これらのプロパティを取得する方法も複数あります。 
+AntBuilderインスタンスからプロパティを直接取得できます。 AntプロパティはMapとしても参照可能です。 以下はサンプルです。
+*/
+//例17.14 Antプロパティの取得
+/*
+build.xml
+<property name="antProp" value="a property defined in an Ant build"/>
+build.gradle
+println ant.antProp
+println ant.properties.antProp
+println ant.properties['antProp']
+Antリファレンスを設定する方法は複数あります:
+*/
+//例17.15 Antリファレンスの設定
+/*
+build.gradle
+ant.path(id: 'classpath', location: 'libs')
+ant.references.classpath = ant.path(location: 'libs')
+ant.references['classpath'] = ant.path(location: 'libs')
+build.xml
+<path refid="classpath"/>
+Antリファレンスを取得する方法も複数あります:
+*/
+//例17.16 Antリファレンスの取得
+/*
+build.xml
+<path id="antPath" location="libs"/>
+build.gradle
+println ant.references.antPath
+println ant.references['antPath']
+*/

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title = "拡張タスク">
+	<folder title="build.gradle 組込みタスク">
+		<record title="clean" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat clean"
+		 	path="$(CurProjectDir)"
+		 	tooltip="プロジェクトをクリーンアプします (build フォルダの削除)"
+		 	icon="image:33" />
+	</folder>		
+
+		<record title="printTasks" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat printTasks"
+		 	path="$(CurProjectDir)"
+		 	tooltip="拡張タスクの一覧をリストします(簡略版)"
+		 	icon="image:33" />
+		
+		<record title="printTasks_org" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat printTasks_org"
+		 	path="$(CurProjectDir)"
+		 	tooltip="rootDirのbuild.gradleに定義されたTaskをリストします(原版)"
+		 	icon="image:33" />
+
+		<record title="echo_properties" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat echo_properties"
+		 	path="$(CurProjectDir)"
+		 	tooltip="組込みプロパティを リストアップします"
+		 	icon="image:33" />
+
+		<record title="listAVD" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat listAVD"
+		 	path="$(CurProjectDir)"
+		 	tooltip="利用可能な 仮想エミュレータ AVD をリストアップします"
+		 	icon="image:33" />
+
+		<record title="launchAVD" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat launchAVD"
+		 	path="$(CurProjectDir)"
+		 	tooltip="仮想エミュレータ Tablet28 を起動します"
+		 	icon="image:33" />
+
+		<record title="listPackages" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat listPackages"
+		 	path="$(CurProjectDir)"
+		 	tooltip="現在実行中のエミュレータにインストールされているパッケージの一覧を表示します"
+		 	icon="image:33" />
+
+		<record title="listPath" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat listPath"
+		 	path="$(CurProjectDir)"
+		 	tooltip="app/src配下の*.javaファイルをリストアップします"
+		 	icon="image:33" />
+
+		<record title="viewSrc" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat viewSrc"
+		 	path="$(CurProjectDir)"
+		 	tooltip="MainActivity.javaの内容をコンソールに出力します"
+		 	icon="image:33" />
+	
+		<record title="open_src_in_fd" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat open_src_in_fd"
+		 	path="$(CurProjectDir)"
+		 	tooltip="MainActivity.java を Flashdevelopで開きます"
+		 	icon="image:33" />
+	
+		<record title="sakura" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat sakura"
+		 	path="$(CurProjectDir)"
+		 	tooltip="MainActivity.java をサクラエディアで開きます"
+		 	icon="image:33" />
+		
+		<record title="studio" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat studio"
+		 	path="$(CurProjectDir)"
+		 	tooltip="現在の「アンドロイドプロジェクトを Android Studio で開きます"
+		 	icon="image:33" />
+
+		<record title="taskList" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat taskList"
+		 	path="$(CurProjectDir)"
+		 	tooltip="taskList (未完成!!!)"
+		 	icon="image:33" />
+
+		<record title="weatherReport" action="RunProcess" command="cmd.exe" 
+			args="/k gradlew.bat weatherReport"
+		 	path="$(CurProjectDir)"
+		 	tooltip="外部 buils.gradle の 特定タスク呼び出しの例"
+		 	icon="image:33" />
+
+
+</root>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="usage" name="${ant.file}">
+
+  <property environment="env"/>
+  <dirname property="ant.file.dir" file="${ant.file}"/>
+  <property name="appname" value="${ant.project.name}"/>
+  <property name="ECLIPSE_HOME" value="C:/eclipse461/eclipse/"/>
+  <property name="FD_PATH" value="F:\VCSharp\Flashdevelop5.1.1-LL\FlashDevelop\Bin\Debug\FlashDevelop.exe" />
+  <!--
+    <property name="${env.JAVA_HOME}" value="C:\Program Files\Java\jdk1.8.0_102"/>
+		<property name="PATH" value="C:/Program Files/Java/jdk1.8.0_102/bin"/>
+  -->
+  <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <property name="appname" value="${ant.project.name}"/>
+   	<path id="main.classpath">
+        <pathelement location="."/>
+        <pathelement path="${java.class.path}" />
+        <!-- <pathelement location="../CommonLibrary/*.class"/>-->
+        <!-- <pathelement location="../swt-4.5-win32-win32-x86_64/swt.jar"/>-->
+        <!-- <pathelement location="F:/codingground/swt.snippets/java/swt-4.5-win32-win32-x86_64/swt.jar"/> -->
+				<pathelement location="C:/eclipse461/workspace/CommonLibrary"/>
+        <pathelement location="f:/java/lib/swt.jar"/>
+    </path>
+    <target name="init">
+    
+	<!--
+	  antからgradleのタスクを実行する（ベタにexecで）
+      https://memo88.hatenablog.com/entry/20131011/1381509852
+	-->
+	<property name="gradle_bin" value="F:/gradle-3.5/bin/gradle.bat" />
+    
+    <macrodef name="gradle">
+        <attribute name="target" />
+        <sequential>
+            <exec executable="${gradle_bin}" dir="${basedir}">
+              <arg line="@{target}" />
+            </exec>
+        </sequential>
+    </macrodef>
+		
+
+    <target name="test">
+      <gradle target="test" />
+    </target>
+		
+
+  <!-- =================================================================== -->
+  <!-- Help on usage                                                       -->
+  <!-- =================================================================== -->
+  <target name="usage">
+    <echo message="" />
+    <echo message="" />
+    <echo message="${Name} Build file" />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message=" available targets are:" />
+    <echo message="" />
+    <echo message="   compile  - compiles the source code (default)" />
+    <echo message="   run      - execute the exsample" />
+    <echo message="   package  - generates the ${name}.jar file" />
+    <echo message="   javadoc  - generates the API documentation" />
+    <echo message="   clean    - cleans up the directory" />
+    <echo message="" />
+    <echo message=" See the comments inside the build.xml file for more details." />
+    <echo message="-------------------------------------------------------------" />
+    <echo message="" />
+    <echo message="" />
+  </target>
+    
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="**/*.bak"/>
+        </delete>
+        <!--  <delete dir="./commonLibrary"/> -->
+    </target>
+
+    <target name="clearall">
+       <delete>
+          <fileset dir="." includes="**/*.class"/>
+          <!--
+          <fileset dir="." includes="**/.classpath"/>
+          <fileset dir="." includes="**/.project"/>
+          <fileset dir="." includes="**/*.bat"/>
+           -->
+          <fileset dir="." includes="**/.gitignore"/>
+          <fileset dir="." includes="**/*.wsf"/>
+          <fileset dir="." includes="**/*.bak"/>
+          <fileset dir="." includes="**/*.ppr"/>
+          <fileset dir="." includes="**/*.fdp"/>
+          <fileset dir="." includes="**/FDTreeMenu.xml"/>
+          <fileset dir="." includes="**/Manifest.txt"/>
+       </delete>
+       <!--
+       <delete dir="./commomLibrary"/>
+       <delete dir="./CommonLibrary"/>
+       <delete dir="./commonLibrary"/>
+        -->
+    </target>
+
+    <target name="cleanall" depends="clean" />
+    <target name="build" depends="build-project"/>
+
+		<target name="rebuild" >
+			<antcall target="clean" />
+			<antcall target="build" />
+			<antcall target="run" />
+		</target>
+		
+    
+    <target name="build-project" depends="init">
+      <echo message="${ant.project.name}: ${ant.file}"/>
+      <javac srcdir="."
+         includes="**/*.java"
+         destdir="."
+         encoding="utf-8"
+         debug="true"
+         includeAntRuntime="no"
+         fork="true"
+         classpathref="main.classpath">
+      </javac>
+    </target>
+    
+    
+    
+<!--    
+		<target name="build-subprojects"/>
+  <target name="build-refprojects" description="Build all projects which reference this project. Useful to propagate changes."/>
+    <target name="init-eclipse-compiler" description="copy Eclipse compiler jars to ant lib directory">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target name="build-eclipse-compiler" description="compile project with Eclipse compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+-->
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    
+    <target name="create_jar" depends="build">
+      <!--  <jar destfile="F:/java/SWT/git.eclipse/Snippet2/${appname}.jar" filesetmanifest="mergewithoutmain"> -->
+      <jar destfile="${basedir}/${appname}.jar" filesetmanifest="mergewithoutmain">
+        <manifest>
+           <attribute name="Main-Class" value="${appname}"/>
+           <attribute name="Class-Path" value="."/>
+        </manifest>
+        <!-- <fileset dir="F:/java/SWT/git.eclipse/Snippet2"/> -->
+        <fileset dir="${basedir}" includes="*.class"/>
+        <!-- <zipfileset excludes="META-INF/*.SF" src="F:/java/lib/swt.jar"/> -->
+      </jar>
+    </target>
+
+	<target name="run">
+        <java classname="${appname}" failonerror="true" fork="yes">
+            <classpath refid="main.classpath"/>
+        </java>
+    </target>
+
+    <target name="runjar">
+        <java jar="${basedir}/${appname}.jar" failonerror="true" fork="yes">
+            <classpath refid="main.classpath"/>
+        </java>
+    </target>
+
+	<target name="${ant.project.name}">
+        <java classname="${ant.project.name}" failonerror="true" fork="yes">
+            <classpath refid="main.classpath"/>
+        </java>
+    </target>
+
+	<target name="open-fd-project" description="open FD Project" >
+	<exec executable="${FD_PATH}" spawn="true">
+		<arg value="-reuse" />
+		<arg value="${ant.file.dir}/${appname}.fdp" />
+	</exec>
+	</target>
+	
+	<target name="open-src-in-fd" description="open source in FD">
+		<exec executable="${FD_PATH}" spawn="true">
+			<arg value="-reuse" />
+			<arg value="${ant.file.dir}/${appname}.java" />
+		</exec>
+	</target>
+
+</project>
+

@@ -1,0 +1,4 @@
+#Sat Jan 26 11:54:24 JST 2019
+base.0=F\:\\mnt\\sdcard\\www\\public\\android\\android-sdk-pokeri-v2\\Chapter01\\layout_ConstraintLayout\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex

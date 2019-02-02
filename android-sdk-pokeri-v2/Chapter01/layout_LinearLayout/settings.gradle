@@ -1,0 +1,2 @@
+include ':app'
+//apply from: 'F:/GitHub/android-sdk-pokeri-v2/obj/gradle/CommonTasks.gradle'

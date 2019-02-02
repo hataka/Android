@@ -1,0 +1,3 @@
+rootProject.name = 'layout_Include'
+include ':app'
+//includeFlat '../GradleProject'

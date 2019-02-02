@@ -1,0 +1,9 @@
+/**
+ * Gradleで相対パスでライブラリプロジェクトを参照する
+ * http://sys1yagi.hatenablog.com/entry/2015/07/27/122459
+ 
+ */
+rootProject.name = 'GradleProject'
+include 'obj:gradle:Exec'
+include ':..:..:..:java:gradle:Exec'
+include ':..:..:..:java:gradle:lesson:lesson01'

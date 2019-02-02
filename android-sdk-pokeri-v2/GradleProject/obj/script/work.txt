@@ -1,0 +1,22 @@
+
+<record title="F:/java/gradle/Ant/build.gradle" command="open" path="F:/java/gradle/Ant/build.gradle" />
+F:/java/gradle/DateTime/build.gradle
+F:/java/gradle/Exec/build.gradle
+
+
+F:/java/gradle/Helloworld/helloworld1/build.gradle
+F:/java/gradle/Helloworld/helloworld2/build.gradle
+F:/java/gradle/Helloworld/helloworld3/build.gradle
+F:/java/gradle/Helloworld/helloworld4/build.gradle
+
+
+F:/java/gradle/Maven/build.gradle
+F:/java/gradle/Property/build.gradle
+F:/java/gradle/Regex/build.gradle
+F:/java/gradle/SwingBuilder/build.gradle
+F:/java/gradle/Tasks/build.gradle
+
+
+F:/java/gradle/apply_from/build.gradle
+
+
