@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root title="YaSample TreeMenu" icon="" expand="false">
+<folder title="Sample01">
+	<record title="YaSample011" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample011\YaSample011.fdp" />
+</folder>
+<folder title="Sample02">
+	<record title="YaSample021" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample021\YaSample021.fdp" />
+	<record title="YaSample022" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample022\YaSample022.fdp" />
+	<record title="YaSample023" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample023\YaSample023.fdp" />
+</folder>
+<folder title="Sample03">
+	<record title="YaSample031" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample031\YaSample031.fdp" />
+	<record title="YaSample032" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample032\YaSample032.fdp" />
+	<record title="YaSample033" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample033\YaSample033.fdp" />
+	<record title="YaSample034" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample034\YaSample034.fdp" />
+	<record title="YaSample035" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample035\YaSample035.fdp" />
+	<record title="YaSample036" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample036\YaSample036.fdp" />
+	<record title="YaSample037" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample037\YaSample037.fdp" />
+</folder>
+<folder title="Sample04">
+	<record title="YaSample041" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample041\YaSample041.fdp" />
+	<record title="YaSample042" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample042\YaSample042.fdp" />
+	<record title="YaSample043" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample043\YaSample043.fdp" />
+	<record title="YaSample044" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample044\YaSample044.fdp" />
+	<record title="YaSample045" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample045\YaSample045.fdp" />
+	<record title="YaSample046" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample046\YaSample046.fdp" />
+	<record title="YaSample047" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample047\YaSample047.fdp" />
+	<record title="YaSample048" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample048\YaSample048.fdp" />
+	<record title="YaSample049" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample049\YaSample049.fdp" />
+</folder>
+<folder title="Sample05">
+	<record title="YaSample051" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample051\YaSample051.fdp" />
+	<record title="YaSample052" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample052\YaSample052.fdp" />
+	<record title="YaSample053" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample053\YaSample053.fdp" />
+	<record title="YaSample054" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample054\YaSample054.fdp" />
+	<record title="YaSample055" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample055\YaSample055.fdp" />
+	<record title="YaSample056" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample056\YaSample056.fdp" />
+	<record title="YaSample057" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample057\YaSample057.fdp" />
+	<record title="YaSample058" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample058\YaSample058.fdp" />
+	<record title="YaSample059" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample059\YaSample059.fdp" />
+</folder>
+<folder title="Sample06">
+	<record title="YaSample061" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample061\YaSample061.fdp" />
+	<record title="YaSample062" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample062\YaSample062.fdp" />
+	<record title="YaSample063" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample063\YaSample063.fdp" />
+	<record title="YaSample064" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample064\YaSample064.fdp" />
+	<record title="YaSample065" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample065\YaSample065.fdp" />
+</folder>
+<folder title="Sample07">
+	<record title="YaSample071" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample071\YaSample071.fdp" />
+	<record title="YaSample072" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample072\YaSample072.fdp" />
+	<record title="YaSample073" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample073\YaSample073.fdp" />
+	<record title="YaSample074" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample074\YaSample074.fdp" />
+	<record title="YaSample075" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\Sample075\YaSample075.fdp" />
+</folder>
+	<record title="YaLauncher" action="OpenProject" path="F:\GitHub\hataka\codingground\android\YaSample\YaLauncher\YaLauncher.fdp" />
+</root>

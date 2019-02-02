@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package title="LaunchAVD" name="LaunchAVD">
+<job id="GoogleNexus7">
+<script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+<script language="javascript"><![CDATA[
+  //  アプリケーション操作
+  //  パスを指定してアプリケーションを起動する。
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var WS_ACT_NOMAL    = 1;    //ウインドウはアクティブ、サイズは通常(規定値)
+  var WS_ACT_MIN      = 2;    //ウインドウはアクティブ、サイズは最小
+  var WS_ACT_MAX      = 3;    //ウインドウはアクティブ、サイズは最大
+  var WS_NOTACT_NOMAL = 4;    //ウインドウは非アクティブ、サイズは通常
+  var WS_ACT_DEF      = 5;    //ウインドウはアクティブ、サイズは前回終了時と同じ
+                              //(アプリによって動作は異なる)
+  var WS_NOTACT_MIN   = 7;    //ウインドウは非アクティブ、サイズは最小
+  //  Shell関連の操作を提供するオブジェクトを取得
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  // 現在のカレントディレクトリを表示
+  //WScript.Echo(fs.getParentFolderName(WScript.ScriptFullName))
+  //WScript.Echo( sh.CurrentDirectory );
+  // C: ドライブの直下にカレントディレクトリを設定
+  sh.CurrentDirectory = "C:\\Program Files\\Genymobile\\Genymotion";
+  sh.Run("\"" + "C:\\Program Files\\Git\\git-bash.exe"+"\" --vm-name GoogleNexus7", WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="GenyMotion">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:\\Program Files\\Genymobile\\Genymotion";
+  sh.Run("\"" + "C:\Program Files\Genymobile\Genymotion\genymotion.exe"+"\"", WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="Git_CMD">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:\\Program Files\\Genymobile\\Genymotion";
+  sh.Run("\"" + "C:\\Program Files\\Genymobile\\Genymotion\\genyshell.exe"+"\"", WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  /*
+    	Set shell = CreateObject("WScript.Shell")
+	    Set objFSO = WScript.CreateObject("Scripting.FileSystemObject")
+    	Set objExecCmd = shell.Exec(compiler & " " & AppName & ".csproj /rebuild ")
+      Do While objExecCmd.Status = 0
+            ' １秒待ってみる
+        WScript.Sleep(1000)
+      Loop
+  */
+  
+  ]]></script>
+</job>
+
+<job id="run">
+<script language="VBScript">
+    Option Explicit
+	Dim shell
+	
+	Set shell = CreateObject("WScript.Shell")
+	shell.CurrentDirectory = Replace(WScript.ScriptFullName, WScript.ScriptName, "")
+
+	if FileExists("build.xml") then
+		CreateObject("WScript.Shell").Run "cmd.exe /c build8.bat run",0
+	end if
+
+	Function FolderExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FolderExists = objFileSys.FolderExists(strFilePath)
+	End Function
+
+	Function FileExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FileExists = objFileSys.FileExists(strFilePath)
+	End Function
+</script>
+</job>
+</package>

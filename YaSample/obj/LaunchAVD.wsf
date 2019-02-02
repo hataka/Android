@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package title="LaunchAVD" name="LaunchAVD">
+<job id="3.7_FWVGA_slider_API_25">
+<script language="JScript" src ="F:\WSH\wsf\common_lib.js" />
+<script language="javascript"><![CDATA[
+  //  アプリケーション操作
+  //  パスを指定してアプリケーションを起動する。
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var WS_ACT_NOMAL    = 1;    //ウインドウはアクティブ、サイズは通常(規定値)
+  var WS_ACT_MIN      = 2;    //ウインドウはアクティブ、サイズは最小
+  var WS_ACT_MAX      = 3;    //ウインドウはアクティブ、サイズは最大
+  var WS_NOTACT_NOMAL = 4;    //ウインドウは非アクティブ、サイズは通常
+  var WS_ACT_DEF      = 5;    //ウインドウはアクティブ、サイズは前回終了時と同じ
+                              //(アプリによって動作は異なる)
+  var WS_NOTACT_MIN   = 7;    //ウインドウは非アクティブ、サイズは最小
+  var avd = "3.7_FWVGA_slider_API_25";
+  //  Shell関連の操作を提供するオブジェクトを取得
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  // 現在のカレントディレクトリを表示
+  //WScript.Echo(fs.getParentFolderName(WScript.ScriptFullName))
+  //WScript.Echo( sh.CurrentDirectory );
+  // C: ドライブの直下にカレントディレクトリを設定
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="7_WSVGA_Tablet_API_25">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var avd = "7_WSVGA_Tablet_API_25";
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+  ]]></script>
+</job>
+
+<job id="Pixel_C_API_25">
+<script language="javascript"><![CDATA[
+  //  ウインドウスタイル
+  var WS_NOTVISIVLE   = 0;    //ウインドウは非表示
+  var avd = "Pixel_C_API_25";
+  var sh = new ActiveXObject( "WScript.Shell" );
+  var fs = WScript.CreateObject("Scripting.FileSystemObject");
+  sh.CurrentDirectory = "C:/AndroidStudio/tools";
+  sh.Run("C:/AndroidStudio/tools/emulator.exe -avd "+ avd, WS_NOTVISIVLE );
+  //  オブジェクトを解放
+  sh = null;
+
+/*
+:lesson021:listAVD
+Available Android Virtual Devices:
+    Name: 3.7_FWVGA_slider_API_25
+  Device: 3.7 FWVGA slider (Generic)
+    Path: C:\Users\和彦\.android\avd\3.7_FWVGA_slider_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 854x480
+  Sdcard: C:\Users\和彦\.android\avd\3.7_FWVGA_slider_API_25.avd\sdcard.img
+---------
+    Name: 7_WSVGA_Tablet_API_25
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\和彦\.android\avd\7_WSVGA_Tablet_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: 7_WSVGA_Tablet_API_25_2
+  Device: 7in WSVGA (Tablet) (Generic)
+    Path: C:\Users\和彦\.android\avd\7_WSVGA_Tablet_API_25_2.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: 1024x600
+  Sdcard: 100M
+---------
+    Name: Pixel_C_API_25
+  Device: pixel_c (Google)
+    Path: C:\Users\和彦\.android\avd\Pixel_C_API_25.avd
+  Target: Google APIs (Google Inc.)
+          Based on: Android 7.1.1 (Nougat) Tag/ABI: google_apis/x86
+    Skin: pixel_c
+  Sdcard: C:\Users\和彦\.android\avd\Pixel_C_API_25.avd\sdcard.img
+*/
+  /*
+    	Set shell = CreateObject("WScript.Shell")
+	    Set objFSO = WScript.CreateObject("Scripting.FileSystemObject")
+    	Set objExecCmd = shell.Exec(compiler & " " & AppName & ".csproj /rebuild ")
+      Do While objExecCmd.Status = 0
+            ' １秒待ってみる
+        WScript.Sleep(1000)
+      Loop
+  */
+  
+  ]]></script>
+</job>
+
+
+<job id="run">
+<script language="VBScript">
+    Option Explicit
+	Dim shell
+	
+	Set shell = CreateObject("WScript.Shell")
+	shell.CurrentDirectory = Replace(WScript.ScriptFullName, WScript.ScriptName, "")
+
+	if FileExists("build.xml") then
+		CreateObject("WScript.Shell").Run "cmd.exe /c build8.bat run",0
+	end if
+
+	Function FolderExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FolderExists = objFileSys.FolderExists(strFilePath)
+	End Function
+
+	Function FileExists(strFilePath)
+		Dim objFileSys
+		Set objFileSys = CreateObject("Scripting.FileSystemObject")
+		FileExists = objFileSys.FileExists(strFilePath)
+	End Function
+</script>
+</job>
+</package>

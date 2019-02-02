@@ -1,0 +1,2 @@
+F:\GitHub\hataka\codingground\android\YaSample\obj\FDTreeMenu.xml
+F:\GitHub\hataka\codingground\android\YaSample\build.gradle

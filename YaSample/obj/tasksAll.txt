@@ -1,0 +1,130 @@
+F:\GitHub\hataka\codingground\android\YaSample>gradle tasks --all
+The Task.leftShift(Closure) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use Task.doLast(Action) instead.
+        at build_ahtsi8afxrpiqgq9wlmzax5f7$_run_closure2.doCall(F:\GitHub\hataka\codingground\android\YaSample\build.gradle:59)
+:tasks
+
+------------------------------------------------------------
+All tasks runnable from root project
+------------------------------------------------------------
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'YaSample'.
+Sample011:buildEnvironment - Displays all buildscript dependencies declared in project ':Sample011'.
+Sample021:buildEnvironment - Displays all buildscript dependencies declared in project ':Sample021'.
+Sample022:buildEnvironment - Displays all buildscript dependencies declared in project ':Sample022'.
+Sample023:buildEnvironment - Displays all buildscript dependencies declared in project ':Sample023'.
+components - Displays the components produced by root project 'YaSample'. [incubating]
+Sample011:components - Displays the components produced by project ':Sample011'. [incubating]
+Sample021:components - Displays the components produced by project ':Sample021'. [incubating]
+Sample022:components - Displays the components produced by project ':Sample022'. [incubating]
+Sample023:components - Displays the components produced by project ':Sample023'. [incubating]
+dependencies - Displays all dependencies declared in root project 'YaSample'.
+Sample011:dependencies - Displays all dependencies declared in project ':Sample011'.
+Sample021:dependencies - Displays all dependencies declared in project ':Sample021'.
+Sample022:dependencies - Displays all dependencies declared in project ':Sample022'.
+Sample023:dependencies - Displays all dependencies declared in project ':Sample023'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'YaSample'.
+Sample011:dependencyInsight - Displays the insight into a specific dependency in project ':Sample011'.
+Sample021:dependencyInsight - Displays the insight into a specific dependency in project ':Sample021'.
+Sample022:dependencyInsight - Displays the insight into a specific dependency in project ':Sample022'.
+Sample023:dependencyInsight - Displays the insight into a specific dependency in project ':Sample023'.
+dependentComponents - Displays the dependent components of components in root project 'YaSample'. [incubating]
+Sample011:dependentComponents - Displays the dependent components of components in project ':Sample011'. [incubating]
+Sample021:dependentComponents - Displays the dependent components of components in project ':Sample021'. [incubating]
+Sample022:dependentComponents - Displays the dependent components of components in project ':Sample022'. [incubating]
+Sample023:dependentComponents - Displays the dependent components of components in project ':Sample023'. [incubating]
+help - Displays a help message.
+Sample011:help - Displays a help message.
+Sample021:help - Displays a help message.
+Sample022:help - Displays a help message.
+Sample023:help - Displays a help message.
+model - Displays the configuration model of root project 'YaSample'. [incubating]
+Sample011:model - Displays the configuration model of project ':Sample011'. [incubating]
+Sample021:model - Displays the configuration model of project ':Sample021'. [incubating]
+Sample022:model - Displays the configuration model of project ':Sample022'. [incubating]
+Sample023:model - Displays the configuration model of project ':Sample023'. [incubating]
+projects - Displays the sub-projects of root project 'YaSample'.
+Sample011:projects - Displays the sub-projects of project ':Sample011'.
+Sample021:projects - Displays the sub-projects of project ':Sample021'.
+Sample022:projects - Displays the sub-projects of project ':Sample022'.
+Sample023:projects - Displays the sub-projects of project ':Sample023'.
+properties - Displays the properties of root project 'YaSample'.
+Sample011:properties - Displays the properties of project ':Sample011'.
+Sample021:properties - Displays the properties of project ':Sample021'.
+Sample022:properties - Displays the properties of project ':Sample022'.
+Sample023:properties - Displays the properties of project ':Sample023'.
+tasks - Displays the tasks runnable from root project 'YaSample' (some of the displayed tasks may belong to subprojects).
+Sample011:tasks - Displays the tasks runnable from project ':Sample011'.
+Sample021:tasks - Displays the tasks runnable from project ':Sample021'.
+Sample022:tasks - Displays the tasks runnable from project ':Sample022'.
+Sample023:tasks - Displays the tasks runnable from project ':Sample023'.
+
+IDE tasks
+---------
+Sample011:cleanEclipse - Cleans all Eclipse files.
+Sample011:eclipse - Generates all Eclipse files.
+
+Other tasks
+-----------
+Sample011:cleanEclipseProject
+Sample011:eclipseProject - Generates the Eclipse project file.
+Sample011:install
+Sample021:install
+Sample022:install
+Sample023:install
+Sample011:listAVD
+Sample021:listAVD
+Sample022:listAVD
+Sample023:listAVD
+Sample011:listPackages
+Sample021:listPackages
+Sample022:listPackages
+Sample023:listPackages
+Sample011:open_src_in_fd
+Sample021:open_src_in_fd
+Sample022:open_src_in_fd
+Sample023:open_src_in_fd
+Sample011:printTasks
+Sample021:printTasks
+Sample022:printTasks
+Sample023:printTasks
+Sample011:runApp
+Sample021:runApp
+Sample022:runApp
+Sample023:runApp
+Sample011:runAVD
+Sample021:runAVD
+Sample022:runAVD
+Sample023:runAVD
+Sample011:sakura
+Sample021:sakura
+Sample022:sakura
+Sample023:sakura
+Sample011:startGrails
+Sample021:startGrails
+Sample022:startGrails
+Sample023:startGrails
+Sample011:studio
+Sample021:studio
+Sample022:studio
+Sample023:studio
+Sample011:task_test
+Sample021:task_test
+Sample022:task_test
+Sample023:task_test
+Sample011:viewSrc
+Sample021:viewSrc
+Sample022:viewSrc
+Sample023:viewSrc
+
+BUILD SUCCESSFUL
+
+Total time: 9.881 secs
+F:\GitHub\hataka\codingground\android\YaSample>
+

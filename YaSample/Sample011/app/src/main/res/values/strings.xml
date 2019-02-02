@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Sample011!</string>
+    <string name="app_name">Sample011 はじめてのアンドロイドアプリケーション p.5</string>
+    <string name="large">Large Text</string>
+
+</resources>
